@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import * as prettier from "prettier/standalone";
 import * as htmlParser from "prettier/parser-html";
+import FormatterContent from "./formatterContent"; // Import the component
 
 function HTMLFormatter() {
   // States for capturing user input and displaying formatted code
@@ -37,18 +38,13 @@ function HTMLFormatter() {
   };
 
   return (
-    <div className="formatter-container">
-      {/* Input area for users to paste their HTML code */}
-      <textarea
-        value={inputCode}
-        onChange={handleInputChange}
-        placeholder="Copy-paste your HTML here..."
-      />
-      {/* Button to trigger the format operation */}
-      <button onClick={formatHTMLCode}>Format HTML</button>
-      {/* Readonly textarea to display the formatted code */}
-      <textarea value={formattedCode} readOnly key={formattedCode} />
-    </div>
+    <FormatterContent
+      inputCode={inputCode}
+      handleInputChange={handleInputChange}
+      formatCode={formatHTMLCode}
+      formattedCode={formattedCode}
+      codeType="HTML"
+    />
   );
 }
 
