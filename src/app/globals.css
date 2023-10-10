@@ -1,68 +1,111 @@
+body {
+  background-color: #222;
+  color: #f1f1f1;
+}
+
 textarea {
-  min-height: 400px;
-  min-width: 40%;
+  height: 250px;
+  width: 100%;
+  padding: 15px;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  border: 1px solid #555;
+  border-radius: 5px;
+  background-color: #333;
+  color: #f1f1f1;
+  resize: vertical;
 }
 
 .formatter-page {
   font-family: Arial, sans-serif;
-  padding: 20px;
-  max-width: 800px;
-  margin: 0 auto;
+  padding: 40px;
+  max-width: 1000px;
+  margin: 40px auto;
+  background-color: #333;
+  border-radius: 10px;
 }
 
 h1 {
   text-align: center;
-  margin-bottom: 20px;
-}
-
-.input-section,
-.output-section {
-  margin-bottom: 20px;
+  color: #f9f9f9;
+  font-weight: 600;
+  margin-bottom: 30px;
 }
 
 h2 {
   margin-top: 0;
-  border-bottom: 2px solid #ddd;
+  color: #ddd;
+  font-weight: 600;
   padding-bottom: 10px;
-}
-
-textarea {
-  width: 100%;
-  min-height: 200px;
-  padding: 10px;
-  box-sizing: border-box;
-  font-size: 16px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  resize: vertical;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #555;
 }
 
 .pre-container {
   padding: 15px;
-  background-color: #f7f7f7;
-  border: 1px solid #e0e0e0;
+  background-color: #444;
+  border: 1px solid #555;
   border-radius: 5px;
+  margin-top: 15px;
 }
 
 pre {
-  white-space: pre-wrap; /* wrap lines */
-  word-wrap: break-word; /* wrap long lines */
-  max-height: 500px;
-  overflow: scroll;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  max-height: 300px;
+  overflow: auto;
+  font-size: 15px;
+  color: #f9f9f9;
 }
 
 button {
-  display: block;
-  margin: 20px auto;
-  padding: 10px 15px;
+  padding: 10px 25px;
   background-color: #007bff;
-  color: #fff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: all 0.3s;
+  font-weight: 600;
+  margin-top: 20px;
 }
 
 button:hover {
   background-color: #0056b3;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.home-page nav {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.home-page nav button {
+  padding: 10px 20px;
+  margin: 5px;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-weight: 600;
+}
+
+.home-page nav button:hover {
+  background-color: #0056b3;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+#formattersWindow {
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #333;
+}
+
+.output-section {
+  margin-top: 50px;
+}
+
+.results-placeholder {
+  color: #aaa;
+  font-style: italic;
 }
