@@ -29,6 +29,10 @@ section.header-logo img {
 }
 
 /* Style the navigation buttons */
+.home-page {
+  margin: 0 20px;
+}
+
 .home-page nav {
   margin-bottom: 20px;
 }
@@ -54,11 +58,11 @@ section.header-logo img {
 
 /* Style the main content container */
 div#formattersWindow {
-  padding-bottom: 30px;
+  padding-bottom: 20px;
 }
 
 .formatter-page {
-  padding: 40px;
+  padding: 20px;
   max-width: 1000px;
   margin: 0 auto;
   background-color: #fff;
@@ -127,12 +131,7 @@ pre {
 }
 
 /* Style the footer */
-.footer {
-  background-color: #007bff;
-  padding: 10px 0;
-}
-
 .copyrights {
-  color: #fff;
+  color: #a5bdd7;
   font-weight: 600;
 }
