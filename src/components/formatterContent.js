@@ -1,5 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
-import * as prettier from "prettier/standalone";
+import React, { useState, useEffect } from "react";
 import Prism from "prismjs";
 import "prismjs/themes/prism-okaidia.css";
 import "prismjs/components/prism-javascript";
@@ -11,14 +10,26 @@ function FormatterContent(props) {
   const { inputCode, handleInputChange, formatCode, formattedCode, codeType } =
     props;
 
-  const [isClient, setIsClient] = useState(false);
   const [isCopied, setIsCopied] = useState(false);
-  const codeRef = useRef(null);
+  const [showOutput, setShowOutput] = useState(false);
+  const [isProcessing, setIsProcessing] = useState(false);
+  const highlightedCode = Prism.highlight(
+    formattedCode || "",
+    Prism.languages[codeType.toLowerCase()],
+    codeType.toLowerCase()
+  );
 
   useEffect(() => {
-    setIsClient(true);
-    Prism.highlightAll();
+    setShowOutput(!!formattedCode);
   }, [formattedCode]);
+
+  const handleFormatClick = () => {
+    setIsProcessing(true);
+    setTimeout(() => {
+      setIsProcessing(false);
+      formatCode();
+    }, 500);
+  };
 
   const handleCopy = () => {
     navigator.clipboard.writeText(formattedCode).then(() => {
@@ -38,34 +49,30 @@ function FormatterContent(props) {
         />
       </div>
 
-      <button onClick={formatCode}>Format {codeType}</button>
+      <button onClick={handleFormatClick} disabled={isProcessing}>
+        {isProcessing ? "Processing..." : `Format ${codeType}`}
+      </button>
 
-      <div className="output-section">
-        <h2>Formatted Output</h2>
-        <div className="pre-container">
-          {isClient && (
-            <pre
-              className={`language-${codeType.toLowerCase()}`}
-              tabIndex={null}
-            >
-              <code
-                ref={codeRef}
-                className={`language-${codeType.toLowerCase()}`}
-                tabIndex={null}
-              >
-                {formattedCode || (
-                  <span className="results-placeholder">
-                    Formatted result will appear here...
-                  </span>
-                )}
-              </code>
-            </pre>
-          )}
-          <button onClick={handleCopy}>
-            {isCopied ? "Copied!" : "Click to Copy"}
-          </button>
+      {showOutput && (
+        <div
+          className={`output-section ${isProcessing ? "process-output" : ""}`}
+        >
+          <div className="output-content">
+            <h2 className="text-center">Formatted Output</h2>
+            <div className="pre-container">
+              <pre className={`language-${codeType.toLowerCase()}`}>
+                <code
+                  className={`language-${codeType.toLowerCase()}`}
+                  dangerouslySetInnerHTML={{ __html: highlightedCode }}
+                />
+              </pre>
+              <button onClick={handleCopy}>
+                {isCopied ? "Copied!" : "Click to Copy"}
+              </button>
+            </div>
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 }

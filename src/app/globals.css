@@ -79,7 +79,7 @@ h1 {
 
 /* Style the input section */
 textarea {
-  height: 250px;
+  height: 450px;
   width: 100%;
   padding: 15px;
   font-family: Arial, sans-serif;
@@ -110,13 +110,21 @@ button:hover {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
+button[disabled] {
+  background-color: #ccc;
+  color: #999;
+  cursor: not-allowed;
+  border: 1px solid #ccc;
+  box-shadow: none;
+}
+
 /* Style the output section */
 .output-section {
   margin-top: 50px;
 }
 
 /* Style the preformatted code container */
-.pre-container {
+.output-content {
   padding: 15px;
   border: 1px solid #dedede;
   border-radius: 5px;
@@ -125,10 +133,16 @@ button:hover {
   box-shadow: -1px 4px 19px -6px rgba(0, 0, 0, 0.13);
 }
 
+.output-content h2 {
+  margin: 10px 0 20px 0;
+  font-size: 21px;
+  color: #027bff;
+}
+
 pre {
   white-space: pre-wrap;
   word-wrap: break-word;
-  max-height: 300px;
+  max-height: 400px;
   overflow: auto;
   font-size: 15px;
   color: #333;
@@ -138,4 +152,12 @@ pre {
 .copyrights {
   color: #a5bdd7;
   font-weight: 600;
+}
+
+.output-section.process-output {
+  position: relative;
+}
+
+.output-section.process-output .pre-container {
+  opacity: 0.4;
 }
