@@ -3,7 +3,6 @@ import HTMLFormatter from "../components/HTMLFormatter";
 import JSFormatter from "../components/JSFormatter";
 import CSSFormatter from "../components/CSSFormatter";
 import JSONFormatter from "../components/JSONFormatter";
-import Head from "next/head";
 
 function HomePage() {
   const [selectedFormatter, setSelectedFormatter] = useState("HTML"); // default formatter to display
