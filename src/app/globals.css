@@ -13,6 +13,7 @@ body {
   margin: 0;
 }
 
+/* General */
 .text-center {
   text-align: center;
 }
@@ -30,7 +31,7 @@ section.header-logo img {
 
 /* Style the navigation buttons */
 .home-page {
-  margin: 0 20px;
+  margin: 20px;
 }
 
 .home-page nav {
@@ -87,6 +88,7 @@ textarea {
   border-radius: 5px;
   background-color: #f2fdff;
   resize: vertical;
+  box-shadow: -1px 4px 19px -6px rgba(0, 0, 0, 0.13);
 }
 
 /* Style the format button */
@@ -97,6 +99,7 @@ button {
   border-radius: 5px;
   cursor: pointer;
   transition: all 0.3s;
+  font-size: 14px;
   font-weight: 600;
   margin-top: 20px;
   color: #fff;
@@ -119,6 +122,7 @@ button:hover {
   border-radius: 5px;
   margin-top: 15px;
   background: #fff;
+  box-shadow: -1px 4px 19px -6px rgba(0, 0, 0, 0.13);
 }
 
 pre {
