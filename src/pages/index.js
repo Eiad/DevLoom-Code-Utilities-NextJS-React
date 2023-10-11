@@ -26,10 +26,30 @@ function HomePage() {
   return (
     <div className="home-page">
       <nav>
-        <button onClick={() => setSelectedFormatter("HTML")}>HTML</button>
-        <button onClick={() => setSelectedFormatter("JS")}>JS</button>
-        <button onClick={() => setSelectedFormatter("CSS")}>CSS</button>
-        <button onClick={() => setSelectedFormatter("JSON")}>JSON</button>
+        <button
+          onClick={() => setSelectedFormatter("HTML")}
+          className={selectedFormatter === "HTML" ? "selected-nav" : ""}
+        >
+          HTML
+        </button>
+        <button
+          onClick={() => setSelectedFormatter("JS")}
+          className={selectedFormatter === "JS" ? "selected-nav" : ""}
+        >
+          JS
+        </button>
+        <button
+          onClick={() => setSelectedFormatter("CSS")}
+          className={selectedFormatter === "CSS" ? "selected-nav" : ""}
+        >
+          CSS
+        </button>
+        <button
+          onClick={() => setSelectedFormatter("JSON")}
+          className={selectedFormatter === "JSON" ? "selected-nav" : ""}
+        >
+          JSON
+        </button>
         {/* Add more formatters as needed */}
       </nav>
 
