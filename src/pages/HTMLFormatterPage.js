@@ -11,7 +11,6 @@ function HTMLFormatterPage() {
         </title>
       </Head>
       <div>
-        <h2>HTML Formatter</h2>
         <HTMLFormatter />
         {/* Any other additional elements specific to this page */}
       </div>

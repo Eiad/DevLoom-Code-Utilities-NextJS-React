@@ -1,69 +1,91 @@
+/* Reset some default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Set the overall background color to light blue */
 body {
-  background-color: #007bff;
-  color: #f1f1f1;
-  margin: 20px;
-}
-
-textarea {
-  height: 250px;
-  width: 100%;
-  padding: 15px;
+  background-color: #e6f7ff;
+  color: #333;
   font-family: Arial, sans-serif;
-  font-size: 16px;
-  border: 1px solid #555;
-  border-radius: 5px;
-  background-color: #f2fdff;
-  resize: vertical;
-}
-
-.formatter-page {
-  font-family: Arial, sans-serif;
-  padding: 40px;
-  max-width: 1000px;
-  margin: 40px auto;
-}
-
-h1 {
-  text-align: center;
-  color: #007bff;
-  font-weight: 600;
-  margin: 0 0 30px 0;
-}
-
-h2 {
-  color: #000;
-  font-weight: 600;
-  padding-top: 40px;
-  margin-top: 40px;
-  border-top: 1px solid #dedede;
-  text-align: center;
-}
-
-.pre-container {
-  padding: 15px;
-  border: 1px solid #dedede;
-  border-radius: 5px;
-  margin-top: 15px;
-  background: #000;
-}
-
-.text-right {
-  text-align: right;
+  margin: 0;
 }
 
 .text-center {
   text-align: center;
 }
 
-pre {
-  white-space: pre-wrap;
-  word-wrap: break-word;
-  max-height: 300px;
-  overflow: auto;
-  font-size: 15px;
-  color: #f9f9f9;
+/* Header */
+section.header-logo {
+  margin: 20px 0;
 }
 
+section.header-logo img {
+  display: inline-block;
+  max-width: 140px;
+  height: auto;
+}
+
+/* Style the navigation buttons */
+.home-page nav {
+  margin-bottom: 20px;
+}
+
+.home-page nav button {
+  padding: 10px 20px;
+  margin: 5px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.home-page nav button:hover,
+.home-page nav button.selected-nav {
+  background-color: #0056b3;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Style the main content container */
+div#formattersWindow {
+  padding-bottom: 30px;
+}
+
+.formatter-page {
+  padding: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  color: #007bff;
+  font-weight: 600;
+  margin: 0 0 30px 0;
+}
+
+/* Style the input section */
+textarea {
+  height: 250px;
+  width: 100%;
+  padding: 15px;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f2fdff;
+  resize: vertical;
+}
+
+/* Style the format button */
 button {
   padding: 10px 25px;
   background-color: #007bff;
@@ -81,42 +103,36 @@ button:hover {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-.home-page nav {
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-.home-page nav button {
-  padding: 10px 20px;
-  margin: 5px;
-  background-color: #ffffff;
-  color: #007bff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: all 0.3s;
-  font-size: 25px;
-  font-weight: 600;
-}
-
-.home-page nav button:hover,
-.home-page nav button.selected-nav {
-  background-color: #0056b3;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-  color: #fff;
-}
-
-#formattersWindow {
-  padding: 20px;
-  border-radius: 10px;
-  background-color: #fff;
-}
-
+/* Style the output section */
 .output-section {
   margin-top: 50px;
 }
 
-.results-placeholder {
-  color: #aaa;
-  font-style: italic;
+/* Style the preformatted code container */
+.pre-container {
+  padding: 15px;
+  border: 1px solid #dedede;
+  border-radius: 5px;
+  margin-top: 15px;
+  background: #fff;
+}
+
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  max-height: 300px;
+  overflow: auto;
+  font-size: 15px;
+  color: #333;
+}
+
+/* Style the footer */
+.footer {
+  background-color: #007bff;
+  padding: 10px 0;
+}
+
+.copyrights {
+  color: #fff;
+  font-weight: 600;
 }

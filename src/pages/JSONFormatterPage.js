@@ -11,7 +11,6 @@ function JSONFormatterPage() {
         </title>
       </Head>
       <div>
-        <h2>JSON Formatter</h2>
         <JSONFormatter />
         {/* Any other additional elements specific to this page */}
       </div>

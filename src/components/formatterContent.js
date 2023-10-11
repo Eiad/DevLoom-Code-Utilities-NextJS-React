@@ -29,9 +29,8 @@ function FormatterContent(props) {
 
   return (
     <div className="formatter-page">
-      <h1>{codeType} Formatter</h1>
-      <div className="input-section">
-        <h2>Input</h2>
+      <h1 className="text-center">{codeType} Formatter</h1>
+      <div className="input-section text-center">
         <textarea
           value={inputCode}
           onChange={handleInputChange}

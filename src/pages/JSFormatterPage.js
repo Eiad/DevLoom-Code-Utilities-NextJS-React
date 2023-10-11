@@ -11,7 +11,6 @@ function JSFormatterPage() {
         </title>
       </Head>
       <div>
-        <h2>JavaScript Formatter</h2>
         <JSFormatter />
         {/* Any other additional elements specific to this page */}
       </div>

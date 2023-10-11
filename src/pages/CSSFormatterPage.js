@@ -11,7 +11,6 @@ function CSSFormatterPage() {
         </title>
       </Head>
       <div>
-        <h2>CSS Formatter</h2>
         <CSSFormatter />
         {/* Any other additional elements specific to this page */}
       </div>
