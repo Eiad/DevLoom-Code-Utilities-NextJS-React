@@ -3,9 +3,11 @@ import HTMLFormatter from "../components/HTMLFormatter";
 import JSFormatter from "../components/JSFormatter";
 import CSSFormatter from "../components/CSSFormatter";
 import JSONFormatter from "../components/JSONFormatter";
+import Head from "next/head";
 
 function HomePage() {
   const [selectedFormatter, setSelectedFormatter] = useState("HTML"); // default formatter to display
+  const currentYear = new Date().getFullYear();
 
   let ComponentToShow;
   switch (selectedFormatter) {
@@ -35,6 +37,9 @@ function HomePage() {
       <div id="formattersWindow">
         <ComponentToShow />
       </div>
+      <section className="footer">
+        <p className="copyrights text-center">&copy; Devloom {currentYear}</p>
+      </section>
     </div>
   );
 }
