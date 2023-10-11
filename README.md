@@ -2,6 +2,10 @@
 
 DevLoom is a code formatter app built with [Next.js](nextjs.org) and [Electron](https://electronjs.org/). It allows you to format HTML, CSS, JavaScript, and JSON code.
 
+## See it in action!
+
+[devloom.net](devloom.net)
+
 ## Getting Started
 
 First, install dependencies:
