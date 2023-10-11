@@ -99,7 +99,8 @@ button:hover {
   font-weight: 600;
 }
 
-.home-page nav button:hover {
+.home-page nav button:hover,
+.home-page nav button.selected-nav {
   background-color: #0056b3;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   color: #fff;
