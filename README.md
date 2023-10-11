@@ -1,36 +1,67 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# DevLoom - Code Formatter
+
+DevLoom is a code formatter app built with [Next.js](nextjs.org) and [Electron](https://electronjs.org/). It allows you to format HTML, CSS, JavaScript, and JSON code.
 
 ## Getting Started
 
-First, run the development server:
-
-```bash
+First, install dependencies:
+npm install
+Then, run the development server:
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+This will start Next.js in development mode. Open http://localhost:3000 to view it in the browser.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+You can also run the Electron app in development mode with:
+npm run electron-dev
+This will start the React app and Electron simultaneously. The React app will run on http://localhost:3000 and the Electron app will load that URL.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Building and Packaging for Production
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+To build the Next.js app for production, run:
+npm run build
+Then, to package the app for the platforms you want to distribute to (Windows, Mac, Linux), run:
+npm run electron-pack
+This will generate installers for your app in the `release` folder.
 
-## Learn More
+## Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+- `/src` - Contains the Next.js app source code
+- `/pages` - Routes in the app mapped to pages
+- `/components` - Reusable components
+- `/app` - Global styles and layout
+- `/electron` - Electron main process file
+- `/public` - Static files for the Next.js app
+- `next.config.js` - Next.js configuration
+- `package.json` - Node dependencies and scripts
+- `jsconfig.json` - JavaScript configuration
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Formatter Components
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+The main formatter components are:
 
-## Deploy on Vercel
+- `HTMLFormatter.js` - Formats HTML code
+- `CSSFormatter.js` - Formats CSS code
+- `JSFormatter.js` - Formats JavaScript code
+- `JSONFormatter.js` - Formats JSON code
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+These components use the `prettier` library to format the code. They take in user input, call the appropriate `prettier` formatting function based on the code type, and display the formatted output.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+The `FormatterContent.js` component is a reusable component that contains the input, output, and copy functionality shared between the formatters.
+
+## Pages
+
+The main pages are:
+
+- `/` - Home page with buttons to select a formatter
+- `/html-formatter` - HTML formatter page
+- `/css-formatter` - CSS formatter page
+- `/js-formatter` - JS formatter page
+- `/json-formatter` - JSON formatter page
+
+These pages render the appropriate formatter component based on the route.
+
+## Assumptions
+
+- Node.js and npm are installed
+- Familiarity with Next.js, React, and Electron
+
+Let me know if you have any other questions!
