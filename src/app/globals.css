@@ -46,7 +46,7 @@ section.header-logo img {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: all 0.3s;
+  transition: all 0.1s;
   font-size: 18px;
   font-weight: 600;
 }
@@ -114,7 +114,6 @@ button[disabled] {
   background-color: #ccc;
   color: #999;
   cursor: not-allowed;
-  border: 1px solid #ccc;
   box-shadow: none;
 }
 
