@@ -7,14 +7,21 @@ import "prismjs/components/prism-cshtml";
 import "prismjs/components/prism-css";
 
 function FormatterContent(props) {
-  const { inputCode, handleInputChange, formatCode, formattedCode, codeType } =
-    props;
+  const {
+    inputCode,
+    handleInputChange,
+    formatCode,
+    formattedCode,
+    codeType,
+    formatOption,
+    setFormatOption, // New prop
+  } = props;
 
   const [isCopied, setIsCopied] = useState(false);
   const [showOutput, setShowOutput] = useState(false);
   const [isProcessing, setIsProcessing] = useState(false);
   const highlightedCode = Prism.highlight(
-    formattedCode || "",
+    String(formattedCode),
     Prism.languages[codeType.toLowerCase()],
     codeType.toLowerCase()
   );
@@ -41,6 +48,22 @@ function FormatterContent(props) {
   return (
     <div className="formatter-page">
       <h1 className="text-center">{codeType} Formatter</h1>
+
+      {/* New Dropdown for Format Options */}
+      <div className="format-options">
+        <label htmlFor="formatOption">Formatting: </label>
+        <select
+          id="formatOption"
+          value={formatOption}
+          onChange={(e) => setFormatOption(e.target.value)}
+        >
+          <option value="1tab">1 Tab</option>
+          <option value="2spaces">2 Spaces</option>
+          <option value="4spaces">4 Spaces</option>
+          <option value="no-Spaces">no-Spaces</option>
+        </select>
+      </div>
+
       <div className="input-section text-center">
         <textarea
           value={inputCode}
