@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import HTMLFormatter from "../components/HTMLFormatter";
-import JSFormatter from "../components/JSFormatter";
-import CSSFormatter from "../components/CSSFormatter";
-import JSONFormatter from "../components/JSONFormatter";
+import HTMLFormatter from "../components/formatters/HTMLFormatter";
+import JSFormatter from "../components/formatters/JSFormatter";
+import CSSFormatter from "../components/formatters/CSSFormatter";
+import JSONFormatter from "../components/formatters/JSONFormatter";
 
 function HomePage() {
   const [selectedFormatter, setSelectedFormatter] = useState("HTML"); // default formatter to display

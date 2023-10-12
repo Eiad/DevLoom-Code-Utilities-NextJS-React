@@ -1,4 +1,4 @@
-import HTMLFormatter from "../components/HTMLFormatter";
+import HTMLFormatter from "../components/formatters/HTMLFormatter";
 import Head from "next/head";
 
 function HTMLFormatterPage() {

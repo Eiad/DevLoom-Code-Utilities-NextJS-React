@@ -30,7 +30,7 @@ function JSFormatter() {
         tabWidth = 4;
         break;
       case "no-Space":
-        tabWidth = 0; // Using zero for full minification
+        tabWidth = 0; // Using zero for full no spaces
         break;
       default:
         break;

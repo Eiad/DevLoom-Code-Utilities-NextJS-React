@@ -1,4 +1,4 @@
-import CSSFormatter from "../components/CSSFormatter";
+import CSSFormatter from "../components/formatters/CSSFormatter";
 import Head from "next/head";
 
 function CSSFormatterPage() {

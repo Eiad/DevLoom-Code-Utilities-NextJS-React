@@ -29,7 +29,7 @@ function JSONFormatter() {
         tabWidth = 4;
         break;
       case "no-Spaces":
-        tabWidth = 0; // Using zero for full minification
+        tabWidth = 0; // Using zero for full no spaces
         break;
       default:
         break;
