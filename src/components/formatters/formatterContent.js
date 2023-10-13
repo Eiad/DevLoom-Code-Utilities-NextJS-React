@@ -51,7 +51,7 @@ function FormatterContent(props) {
 
       {/* New Dropdown for Format Options */}
       <div className="format-options">
-        <label htmlFor="formatOption">Formatting: </label>
+        <label htmlFor="formatOption">Indentation level: </label>
         <select
           id="formatOption"
           value={formatOption}
