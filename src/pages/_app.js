@@ -1,6 +1,6 @@
 import "../app/globals.css";
 import Head from "next/head";
-import MainMenu from "../components/mainMenu"; // Importing the MainMenu component
+import MainMenu from "../components/MainMenu"; // Importing the MainMenu component
 
 function MyApp({ Component, pageProps }) {
   return (
