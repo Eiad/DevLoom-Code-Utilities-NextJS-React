@@ -26,18 +26,16 @@ function YAMLJSONConverter() {
   const convertYAMLToJSON = () => {
     try {
       const yamlObj = yaml.load(inputYAML);
-      const jsonString = JSON.stringify(yamlObj, null, 2);
+      const jsonString = yamlObj ? JSON.stringify(yamlObj, null, 2) : "";
       setOutputJSON(jsonString);
     } catch (error) {
       alert("Invalid YAML");
     }
   };
 
-  const highlightedJSON = Prism.highlight(
-    outputJSON,
-    Prism.languages.json,
-    "json"
-  );
+  const highlightedJSON = outputJSON
+    ? Prism.highlight(outputJSON, Prism.languages.json, "json")
+    : "";
 
   const handleCopyJSON = () => {
     navigator.clipboard.writeText(outputJSON).then(() => {
@@ -60,7 +58,10 @@ function YAMLJSONConverter() {
           placeholder={`Paste your YAML here...`}
         />
       </div>
-      <button onClick={handleConvertClick} disabled={isProcessing}>
+      <button
+        onClick={handleConvertClick}
+        disabled={isProcessing || !inputYAML.trim().length}
+      >
         {isProcessing ? "Processing..." : "Convert"}
       </button>
 

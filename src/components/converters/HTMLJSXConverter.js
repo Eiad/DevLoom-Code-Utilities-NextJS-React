@@ -8,9 +8,19 @@ function HTMLJSXConverter() {
   const [inputHTML, setInputHTML] = useState("");
   const [outputJSX, setOutputJSX] = useState("");
   const [isCopied, setIsCopied] = useState(false);
+  const [showOutput, setShowOutput] = useState(false);
+  const [isProcessing, setIsProcessing] = useState(false); // New state for processing
 
   const handleInputChange = (event) => {
     setInputHTML(event.target.value);
+  };
+
+  const handleConvertClick = () => {
+    setIsProcessing(true); // Set processing state to true when conversion starts
+    setTimeout(() => {
+      convertHTMLToJSX();
+      setIsProcessing(false); // Set processing state to false once conversion is done
+    }, 500); // This simulates a half-second processing time
   };
 
   const convertHTMLToJSX = () => {
@@ -73,6 +83,7 @@ function HTMLJSXConverter() {
     jsx = `<div>${jsx}</div>`;
 
     setOutputJSX(jsx);
+    setShowOutput(true);
   };
 
   const highlightedCode = Prism.highlight(
@@ -98,23 +109,30 @@ function HTMLJSXConverter() {
           placeholder={`Copy-paste your HTML here...`}
         />
       </div>
-      <button onClick={convertHTMLToJSX}>Convert</button>
+      <button
+        onClick={handleConvertClick} // Change to new handler
+        disabled={!inputHTML.trim() || isProcessing} // Disable if textarea is empty or if processing
+      >
+        {isProcessing ? "Processing..." : "Convert"}
+      </button>
 
-      {/* Output with Prism Highlighting */}
-      <div className="output-section">
-        <h2>JSX Output</h2>
-        <div className="pre-container">
-          <pre className="language-jsx">
-            <code
-              className="language-jsx"
-              dangerouslySetInnerHTML={{ __html: highlightedCode }}
-            />
-          </pre>
-          <button onClick={handleCopy}>
-            {isCopied ? "Copied!" : "Copy JSX"}
-          </button>
+      {/* Conditionally render the Output with Prism Highlighting */}
+      {showOutput && (
+        <div className="output-section">
+          <h2>JSX Output</h2>
+          <div className="pre-container">
+            <pre className="language-jsx">
+              <code
+                className="language-jsx"
+                dangerouslySetInnerHTML={{ __html: highlightedCode }}
+              />
+            </pre>
+            <button onClick={handleCopy}>
+              {isCopied ? "Copied!" : "Copy JSX"}
+            </button>
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 }
