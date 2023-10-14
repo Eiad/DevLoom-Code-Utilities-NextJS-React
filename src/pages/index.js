@@ -56,9 +56,7 @@ function HomePage() {
       <div id="formattersWindow">
         <ComponentToShow />
       </div>
-      <section className="footer text-center">
-        <p className="copyrights text-center">&copy; Devloom {currentYear}</p>
-      </section>
+
     </div>
   );
 }

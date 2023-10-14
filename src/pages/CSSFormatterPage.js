@@ -10,9 +10,7 @@ function CSSFormatterPage() {
           HTML Tool
         </title>
       </Head>
-      <div className="main-body">
-        <CSSFormatter />
-      </div>
+      <CSSFormatter />
     </>
   );
 }

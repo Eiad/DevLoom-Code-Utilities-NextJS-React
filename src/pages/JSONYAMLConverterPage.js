@@ -10,9 +10,7 @@ function JSONYAMLConverterPage() {
           DevLoom JSON to YAML Converter - Effortless Code converter
         </title>
       </Head>
-      <div className="main-body">
-        <JSONYAMLConverter />
-      </div>
+      <JSONYAMLConverter />
     </>
   );
 }

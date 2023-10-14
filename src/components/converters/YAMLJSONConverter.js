@@ -3,6 +3,7 @@ import Prism from "prismjs";
 import "prismjs/themes/prism-okaidia.css";
 import "prismjs/components/prism-json";
 import yaml from "js-yaml";
+import Footer from "../Footer";
 
 function YAMLJSONConverter() {
   const [inputYAML, setInputYAML] = useState("");
@@ -49,39 +50,44 @@ function YAMLJSONConverter() {
   }, [outputJSON]);
 
   return (
-    <div className="formatter-page">
-      <h1 className="text-center">YAML to JSON Converter</h1>
-      <div className="input-section text-center">
-        <textarea
-          value={inputYAML}
-          onChange={handleInputChange}
-          placeholder={`Paste your YAML here...`}
-        />
-      </div>
-      <button
-        onClick={handleConvertClick}
-        disabled={isProcessing || !inputYAML.trim().length}
-      >
-        {isProcessing ? "Processing..." : "Convert"}
-      </button>
-
-      {showOutput && (
-        <div className="output-section">
-          <h2>JSON Output</h2>
-          <div className="pre-container">
-            <pre className="language-json">
-              <code
-                className="language-json"
-                dangerouslySetInnerHTML={{ __html: highlightedJSON }}
-              />
-            </pre>
-            <button onClick={handleCopyJSON}>
-              {isCopiedJSON ? "Copied!" : "Copy JSON"}
-            </button>
+    <>
+      <div className="main-body">
+        <div className="formatter-page">
+          <h1 className="text-center">YAML to JSON Converter</h1>
+          <div className="input-section text-center">
+            <textarea
+              value={inputYAML}
+              onChange={handleInputChange}
+              placeholder={`Paste your YAML here...`}
+            />
           </div>
+          <button
+            onClick={handleConvertClick}
+            disabled={isProcessing || !inputYAML.trim().length}
+          >
+            {isProcessing ? "Processing..." : "Convert"}
+          </button>
+
+          {showOutput && (
+            <div className="output-section">
+              <h2>JSON Output</h2>
+              <div className="pre-container">
+                <pre className="language-json">
+                  <code
+                    className="language-json"
+                    dangerouslySetInnerHTML={{ __html: highlightedJSON }}
+                  />
+                </pre>
+                <button onClick={handleCopyJSON}>
+                  {isCopiedJSON ? "Copied!" : "Copy JSON"}
+                </button>
+              </div>
+            </div>
+          )}
         </div>
-      )}
-    </div>
+      </div>
+      <Footer />
+    </>
   );
 }
 

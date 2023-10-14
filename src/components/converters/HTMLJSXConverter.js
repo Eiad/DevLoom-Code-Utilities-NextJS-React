@@ -3,6 +3,7 @@ import Prism from "prismjs";
 import "prismjs/themes/prism-okaidia.css";
 import "prismjs/components/prism-javascript";
 import "prismjs/components/prism-jsx";
+import Footer from "../Footer";
 
 function HTMLJSXConverter() {
   const [inputHTML, setInputHTML] = useState("");
@@ -99,39 +100,44 @@ function HTMLJSXConverter() {
   };
 
   return (
-    <div className="formatter-page">
-      <h1 className="text-center">HTML to JSX Converter</h1>
-      <div className="input-section text-center">
-        <textarea
-          value={inputHTML}
-          onChange={handleInputChange}
-          placeholder={"Copy-paste your HTML here..."}
-        />
-      </div>
-      <button
-        onClick={handleConvertClick}
-        disabled={!inputHTML.trim() || isProcessing}
-      >
-        {isProcessing ? "Processing..." : "Convert"}
-      </button>
-
-      {showOutput && (
-        <div className="output-section">
-          <h2>JSX Output</h2>
-          <div className="pre-container">
-            <pre className="language-jsx">
-              <code
-                className="language-jsx"
-                dangerouslySetInnerHTML={{ __html: highlightedCode }}
-              />
-            </pre>
-            <button onClick={handleCopy}>
-              {isCopied ? "Copied!" : "Copy JSX"}
-            </button>
+    <>
+      <div className="main-body">
+        <div className="formatter-page">
+          <h1 className="text-center">HTML to JSX Converter</h1>
+          <div className="input-section text-center">
+            <textarea
+              value={inputHTML}
+              onChange={handleInputChange}
+              placeholder={"Copy-paste your HTML here..."}
+            />
           </div>
+          <button
+            onClick={handleConvertClick}
+            disabled={!inputHTML.trim() || isProcessing}
+          >
+            {isProcessing ? "Processing..." : "Convert"}
+          </button>
+
+          {showOutput && (
+            <div className="output-section">
+              <h2>JSX Output</h2>
+              <div className="pre-container">
+                <pre className="language-jsx">
+                  <code
+                    className="language-jsx"
+                    dangerouslySetInnerHTML={{ __html: highlightedCode }}
+                  />
+                </pre>
+                <button onClick={handleCopy}>
+                  {isCopied ? "Copied!" : "Copy JSX"}
+                </button>
+              </div>
+            </div>
+          )}
         </div>
-      )}
-    </div>
+      </div>
+      <Footer />
+    </>
   );
 }
 

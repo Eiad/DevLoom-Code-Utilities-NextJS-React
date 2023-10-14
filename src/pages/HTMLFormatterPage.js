@@ -10,9 +10,7 @@ function HTMLFormatterPage() {
           HTML Tool
         </title>
       </Head>
-      <div className="main-body">
-        <HTMLFormatter />
-      </div>
+      <HTMLFormatter />
     </>
   );
 }

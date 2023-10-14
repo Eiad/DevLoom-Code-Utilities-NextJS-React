@@ -3,6 +3,7 @@ import Prism from "prismjs";
 import "prismjs/themes/prism-okaidia.css";
 import "prismjs/components/prism-yaml";
 import yaml from "js-yaml";
+import Footer from "../Footer";
 
 function JSONYAMLConverter() {
   const [inputJSON, setInputJSON] = useState("");
@@ -49,39 +50,44 @@ function JSONYAMLConverter() {
   }, [outputYAML]);
 
   return (
-    <div className="formatter-page">
-      <h1 className="text-center">JSON to YAML Converter</h1>
-      <div className="input-section text-center">
-        <textarea
-          value={inputJSON}
-          onChange={handleInputChange}
-          placeholder={`Paste your JSON here...`}
-        />
-      </div>
-      <button
-        onClick={handleConvertClick}
-        disabled={isProcessing || !inputJSON.trim().length}
-      >
-        {isProcessing ? "Processing..." : "Convert"}
-      </button>
-
-      {showOutput && (
-        <div className="output-section">
-          <h2>YAML Output</h2>
-          <div className="pre-container">
-            <pre className="language-yaml">
-              <code
-                className="language-yaml"
-                dangerouslySetInnerHTML={{ __html: highlightedYAML }}
-              />
-            </pre>
-            <button onClick={handleCopyYAML}>
-              {isCopiedYAML ? "Copied!" : "Copy YAML"}
-            </button>
+    <>
+      <div className="main-body">
+        <div className="formatter-page">
+          <h1 className="text-center">JSON to YAML Converter</h1>
+          <div className="input-section text-center">
+            <textarea
+              value={inputJSON}
+              onChange={handleInputChange}
+              placeholder={`Paste your JSON here...`}
+            />
           </div>
+          <button
+            onClick={handleConvertClick}
+            disabled={isProcessing || !inputJSON.trim().length}
+          >
+            {isProcessing ? "Processing..." : "Convert"}
+          </button>
+
+          {showOutput && (
+            <div className="output-section">
+              <h2>YAML Output</h2>
+              <div className="pre-container">
+                <pre className="language-yaml">
+                  <code
+                    className="language-yaml"
+                    dangerouslySetInnerHTML={{ __html: highlightedYAML }}
+                  />
+                </pre>
+                <button onClick={handleCopyYAML}>
+                  {isCopiedYAML ? "Copied!" : "Copy YAML"}
+                </button>
+              </div>
+            </div>
+          )}
         </div>
-      )}
-    </div>
+      </div>
+      <Footer />
+    </>
   );
 }
 

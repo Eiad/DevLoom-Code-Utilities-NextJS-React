@@ -5,6 +5,7 @@ import "prismjs/components/prism-javascript";
 import "prismjs/components/prism-json";
 import "prismjs/components/prism-cshtml";
 import "prismjs/components/prism-css";
+import Footer from "../Footer";
 
 function FormatterContent(props) {
   const {
@@ -46,58 +47,68 @@ function FormatterContent(props) {
   };
 
   return (
-    <div className="formatter-page">
-      <h1 className="text-center">{codeType} Formatter</h1>
+    <>
+      <div className="main-body">
+        <div className="formatter-page">
+          <h1 className="text-center">{codeType} Formatter</h1>
 
-      {/* New Dropdown for Format Options */}
-      <div className="format-options">
-        <label htmlFor="formatOption">Indentation level: </label>
-        <select
-          id="formatOption"
-          value={formatOption}
-          onChange={(e) => setFormatOption(e.target.value)}
-        >
-          <option value="1tab">1 Tab</option>
-          <option value="2spaces">2 Spaces</option>
-          <option value="4spaces">4 Spaces</option>
-          <option value="no-Spaces">no-Spaces</option>
-        </select>
-      </div>
-
-      <div className="input-section text-center">
-        <textarea
-          value={inputCode}
-          onChange={handleInputChange}
-          placeholder={`Copy-paste your ${codeType} here...`}
-        />
-      </div>
-
-      {/* Button is disabled if textarea is empty or if it is processing */}
-      <button onClick={handleFormatClick} disabled={!inputCode || isProcessing}>
-        {isProcessing ? "Processing..." : `Format ${codeType}`}
-      </button>
-
-      {showOutput && (
-        <div
-          className={`output-section ${isProcessing ? "process-output" : ""}`}
-        >
-          <div className="output-content">
-            <h2 className="text-center">Formatted Output</h2>
-            <div className="pre-container">
-              <pre className={`language-${codeType.toLowerCase()}`}>
-                <code
-                  className={`language-${codeType.toLowerCase()}`}
-                  dangerouslySetInnerHTML={{ __html: highlightedCode }}
-                />
-              </pre>
-              <button onClick={handleCopy}>
-                {isCopied ? "Copied!" : "Click to Copy"}
-              </button>
-            </div>
+          {/* New Dropdown for Format Options */}
+          <div className="format-options">
+            <label htmlFor="formatOption">Indentation level: </label>
+            <select
+              id="formatOption"
+              value={formatOption}
+              onChange={(e) => setFormatOption(e.target.value)}
+            >
+              <option value="1tab">1 Tab</option>
+              <option value="2spaces">2 Spaces</option>
+              <option value="4spaces">4 Spaces</option>
+              <option value="no-Spaces">no-Spaces</option>
+            </select>
           </div>
+
+          <div className="input-section text-center">
+            <textarea
+              value={inputCode}
+              onChange={handleInputChange}
+              placeholder={`Copy-paste your ${codeType} here...`}
+            />
+          </div>
+
+          {/* Button is disabled if textarea is empty or if it is processing */}
+          <button
+            onClick={handleFormatClick}
+            disabled={!inputCode || isProcessing}
+          >
+            {isProcessing ? "Processing..." : `Format ${codeType}`}
+          </button>
+
+          {showOutput && (
+            <div
+              className={`output-section ${
+                isProcessing ? "process-output" : ""
+              }`}
+            >
+              <div className="output-content">
+                <h2 className="text-center">Formatted Output</h2>
+                <div className="pre-container">
+                  <pre className={`language-${codeType.toLowerCase()}`}>
+                    <code
+                      className={`language-${codeType.toLowerCase()}`}
+                      dangerouslySetInnerHTML={{ __html: highlightedCode }}
+                    />
+                  </pre>
+                  <button onClick={handleCopy}>
+                    {isCopied ? "Copied!" : "Click to Copy"}
+                  </button>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
-      )}
-    </div>
+      </div>
+      <Footer />
+    </>
   );
 }
 
