@@ -10,9 +10,8 @@ function JSONFormatterPage() {
           HTML Tool
         </title>
       </Head>
-      <div>
+      <div className="main-body">
         <JSONFormatter />
-        {/* Any other additional elements specific to this page */}
       </div>
     </>
   );

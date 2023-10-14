@@ -10,9 +10,8 @@ function CSSFormatterPage() {
           HTML Tool
         </title>
       </Head>
-      <div>
+      <div className="main-body">
         <CSSFormatter />
-        {/* Any other additional elements specific to this page */}
       </div>
     </>
   );

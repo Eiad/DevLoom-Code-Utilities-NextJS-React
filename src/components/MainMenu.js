@@ -1,33 +1,52 @@
 import Link from "next/link";
+import Image from "next/image";
+import { useRouter } from "next/router";
 
 function MainMenu() {
+  const router = useRouter();
+
+  const getLinkClass = (path) => {
+    return router.pathname === path ? "current-page" : "";
+  };
+
   return (
-    <div className="main-menu">
-      <h3>Navigation Menu</h3>
-      <ul>
-        <li>
-          <Link href="/CSSFormatterPage">CSS Formatter</Link>
-        </li>
-        <li>
-          <Link href="/HTMLFormatterPage">HTML Formatter</Link>
-        </li>
-        <li>
-          <Link href="/HTMLJSXConverterPage">HTML to JSX Converter</Link>
-        </li>
-        <li>
-          <Link href="/JSFormatterPage">JavaScript Formatter</Link>
-        </li>
-        <li>
-          <Link href="/JSONFormatterPage">JSON Formatter</Link>
-        </li>
-        <li>
-          <Link href="/JSONYAMLConverterPage">JSON to YAML Converter</Link>
-        </li>
-        <li>
-          <Link href="/YAMLJSONConverterPage">YAML to JSON Converter</Link>
-        </li>
-      </ul>
-    </div>
+    <section className="menu-logo">
+      <div className="header-logo">
+        <a href="#">
+          <Image
+            src="/devloom-logo-white-side-2.png"
+            width={500}
+            height={200}
+            alt="Devloom logo"
+          />
+        </a>
+      </div>
+      <div className="main-menu">
+        <ul>
+          <li className={getLinkClass("/HTMLFormatterPage")}>
+            <Link href="/HTMLFormatterPage">HTML Formatter</Link>
+          </li>
+          <li className={getLinkClass("/CSSFormatterPage")}>
+            <Link href="/CSSFormatterPage">CSS Formatter</Link>
+          </li>
+          <li className={getLinkClass("/HTMLJSXConverterPage")}>
+            <Link href="/HTMLJSXConverterPage">HTML to JSX Converter</Link>
+          </li>
+          <li className={getLinkClass("/JSFormatterPage")}>
+            <Link href="/JSFormatterPage">JavaScript Formatter</Link>
+          </li>
+          <li className={getLinkClass("/JSONFormatterPage")}>
+            <Link href="/JSONFormatterPage">JSON Formatter</Link>
+          </li>
+          <li className={getLinkClass("/JSONYAMLConverterPage")}>
+            <Link href="/JSONYAMLConverterPage">JSON to YAML Converter</Link>
+          </li>
+          <li className={getLinkClass("/YAMLJSONConverterPage")}>
+            <Link href="/YAMLJSONConverterPage">YAML to JSON Converter</Link>
+          </li>
+        </ul>
+      </div>
+    </section>
   );
 }
 

@@ -1,6 +1,6 @@
 import "../app/globals.css";
-import Image from "next/image";
 import Head from "next/head";
+import MainMenu from "../components/mainMenu"; // Importing the MainMenu component
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -18,18 +18,14 @@ function MyApp({ Component, pageProps }) {
           content="DevLoom Formatter, code beautifier, code formatter, HTML formatter, JavaScript formatter, CSS formatter, JSON formatter, code formatting tool, development workflow, coding experience, code optimization"
         />
       </Head>
-      <section className="header-logo text-center">
-        <a href="#">
-          <Image
-            src="/devloom-logo.jpg"
-            width={205}
-            height={124}
-            alt="Devloom logo"
-          />
-        </a>
-      </section>
-
-      <Component {...pageProps} />
+      <div className="main-container">
+        <section className="left-hand-column">
+          <MainMenu />
+        </section>
+        <section className="right-hand-column">
+          <Component {...pageProps} />
+        </section>
+      </div>
     </>
   );
 }

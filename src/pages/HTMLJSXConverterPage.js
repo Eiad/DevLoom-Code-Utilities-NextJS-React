@@ -11,7 +11,7 @@ function htmljsxConverterPage() {
           Formatting HTML Tool
         </title>
       </Head>
-      <div>
+      <div className="main-body">
         <HTMLJSXConverter />
       </div>
     </>

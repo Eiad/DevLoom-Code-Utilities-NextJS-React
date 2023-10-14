@@ -10,9 +10,8 @@ function JSFormatterPage() {
           Formatting HTML Tool
         </title>
       </Head>
-      <div>
+      <div className="main-body">
         <JSFormatter />
-        {/* Any other additional elements specific to this page */}
       </div>
     </>
   );
