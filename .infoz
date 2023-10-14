@@ -3,3 +3,4 @@ npm run electron-pack
 
 git commit -m "Update"
 git push -u origin master
+vercel --prod
