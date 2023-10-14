@@ -72,7 +72,8 @@ function FormatterContent(props) {
         />
       </div>
 
-      <button onClick={handleFormatClick} disabled={isProcessing}>
+      {/* Button is disabled if textarea is empty or if it is processing */}
+      <button onClick={handleFormatClick} disabled={!inputCode || isProcessing}>
         {isProcessing ? "Processing..." : `Format ${codeType}`}
       </button>
 
