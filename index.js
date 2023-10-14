@@ -10,7 +10,7 @@ function createWindow() {
       nodeIntegration: true,
     },
   });
-  mainWindow.loadURL("https://devloom.vercel.app"); // Adjust this if your dev server is on a different port
+  mainWindow.loadURL("https://devloom.net"); // Adjust this if your dev server is on a different port
   mainWindow.on("closed", function () {
     mainWindow = null;
   });
