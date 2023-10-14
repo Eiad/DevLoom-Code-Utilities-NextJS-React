@@ -1,4 +1,5 @@
 import HTMLFormatter from "../components/formatters/HTMLFormatter";
+import MainMenu from "../components/mainMenu"; // Importing the MainMenu component
 import Head from "next/head";
 
 function HTMLFormatterPage() {
@@ -10,7 +11,8 @@ function HTMLFormatterPage() {
           HTML Tool
         </title>
       </Head>
-      <div>
+      <div className="main-body">
+        <MainMenu />
         <HTMLFormatter />
         {/* Any other additional elements specific to this page */}
       </div>

@@ -6,6 +6,8 @@
 .pnp.js
 dist
 /dist
+
+# Package lock
 package-lock.json
 
 # testing

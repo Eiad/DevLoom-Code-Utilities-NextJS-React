@@ -29,6 +29,19 @@ section.header-logo img {
   height: auto;
 }
 
+/* Main menu */
+.main-body {
+  display: flex;
+}
+
+.main-menu {
+  flex: 15%;
+}
+
+.formatter-page {
+  flex: 85%;
+}
+
 /* Style the navigation buttons */
 .home-page {
   margin: 20px;
