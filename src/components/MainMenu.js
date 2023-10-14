@@ -23,20 +23,26 @@ function MainMenu() {
       </div>
       <div className="main-menu">
         <ul>
+          <li className={getLinkClass("/")}>
+            <Link href="/">ALL Formatters</Link>
+          </li>
           <li className={getLinkClass("/HTMLFormatterPage")}>
             <Link href="/HTMLFormatterPage">HTML Formatter</Link>
           </li>
           <li className={getLinkClass("/CSSFormatterPage")}>
             <Link href="/CSSFormatterPage">CSS Formatter</Link>
           </li>
-          <li className={getLinkClass("/HTMLJSXConverterPage")}>
-            <Link href="/HTMLJSXConverterPage">HTML to JSX Converter</Link>
-          </li>
           <li className={getLinkClass("/JSFormatterPage")}>
             <Link href="/JSFormatterPage">JavaScript Formatter</Link>
           </li>
           <li className={getLinkClass("/JSONFormatterPage")}>
             <Link href="/JSONFormatterPage">JSON Formatter</Link>
+          </li>
+          <li className="menu-converters">
+            <p>Converters</p>
+          </li>
+          <li className={getLinkClass("/HTMLJSXConverterPage")}>
+            <Link href="/HTMLJSXConverterPage">HTML to JSX Converter</Link>
           </li>
           <li className={getLinkClass("/JSONYAMLConverterPage")}>
             <Link href="/JSONYAMLConverterPage">JSON to YAML Converter</Link>

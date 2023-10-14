@@ -13,6 +13,11 @@ body {
   margin: 0;
 }
 
+a,
+button {
+  cursor: pointer;
+}
+
 /* General */
 .text-center {
   text-align: center;
@@ -69,27 +74,39 @@ section.menu-logo {
   width: 100%;
 }
 
+.main-menu li.current-page a,
+.main-menu li a:hover {
+  background: rgb(0, 78, 172);
+}
+
 .main-menu li a {
   display: block;
   width: 100%;
   margin: 10px 0;
   padding: 10px 12px 10px 22px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 10px;
   text-decoration: none;
   color: white;
   transition: background-color 0.3s;
 }
 
-.main-menu li.current-page,
-.main-menu li a:hover {
-  background: rgb(0, 78, 172);
-  border-top-left-radius: 8px;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 8px;
+.main-menu li.current-page p {
+  padding: 10px 12px;
 }
 
-.main-menu li.current-page a {
-  padding: 10px 12px;
+li.menu-converters p {
+  font-size: 11px;
+  padding: 5px 20px;
+  background: rgb(0, 78, 172);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 20px;
+  color: #b5c5cc;
+  cursor: default;
 }
 
 /* Style the navigation buttons */
@@ -97,11 +114,11 @@ section.menu-logo {
   margin: 20px;
 }
 
-.home-page nav {
+nav {
   margin-bottom: 20px;
 }
 
-.home-page nav button {
+nav button {
   padding: 10px 20px;
   margin: 5px;
   background-color: #007bff;
@@ -114,8 +131,8 @@ section.menu-logo {
   font-weight: 600;
 }
 
-.home-page nav button:hover,
-.home-page nav button.selected-nav {
+nav button:hover,
+nav button.selected-nav {
   background-color: #0056b3;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }

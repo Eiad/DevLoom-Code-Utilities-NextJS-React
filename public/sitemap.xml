@@ -16,12 +16,27 @@
         <priority>0.8</priority>
     </url>
     <url>
+        <loc>https://devloom.net/JSFormatterPage</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://devloom.net/JSONFormatterPage</loc>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://devloom.net/JSFormatterPage</loc>
+        <loc>https://devloom.net/HTMLJSXConverterPage</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://devloom.net/JSONYAMLConverterPage</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://devloom.net/YAMLJSONConverterPage</loc>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>

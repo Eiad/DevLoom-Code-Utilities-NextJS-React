@@ -7,7 +7,7 @@ function YAMLJSONConverterPage() {
     <>
       <Head>
         <title>
-          DevLoom JSON to YAML Formatter - Effortless Code converter
+          DevLoom YAML to JSON Converter - Effortless Code converter
         </title>
       </Head>
       <div className="main-body">
