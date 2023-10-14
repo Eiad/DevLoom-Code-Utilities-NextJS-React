@@ -2,14 +2,14 @@ import React, { useState, useEffect } from "react";
 import Prism from "prismjs";
 import "prismjs/themes/prism-okaidia.css";
 import "prismjs/components/prism-javascript";
-import "prismjs/components/prism-jsx"; // <-- This line is important!
+import "prismjs/components/prism-jsx";
 
 function HTMLJSXConverter() {
   const [inputHTML, setInputHTML] = useState("");
   const [outputJSX, setOutputJSX] = useState("");
   const [isCopied, setIsCopied] = useState(false);
   const [showOutput, setShowOutput] = useState(false);
-  const [isProcessing, setIsProcessing] = useState(false); // New state for processing
+  const [isProcessing, setIsProcessing] = useState(false);
 
   const handleInputChange = (event) => {
     setInputHTML(event.target.value);
@@ -64,10 +64,9 @@ function HTMLJSXConverter() {
       // Fallback for other event names
       const camelCaseEvent =
         "on" + event.charAt(0).toUpperCase() + event.slice(1);
-      return `${camelCaseEvent}={${handler.replace(/\(\)/, "")}}`; // remove any parentheses from the handler
+      return `${camelCaseEvent}={() => ${handler}}`;
     });
 
-    // Convert boolean attributes like checked, disabled, selected
     jsx = jsx.replace(/\b(checked|disabled|selected)="[^"]*"/g, "$1={true}");
     jsx = jsx.replace(/\b(checked|disabled|selected)(?!\={)/g, "$1={true}");
 
@@ -95,7 +94,7 @@ function HTMLJSXConverter() {
   const handleCopy = () => {
     navigator.clipboard.writeText(outputJSX).then(() => {
       setIsCopied(true);
-      setTimeout(() => setIsCopied(false), 2000); // Reset after 2 seconds
+      setTimeout(() => setIsCopied(false), 2000);
     });
   };
 
@@ -106,17 +105,16 @@ function HTMLJSXConverter() {
         <textarea
           value={inputHTML}
           onChange={handleInputChange}
-          placeholder={`Copy-paste your HTML here...`}
+          placeholder={"Copy-paste your HTML here..."}
         />
       </div>
       <button
-        onClick={handleConvertClick} // Change to new handler
-        disabled={!inputHTML.trim() || isProcessing} // Disable if textarea is empty or if processing
+        onClick={handleConvertClick}
+        disabled={!inputHTML.trim() || isProcessing}
       >
         {isProcessing ? "Processing..." : "Convert"}
       </button>
 
-      {/* Conditionally render the Output with Prism Highlighting */}
       {showOutput && (
         <div className="output-section">
           <h2>JSX Output</h2>
