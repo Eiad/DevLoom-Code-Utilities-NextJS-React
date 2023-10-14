@@ -1,4 +1,7 @@
 const { app, BrowserWindow } = require("electron");
+const serve = require("electron-serve");
+
+const loadURL = serve({ directory: "out" }); // Assuming 'out' is the directory where your Next.js static files are
 
 let mainWindow;
 
@@ -10,7 +13,9 @@ function createWindow() {
       nodeIntegration: true,
     },
   });
-  mainWindow.loadURL("https://devloom.net"); // Adjust this if your dev server is on a different port
+
+  loadURL(mainWindow); // Use the loadURL function from electron-serve to load local static files
+
   mainWindow.on("closed", function () {
     mainWindow = null;
   });

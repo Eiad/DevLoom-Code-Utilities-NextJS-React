@@ -14,9 +14,16 @@ body {
 }
 
 a,
-button {
+button, select {
   cursor: pointer;
 }
+
+h1 {
+  color: #007bff;
+  font-weight: 600;
+  margin: 0 0 30px 0;
+}
+
 
 /* General */
 .text-center {
@@ -82,7 +89,7 @@ section.menu-logo {
 .main-menu li a {
   display: block;
   width: 100%;
-  margin: 10px 0;
+  margin: 5px 0;
   padding: 10px 12px 10px 22px;
   border-top-left-radius: 20px;
   border-top-right-radius: 0;
@@ -98,15 +105,12 @@ section.menu-logo {
 }
 
 li.menu-converters p {
-  font-size: 11px;
-  padding: 5px 20px;
-  background: rgb(0, 78, 172);
-  border-top-left-radius: 10px;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 20px;
-  color: #b5c5cc;
-  cursor: default;
+    font-size: 11px;
+    padding: 4px 20px 4px 30px;
+    margin-left: -10px;
+    background: rgb(0, 78, 172);
+    color: #b5c5cc;
+    cursor: default;
 }
 
 /* Style the navigation buttons */
@@ -125,7 +129,6 @@ nav button {
   color: #fff;
   border: none;
   border-radius: 5px;
-  cursor: pointer;
   transition: all 0.1s;
   font-size: 18px;
   font-weight: 600;
@@ -151,10 +154,29 @@ div#formattersWindow {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-h1 {
-  color: #007bff;
-  font-weight: 600;
-  margin: 0 0 30px 0;
+.format-options {
+    font-family: Arial, sans-serif;
+    border-radius: 5px;
+    margin: 0 0 20px 0;
+    display: block;
+    text-align: right;
+}
+
+.format-options label {
+    font-weight: bold;
+    margin-right: 10px;
+}
+.format-options select {
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #444444;
+    font-size: 14px;
+}
+
+.format-options select:focus {
+    outline: none;
 }
 
 /* Style the input section */
@@ -177,7 +199,6 @@ button {
   background-color: #007bff;
   border: none;
   border-radius: 5px;
-  cursor: pointer;
   transition: all 0.3s;
   font-size: 14px;
   font-weight: 600;

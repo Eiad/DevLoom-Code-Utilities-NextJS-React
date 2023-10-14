@@ -9,11 +9,16 @@
     "lint": "next lint",
     "electron-start": "electron .",
     "react-start": "react-scripts start",
-    "electron-dev": "concurrently \"BROWSER=none npm run react-start\" \"wait-on https://devloom.vercel.app && electron .\"",
+    "electron-dev": "concurrently \"BROWSER=none npm run react-start\" \"wait-on https://devloom.net && electron .\"",
     "electron-pack": "electron-builder"
   },
   "build": {
     "appId": "com.devloom.app",
+    "files": [
+      "out/**/*",
+      "index.js",
+      "package.json"
+    ],
     "mac": {
       "category": "public.app-category.developer-tools",
       "target": [
@@ -22,6 +27,7 @@
     }
   },
   "dependencies": {
+    "electron-serve": "^1.1.0",
     "js-yaml": "^4.1.0",
     "next": "13.5.4",
     "next-sitemap": "^4.2.3",
