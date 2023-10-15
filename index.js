@@ -1,14 +1,14 @@
 const { app, BrowserWindow } = require("electron");
 const serve = require("electron-serve");
 
-const loadURL = serve({ directory: "out" }); // Assuming 'out' is the directory where your Next.js static files are
+const loadURL = serve({ directory: "out" }); // 'out' pickup the build
 
 let mainWindow;
 
 function createWindow() {
   mainWindow = new BrowserWindow({
-    width: 900,
-    height: 680,
+    width: 1200,
+    height: 900,
     webPreferences: {
       nodeIntegration: true,
     },
