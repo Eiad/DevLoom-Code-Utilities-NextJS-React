@@ -1,6 +1,6 @@
-# DevLoom - Code Formatter
+# DevLoom - Code Formatter and Converter
 
-DevLoom is a code formatter app built with [Next.js](https://nextjs.org) and [Electron](https://electronjs.org/). It allows you to format HTML, CSS, JavaScript, and JSON code.
+DevLoom is a comprehensive tool built with Next.js and Electron. It provides functionalities to format HTML, CSS, JavaScript, and JSON code, as well as conversion tools for a number of code types.
 
 ## See it in action at [devloom.net](https://devloom.net)
 
@@ -49,15 +49,28 @@ These components use the `prettier` library to format the code. They take in use
 
 The `FormatterContent.js` component is a reusable component that contains the input, output, and copy functionality shared between the formatters.
 
+## Converter Components
+
+DevLoom also introduces code conversion components:
+
+- `HTMLJSXConverter.js` - Converts HTML code to JSX.
+- `JSONYAMLConverter.js` - Transforms JSON data to YAML.
+- `YAMLJSONConverter.js` - Converts YAML data back to JSON.
+
+These modules facilitate seamless code conversion, enriching the DevLoom experience.
+
 ## Pages
 
 The main pages are:
 
 - `/` - Home page with buttons to select a formatter
-- `/html-formatter` - HTML formatter page
-- `/css-formatter` - CSS formatter page
-- `/js-formatter` - JS formatter page
-- `/json-formatter` - JSON formatter page
+- `/HTMLFormatterPage` - HTML formatter page
+- `/CSSFormatterPage` - CSS formatter page
+- `/JSFormatterPage` - JS formatter page
+- `/HTMLJSXConverterPage` - JSON formatter page
+- `/JSONFormatterPage` - JSON formatter page
+- `/JSONYAMLConverterPage` - JSON to YAML converter page
+- `/YAMLJSONConverterPage` - YAML to JSON converter page
 
 These pages render the appropriate formatter component based on the route.
 
