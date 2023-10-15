@@ -45,6 +45,7 @@ h1 {
 .right-hand-column {
   flex-grow: 1;
   padding: 20px;
+  max-width: 1000px;
 }
 
 /* Header */
@@ -147,7 +148,6 @@ div#formattersWindow {
 
 .formatter-page {
   padding: 20px;
-  max-width: 1000px;
   margin: 0;
   background-color: #fff;
   border-radius: 10px;
@@ -250,7 +250,7 @@ pre {
 
 /* Style the footer */
 section.footer {
-  margin: 20px 0 20px -250px;
+  margin: 20px 0;
 }
 .copyrights {
   color: #a5bdd7;
