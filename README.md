@@ -63,7 +63,7 @@ These modules facilitate seamless code conversion, enriching the DevLoom experie
 
 The main pages are:
 
-- `/` - Home page with buttons to select a formatter
+- `/` - Home page which is an ALL Formatters page with tabs selection
 - `/HTMLFormatterPage` - HTML formatter page
 - `/CSSFormatterPage` - CSS formatter page
 - `/JSFormatterPage` - JS formatter page
