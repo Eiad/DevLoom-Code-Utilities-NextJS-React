@@ -24,31 +24,112 @@ function MainMenu() {
       <div className="main-menu">
         <ul>
           <li className={getLinkClass("/")}>
-            <Link href="/">ALL Formatters</Link>
+            <div>
+              <Link href="/">
+                {" "}
+                <Image
+                  src="format-icon.svg"
+                  width={20}
+                  height={20}
+                  alt="Devloom Formatters"
+                />
+                <span>ALL Formatters</span>
+              </Link>
+            </div>
           </li>
           <li className={getLinkClass("/HTMLFormatterPage")}>
-            <Link href="/HTMLFormatterPage">HTML Formatter</Link>
+            <div>
+              <Link href="/HTMLFormatterPage">
+                <Image
+                  src="html5-line-icon.svg"
+                  width={20}
+                  height={20}
+                  alt="HTML Formatter"
+                />
+                <span>HTML Formatter</span>
+              </Link>
+            </div>
           </li>
           <li className={getLinkClass("/CSSFormatterPage")}>
-            <Link href="/CSSFormatterPage">CSS Formatter</Link>
+            <div>
+              <Link href="/CSSFormatterPage">
+                <Image
+                  src="css3-icon.svg"
+                  width={20}
+                  height={20}
+                  alt="CSS Formatter"
+                />
+                <span>CSS Formatter</span>
+              </Link>
+            </div>
           </li>
           <li className={getLinkClass("/JSFormatterPage")}>
-            <Link href="/JSFormatterPage">JavaScript Formatter</Link>
+            <div>
+              <Link href="/JSFormatterPage">
+                <Image
+                  src="js-icon.svg"
+                  width={20}
+                  height={20}
+                  alt="Format Icon"
+                />
+                <span>JavaScript Formatter</span>
+              </Link>
+            </div>
           </li>
           <li className={getLinkClass("/JSONFormatterPage")}>
-            <Link href="/JSONFormatterPage">JSON Formatter</Link>
+            <div>
+              <Link href="/JSONFormatterPage">
+                <Image
+                  src="json-file-icon.svg"
+                  width={20}
+                  height={20}
+                  alt="Format Icon"
+                />
+                <span>JSON Formatter</span>
+              </Link>
+            </div>
           </li>
-          <li className="menu-converters">
+          {/* <li className="menu-converters">
             <p>Converters</p>
-          </li>
+          </li> */}
           <li className={getLinkClass("/HTMLJSXConverterPage")}>
-            <Link href="/HTMLJSXConverterPage">HTML to JSX Converter</Link>
+            <div>
+              <Link href="/HTMLJSXConverterPage">
+                <Image
+                  src="convert-icon.svg"
+                  width={20}
+                  height={20}
+                  alt="Format Icon"
+                />
+                <span>HTML to JSX</span>
+              </Link>
+            </div>
           </li>
           <li className={getLinkClass("/JSONYAMLConverterPage")}>
-            <Link href="/JSONYAMLConverterPage">JSON to YAML Converter</Link>
+            <div>
+              <Link href="/JSONYAMLConverterPage">
+                <Image
+                  src="convert-icon.svg"
+                  width={20}
+                  height={20}
+                  alt="Format Icon"
+                />
+                <span>JSON to YAML</span>
+              </Link>
+            </div>
           </li>
           <li className={getLinkClass("/YAMLJSONConverterPage")}>
-            <Link href="/YAMLJSONConverterPage">YAML to JSON Converter</Link>
+            <div>
+              <Link href="/YAMLJSONConverterPage">
+                <Image
+                  src="convert-icon.svg"
+                  width={20}
+                  height={20}
+                  alt="Format Icon"
+                />
+                <span>YAML to JSON</span>
+              </Link>
+            </div>
           </li>
         </ul>
       </div>
