@@ -1,0 +1,25 @@
+/* For larger screens */
+@media (min-width: 1024px) {
+  .left-hand-column .menu-content {
+    transform: translateX(0);
+    display: block;
+  }
+}
+
+/* Tablets */
+@media (min-width: 768px) and (max-width: 1023px) {
+  nav {
+    text-align: center;
+  }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .left-hand-column.closed {
+    min-width: 45px;
+  }
+  nav button {
+    font-size: 12px;
+    width: calc(50% - 10px);
+  }
+}

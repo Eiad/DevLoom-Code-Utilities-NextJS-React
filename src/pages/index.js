@@ -25,7 +25,7 @@ function HomePage() {
 
   return (
     <div className="main-body">
-      <nav className="text-right">
+      <nav>
         <button
           onClick={() => setSelectedFormatter("HTML")}
           className={selectedFormatter === "HTML" ? "selected-nav" : ""}

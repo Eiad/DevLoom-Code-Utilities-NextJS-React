@@ -12,14 +12,16 @@ function MainMenu() {
   return (
     <section className="menu-logo">
       <div className="header-logo">
-        <a href="#">
-          <Image
-            src="/logo/devloom-logo-white-side-2.png"
-            width={500}
-            height={200}
-            alt="Devloom logo"
-          />
-        </a>
+        <div className="logo-img">
+          <a href="#">
+            <Image
+              src="/logo/devloom-logo-white-side-2.png"
+              width={500}
+              height={200}
+              alt="Devloom logo"
+            />
+          </a>
+        </div>
       </div>
       <div className="main-menu">
         <ul>
