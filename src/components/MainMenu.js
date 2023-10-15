@@ -14,7 +14,7 @@ function MainMenu() {
       <div className="header-logo">
         <a href="#">
           <Image
-            src="/devloom-logo-white-side-2.png"
+            src="/logo/devloom-logo-white-side-2.png"
             width={500}
             height={200}
             alt="Devloom logo"
@@ -28,7 +28,7 @@ function MainMenu() {
               <Link href="/">
                 {" "}
                 <Image
-                  src="format-icon.svg"
+                  src="icons/format-icon.svg"
                   width={20}
                   height={20}
                   alt="Devloom Formatters"
@@ -41,7 +41,7 @@ function MainMenu() {
             <div>
               <Link href="/HTMLFormatterPage">
                 <Image
-                  src="html5-line-icon.svg"
+                  src="icons/html5-line-icon.svg"
                   width={20}
                   height={20}
                   alt="HTML Formatter"
@@ -54,7 +54,7 @@ function MainMenu() {
             <div>
               <Link href="/CSSFormatterPage">
                 <Image
-                  src="css3-icon.svg"
+                  src="icons/css3-icon.svg"
                   width={20}
                   height={20}
                   alt="CSS Formatter"
@@ -67,7 +67,7 @@ function MainMenu() {
             <div>
               <Link href="/JSFormatterPage">
                 <Image
-                  src="js-icon.svg"
+                  src="icons/js-icon.svg"
                   width={20}
                   height={20}
                   alt="Format Icon"
@@ -80,12 +80,25 @@ function MainMenu() {
             <div>
               <Link href="/JSONFormatterPage">
                 <Image
-                  src="json-file-icon.svg"
+                  src="icons/json-file-icon.svg"
                   width={20}
                   height={20}
                   alt="Format Icon"
                 />
                 <span>JSON Formatter</span>
+              </Link>
+            </div>
+          </li>
+          <li className={getLinkClass("/XMLFormatterPage")}>
+            <div>
+              <Link href="/XMLFormatterPage">
+                <Image
+                  src="icons/xml-file-icon.svg"
+                  width={20}
+                  height={20}
+                  alt="Format Icon"
+                />
+                <span>XML Formatter</span>
               </Link>
             </div>
           </li>
@@ -96,7 +109,7 @@ function MainMenu() {
             <div>
               <Link href="/HTMLJSXConverterPage">
                 <Image
-                  src="convert-icon.svg"
+                  src="icons/convert-icon.svg"
                   width={20}
                   height={20}
                   alt="Format Icon"
@@ -109,7 +122,7 @@ function MainMenu() {
             <div>
               <Link href="/JSONYAMLConverterPage">
                 <Image
-                  src="convert-icon.svg"
+                  src="icons/convert-icon.svg"
                   width={20}
                   height={20}
                   alt="Format Icon"
@@ -122,7 +135,7 @@ function MainMenu() {
             <div>
               <Link href="/YAMLJSONConverterPage">
                 <Image
-                  src="convert-icon.svg"
+                  src="icons/convert-icon.svg"
                   width={20}
                   height={20}
                   alt="Format Icon"

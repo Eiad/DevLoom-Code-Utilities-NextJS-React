@@ -1,11 +1,9 @@
 import React, { useState } from "react";
-
 import * as prettier from "prettier/standalone";
-import * as babelParser from "prettier/parser-babel";
-import * as prettierEstree from "prettier/plugins/estree"; // Added the estree plugin
-import FormatterContent from "./formatterContent"; // Import the component
+import * as htmlParser from "prettier/parser-html"; // XML uses HTML parser
+import FormatterContent from "./formatterContent";
 
-function JSFormatter() {
+function XMLFormatter() {
   const [inputCode, setInputCode] = useState("");
   const [formattedCode, setFormattedCode] = useState("");
   const [formatOption, setFormatOption] = useState("2spaces");
@@ -14,7 +12,7 @@ function JSFormatter() {
     setInputCode(event.target.value);
   };
 
-  const formatJSCode = () => {
+  const formatXMLCode = () => {
     let tabWidth = 2;
     let useTabs = false;
 
@@ -29,7 +27,7 @@ function JSFormatter() {
       case "4spaces":
         tabWidth = 4;
         break;
-      case "no-Space":
+      case "no-Spaces":
         tabWidth = 0; // Using zero for full no spaces
         break;
       default:
@@ -38,18 +36,18 @@ function JSFormatter() {
 
     try {
       const formatOptions = {
-        parser: "babel",
-        plugins: [babelParser, prettierEstree],
+        parser: "html", // XML uses HTML parser
+        plugins: [htmlParser],
         tabWidth: formatOption === "no-Spaces" ? 0 : tabWidth,
         useTabs: formatOption === "no-Spaces" ? false : useTabs,
         printWidth: formatOption === "no-Spaces" ? 10000 : 80,
-        semi: formatOption !== "no-Spaces", // No semicolons for no-Spaces
-        singleQuote: false,
+        trailingComma: "none",
         bracketSpacing: formatOption !== "no-Spaces",
       };
 
       const formatted = prettier.format(inputCode, formatOptions);
 
+      // Check if the formatted value is a Promise
       if (formatted instanceof Promise) {
         formatted.then((result) => {
           setFormattedCode(result);
@@ -68,13 +66,13 @@ function JSFormatter() {
     <FormatterContent
       inputCode={inputCode}
       handleInputChange={handleInputChange}
-      formatCode={formatJSCode}
+      formatCode={formatXMLCode}
       formattedCode={formattedCode}
-      codeType="javaScript"
+      codeType="XML"
       formatOption={formatOption}
       setFormatOption={setFormatOption}
     />
   );
 }
 
-export default JSFormatter;
+export default XMLFormatter;

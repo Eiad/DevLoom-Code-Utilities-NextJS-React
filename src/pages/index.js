@@ -25,7 +25,7 @@ function HomePage() {
 
   return (
     <div className="main-body">
-      <nav className="text-center">
+      <nav className="text-right">
         <button
           onClick={() => setSelectedFormatter("HTML")}
           className={selectedFormatter === "HTML" ? "selected-nav" : ""}
@@ -56,7 +56,6 @@ function HomePage() {
       <div id="formattersWindow">
         <ComponentToShow />
       </div>
-
     </div>
   );
 }

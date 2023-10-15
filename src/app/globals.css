@@ -30,6 +30,10 @@ h1 {
   text-align: center;
 }
 
+.text-right {
+  text-align: right;
+}
+
 /*  Main container */
 .main-container {
   display: flex;
