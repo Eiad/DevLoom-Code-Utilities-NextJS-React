@@ -13,14 +13,14 @@ function MainMenu() {
     <section className="menu-logo">
       <div className="header-logo">
         <div className="logo-img">
-          <a href="#">
+          <Link href="/">
             <Image
               src="/logo/devloom-logo-white-side-2.png"
               width={500}
               height={200}
               alt="Devloom logo"
             />
-          </a>
+          </Link>
         </div>
       </div>
       <div className="main-menu">
@@ -28,7 +28,6 @@ function MainMenu() {
           <li className={getLinkClass("/")}>
             <div>
               <Link href="/">
-                {" "}
                 <Image
                   src="icons/format-icon.svg"
                   width={20}
