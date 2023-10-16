@@ -122,8 +122,10 @@ section.menu-logo {
   transition-delay: 0s;
 }
 
-.menu-burger:hover {
-  transform: rotate(7deg);
+@media (hover: hover) and (pointer: fine) {
+  .menu-burger:hover {
+    transform: rotate(7deg);
+  }
 }
 
 .menu-burger img {

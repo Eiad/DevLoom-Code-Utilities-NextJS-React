@@ -15,6 +15,9 @@
 
 /* Mobile */
 @media (max-width: 767px) {
+  section.right-hand-column.menu-open {
+    min-width: 120%;
+  }
   .left-hand-column.closed {
     min-width: 45px;
   }
