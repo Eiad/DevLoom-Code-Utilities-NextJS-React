@@ -13,16 +13,25 @@
   }
 }
 
-/* Mobile */
+/* Larger phones */
 @media (max-width: 767px) {
+  .top-section {
+    background-color: transparent;
+    padding: 20px 0 0 0;
+    margin-bottom: 20px;
+  }
+
   section.right-hand-column.menu-open {
     min-width: 120%;
   }
-  .left-hand-column.closed {
-    min-width: 45px;
-  }
+
   nav button {
     font-size: 12px;
     width: calc(50% - 10px);
   }
+}
+
+/* Smaller screens */
+@media (max-width: 500px) {
+  /* Content to be here */
 }

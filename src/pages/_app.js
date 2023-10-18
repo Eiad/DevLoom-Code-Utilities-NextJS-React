@@ -54,6 +54,16 @@ function MyApp({ Component, pageProps }) {
             isMenuOpen ? "menu-open" : "menu-closed"
           }`}
         >
+          <div class="top-section">
+            <h1>Welcome to DEVLOOM</h1>
+            <p>
+              Dive into DevLoom, your hub for multi-language code formatting and
+              conversion. Perfect codes from HTML, CSS, JavaScript, JSON, and
+              more, or easily switch between diverse formats. With DevLoom,
+              elevate every coding session.
+            </p>
+            <p class="get-started">No ads - No Bullshit ;)</p>
+          </div>
           <Component {...pageProps} />
         </section>
       </div>
