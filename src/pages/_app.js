@@ -38,7 +38,7 @@ function MyApp({ Component, pageProps }) {
         >
           <div className="menu-burger">
             <Image
-              src="icons/list-square-bullet-icon.svg"
+              src="/icons/list-square-bullet-icon.svg"
               width={25}
               height={25}
               alt="Devloom Formatters"
