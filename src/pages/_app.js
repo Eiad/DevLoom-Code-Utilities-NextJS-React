@@ -60,7 +60,7 @@ function MyApp({ Component, pageProps }) {
               Dive into DevLoom, your hub for multi-language code formatting and
               conversion. Perfect codes from HTML, CSS, JavaScript, JSON, and
               more, or easily switch between diverse formats. With DevLoom,
-              elevate every coding session.
+              elevate every coding session.....
             </p>
             <p class="get-started">No ads - No Bullshit ;)</p>
           </div>
