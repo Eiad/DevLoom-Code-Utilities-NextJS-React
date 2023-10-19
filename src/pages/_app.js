@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Analytics } from "@vercel/analytics/react";
 import "../app/globals.css";
 import "../app/responsive.css";
 import Head from "next/head";
@@ -32,6 +33,7 @@ function MyApp({ Component, pageProps }) {
           content="DevLoom Formatter, code beautifier, code formatter, HTML formatter, JavaScript formatter, CSS formatter, JSON formatter, code formatting tool, development workflow, coding experience, code optimization"
         />
       </Head>
+      {/*  Main body content */}
       <div className="main-container">
         <section
           className={`left-hand-column ${isMenuOpen ? "open" : "closed"}`}
@@ -67,6 +69,7 @@ function MyApp({ Component, pageProps }) {
           <Component {...pageProps} />
         </section>
       </div>
+      <Analytics />
     </>
   );
 }
