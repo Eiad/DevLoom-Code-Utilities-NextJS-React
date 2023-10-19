@@ -1,22 +1,17 @@
-// Offline Index build for Mac and apps. Use 'out' folder static files
+// Online loads online devloom.net
 const { app, BrowserWindow } = require("electron");
-const serve = require("electron-serve");
-
-const loadURL = serve({ directory: "out" }); // 'out' pickup the build
 
 let mainWindow;
 
 function createWindow() {
   mainWindow = new BrowserWindow({
-    width: 1200,
-    height: 900,
+    width: 900,
+    height: 680,
     webPreferences: {
       nodeIntegration: true,
     },
   });
-
-  loadURL(mainWindow); // Use the loadURL function from electron-serve to load local static files
-
+  mainWindow.loadURL("https://www.devloom.net");
   mainWindow.on("closed", function () {
     mainWindow = null;
   });
