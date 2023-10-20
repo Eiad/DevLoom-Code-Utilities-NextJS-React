@@ -16,10 +16,10 @@ function JSFormatterPage() {
       <div className="top-section">
         <h1>Meet DevLoom: Every Developer&#39;s Good Friend</h1>
         <p>
-          Dive into DevLoom, your hub for multi-language code formatting and
-          conversion. Perfect codes from HTML, CSS, JavaScript, JSON, and more,
-          or easily switch between diverse formats. With DevLoom, elevate every
-          coding session.
+          Optimize your JavaScript coding with DevLoom&#39;s JavaScript
+          Formatter. Experience effortless code beautification and formatting
+          designed specifically for JavaScript. Give it a try and elevate your
+          coding!
         </p>
         <p className="get-started">No ads - No Bullshit ;)</p>
       </div>

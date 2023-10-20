@@ -14,10 +14,9 @@ function HTMLFormatterPage() {
       <div className="top-section">
         <h1>Meet DevLoom: Every Developer&#39;s Good Friend</h1>
         <p>
-          Dive into DevLoom, your hub for multi-language code formatting and
-          conversion. Perfect codes from HTML, CSS, JavaScript, JSON, and more,
-          or easily switch between diverse formats. With DevLoom, elevate every
-          coding session.
+          Simplify your HTML coding with DevLoom&#39;s HTML Formatter.
+          Experience effortless code beautification and formatting tailored
+          specifically for HTML. Get started and see the magic unfold!
         </p>
         <p className="get-started">No ads - No Bullshit ;)</p>
       </div>

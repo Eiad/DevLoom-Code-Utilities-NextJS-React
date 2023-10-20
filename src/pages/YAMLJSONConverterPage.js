@@ -16,10 +16,9 @@ function YAMLJSONConverterPage() {
       <div className="top-section">
         <h1>Meet DevLoom: Every Developer&#39;s Good Friend</h1>
         <p>
-          Dive into DevLoom, your hub for multi-language code formatting and
-          conversion. Perfect codes from HTML, CSS, JavaScript, JSON, and more,
-          or easily switch between diverse formats. With DevLoom, elevate every
-          coding session.
+          Make code conversion seamless with DevLoom&#39;s YAML to JSON
+          Converter. Improve your development workflow with our effective
+          conversion tool. Give it a try and feel the power of efficient coding!
         </p>
         <p className="get-started">No ads - No Bullshit ;)</p>
       </div>
