@@ -3,7 +3,9 @@ function Footer() {
 
   return (
     <section className="footer text-center">
-      <p className="copyrights text-center">&copy; Devloom {currentYear}</p>
+      <p className="copyrights text-center">
+        &copy; {currentYear} DevLoom. All rights reserved.
+      </p>
     </section>
   );
 }

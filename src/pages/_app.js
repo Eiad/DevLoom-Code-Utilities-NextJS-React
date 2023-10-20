@@ -71,6 +71,9 @@ function MyApp({ Component, pageProps }) {
               closeMenu={() => setIsMenuOpen(false)}
             />
           </div>
+          <div className="menu-app-version-info">
+            <p>DevLoom v1.0</p>
+          </div>
         </section>
         <section
           className={`right-hand-column ${
