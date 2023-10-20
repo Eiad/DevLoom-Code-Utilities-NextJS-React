@@ -5,14 +5,11 @@ function JSONFormatterPage() {
   return (
     <>
       <Head>
-        <title>
-          DevLoom JSON Formatter - Effortless Code Beautification and Formatting
-          HTML Tool
-        </title>
+        <title>DevLoom JSON Formatter - Enhance Your JSON Formatting</title>
       </Head>
       <meta
         name="description"
-        content="Elevate your coding experience with DevLoom Formatter. Simplify code formatting and beautification for HTML, JavaScript, CSS, and JSON effortlessly. Streamline your development workflow with our powerful code beautifier tool."
+        content="Boost your JSON workflow with DevLoom JSON Formatter. Simplify code formatting and beautification specifically for JSON."
       />
       <div className="top-section">
         <h1>Meet DevLoom: Every Developer&#39;s Good Friend</h1>

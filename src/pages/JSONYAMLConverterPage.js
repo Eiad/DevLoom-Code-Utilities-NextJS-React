@@ -7,11 +7,11 @@ function JSONYAMLConverterPage() {
     <>
       <Head>
         <title>
-          DevLoom JSON to YAML Converter - Effortless Code converter
+          DevLoom JSON to YAML Converter - Streamline Your Code Conversion
         </title>
         <meta
           name="description"
-          content="Elevate your coding experience with DevLoom Formatter. Simplify code formatting and beautification for HTML, JavaScript, CSS, and JSON effortlessly. Streamline your development workflow with our powerful code beautifier tool."
+          content="Simplify code conversion with DevLoom JSON to YAML Converter. Enhance your development workflow with our efficient conversion tool."
         />
       </Head>
       <div className="top-section">

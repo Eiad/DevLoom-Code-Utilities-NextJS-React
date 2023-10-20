@@ -45,7 +45,7 @@ function MainMenu({ isMobileView, closeMenu, isFWView }) {
                 onClick={isMobileView ? closeMenu : null}
               >
                 <Image
-                  src="/icons/html5-line-icon.svg"
+                  src="/icons/html-icon.svg"
                   width={20}
                   height={20}
                   alt="HTML Formatter"
@@ -61,7 +61,7 @@ function MainMenu({ isMobileView, closeMenu, isFWView }) {
                 onClick={isMobileView ? closeMenu : null}
               >
                 <Image
-                  src="/icons/css3-icon.svg"
+                  src="/icons/css-icon.svg"
                   width={20}
                   height={20}
                   alt="CSS Formatter"
@@ -186,7 +186,7 @@ function MainMenu({ isMobileView, closeMenu, isFWView }) {
             <div>
               <Link href="/MARKDOWNPreviewerPage" onClick={closeMenu}>
                 <Image
-                  src="/icons/markdown-icon.svg"
+                  src="/icons/markdown-fill.svg"
                   width={20}
                   height={20}
                   alt="Format Icon"

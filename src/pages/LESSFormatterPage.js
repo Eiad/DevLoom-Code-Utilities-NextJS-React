@@ -5,13 +5,11 @@ function LESSFormatterPage() {
   return (
     <>
       <Head>
-        <title>
-          DevLoom javaScript Formatter - Effortless Code Beautification and
-          Formatting HTML Tool
-        </title>
+        <title>DevLoom LESS Formatter - Enhance Your LESS Formatting</title>
         <meta
           name="description"
-          content="Elevate your coding experience with DevLoom Formatter. Simplify code formatting and beautification for HTML, JavaScript, CSS, and JSON effortlessly. Streamline your development workflow with our powerful code beautifier tool."
+          content="Boost your LESS workflow with DevLoom LESS Formatter. Simplify code formatting and beautification specifically for LESS. 
+   - Meta Keywords: LESS formatter, code beautifier, code formatter, DevLoom"
         />
       </Head>
       <div className="top-section">

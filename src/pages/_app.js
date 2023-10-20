@@ -44,7 +44,7 @@ function MyApp({ Component, pageProps }) {
         />
         <meta
           name="keywords"
-          content="DevLoom Formatter, code beautifier, code formatter, HTML formatter, JavaScript formatter, CSS formatter, JSON formatter, code formatting tool, development workflow, coding experience, code optimization"
+          content="DevLoom Formatter, coding assistant, code beautifier, code formatter, HTML formatter, JavaScript formatter, CSS formatter, JSON formatter, code formatting tool, development workflow, coding experience, code optimization"
         />
       </Head>
       {/*  Main body content */}

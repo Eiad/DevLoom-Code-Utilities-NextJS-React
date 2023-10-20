@@ -5,13 +5,10 @@ function HTMLFormatterPage() {
   return (
     <>
       <Head>
-        <title>
-          DevLoom HTML Formatter - Effortless Code Beautification and Formatting
-          HTML Tool
-        </title>
+        <title>DevLoom HTML Formatter - Simplify Your HTML Coding</title>
         <meta
           name="description"
-          content="Elevate your coding experience with DevLoom Formatter. Simplify code formatting and beautification for HTML, JavaScript, CSS, and JSON effortlessly. Streamline your development workflow with our powerful code beautifier tool."
+          content="Make your HTML coding seamless with DevLoom HTML Formatter. Effortless code beautification and formatting tailored for HTML. - Meta Keywords: HTML formatter, code beautifier, code formatter, DevLoom"
         />
       </Head>
       <div className="top-section">

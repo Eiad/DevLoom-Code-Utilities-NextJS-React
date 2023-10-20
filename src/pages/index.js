@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Head from "next/head";
 import HTMLFormatter from "../components/formatters/HTMLFormatter";
 import JSFormatter from "../components/formatters/JSFormatter";
 import CSSFormatter from "../components/formatters/CSSFormatter";
@@ -25,6 +26,15 @@ function HomePage() {
 
   return (
     <>
+      <Head>
+        <title>
+          DevLoom Formatter - Effortless Code Beautification and Formatting Tool
+        </title>
+        <meta
+          name="description"
+          content="Elevate your coding experience with DevLoom Formatter. Simplify code formatting and beautification for HTML, JavaScript, CSS, and JSON effortlessly. Streamline your development workflow with our powerful code beautifier tool."
+        />
+      </Head>
       <div className="top-section">
         <h1>Meet DevLoom: Every Developer&#39;s Good Friend</h1>
         <p>

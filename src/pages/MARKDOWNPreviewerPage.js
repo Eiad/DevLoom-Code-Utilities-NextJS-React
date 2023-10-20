@@ -5,13 +5,10 @@ function MARKDOWNPreviewerPage() {
   return (
     <>
       <Head>
-        <title>
-          DevLoom MARKDOWN Previewer - Effortless and professional Live Preview
-          of Markdown
-        </title>
+        <title>DevLoom Markdown Previewer - Live Preview for Markdown</title>
         <meta
           name="description"
-          content="Elevate ah your coding experience with DevLoom Formatter. Simplify code formatting and beautification for HTML, JavaScript, CSS, and JSON effortlessly. Streamline your development workflow with our powerful code beautifier tool."
+          content="Enhance your Markdown editing with DevLoom Markdown Previewer. Get live previews of your Markdown content to streamline your writing process."
         />
       </Head>
       <div className="top-section">

@@ -5,13 +5,10 @@ function CSSFormatterPage() {
   return (
     <>
       <Head>
-        <title>
-          DevLoom CSS Formatter - Effortless Code Beautification and Formatting
-          HTML Tool
-        </title>
+        <title>DevLoom CSS Formatter - Streamline Your CSS Formatting</title>
         <meta
           name="description"
-          content="Elevate your coding experience with DevLoom Formatter. Simplify code formatting and beautification for HTML, JavaScript, CSS, and JSON effortlessly. Streamline your development workflow with our powerful code beautifier tool."
+          content="Enhance your CSS workflow with DevLoom CSS Formatter. Simplify code formatting and beautification specifically for CSS."
         />
       </Head>
       <div className="top-section">

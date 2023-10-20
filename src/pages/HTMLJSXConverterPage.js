@@ -7,12 +7,11 @@ function htmljsxConverterPage() {
     <>
       <Head>
         <title>
-          DevLoom HTML to JSX Formatter - Effortless Code Beautification and
-          Formatting HTML Tool
+          DevLoom HTML to JSX Converter - Simplify Your Code Conversion
         </title>
         <meta
           name="description"
-          content="Elevate your coding experience with DevLoom Formatter. Simplify code formatting and beautification for HTML, JavaScript, CSS, and JSON effortlessly. Streamline your development workflow with our powerful code beautifier tool."
+          content="Make code conversion easy with DevLoom HTML to JSX Converter. Streamline your development workflow with our powerful conversion tool."
         />
       </Head>
       <div className="top-section">

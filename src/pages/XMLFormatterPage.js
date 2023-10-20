@@ -5,13 +5,10 @@ function XMLFormatterPage() {
   return (
     <>
       <Head>
-        <title>
-          DevLoom javaScript Formatter - Effortless Code Beautification and
-          Formatting HTML Tool
-        </title>
+        <title>DevLoom XML Formatter - Streamline Your XML Formatting</title>
         <meta
           name="description"
-          content="Elevate your coding experience with DevLoom Formatter. Simplify code formatting and beautification for HTML, JavaScript, CSS, and JSON effortlessly. Streamline your development workflow with our powerful code beautifier tool."
+          content="Improve your XML workflow with DevLoom XML Formatter. Simplify code formatting and beautification specifically for XML."
         />
       </Head>
       <div className="top-section">

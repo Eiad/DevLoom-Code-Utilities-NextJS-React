@@ -6,16 +6,11 @@ function JSFormatterPage() {
     <>
       <Head>
         <title>
-          DevLoom javaScript Formatter - Effortless Code Beautification and
-          Formatting HTML Tool
+          DevLoom JavaScript Formatter - Optimize Your JavaScript Coding
         </title>
         <meta
           name="description"
-          content="Elevate your coding experience with DevLoom Formatter. Simplify code formatting and beautification for HTML, JavaScript, CSS, and JSON effortlessly. Streamline your development workflow with our powerful code beautifier tool."
-        />
-        <meta
-          name="description"
-          content="Elevate your coding experience with DevLoom Formatter. Simplify code formatting and beautification for HTML, JavaScript, CSS, and JSON effortlessly. Streamline your development workflow with our powerful code beautifier tool."
+          content="Improve your JavaScript coding with DevLoom JavaScript Formatter. Effortless code beautification and formatting designed for JavaScript."
         />
       </Head>
       <div className="top-section">
