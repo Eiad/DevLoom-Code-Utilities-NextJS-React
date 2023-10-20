@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/router";
 
-function MainMenu({ isMobileView, closeMenu }) {
+function MainMenu({ isMobileView, closeMenu, isFWView }) {
   const router = useRouter();
 
   const getLinkClass = (path) => {
@@ -179,6 +179,19 @@ function MainMenu({ isMobileView, closeMenu }) {
                   alt="Format Icon"
                 />
                 <span>YAML to JSON</span>
+              </Link>
+            </div>
+          </li>
+          <li className={getLinkClass("/MARKDOWNPreviewerPage")}>
+            <div>
+              <Link href="/MARKDOWNPreviewerPage" onClick={closeMenu}>
+                <Image
+                  src="/icons/markdown-icon.svg"
+                  width={20}
+                  height={20}
+                  alt="Format Icon"
+                />
+                <span>Markdown Previewer</span>
               </Link>
             </div>
           </li>

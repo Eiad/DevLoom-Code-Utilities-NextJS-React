@@ -1,18 +1,17 @@
-import HTMLJSXConverter from "../components/converters/HTMLJSXConverter";
-
+import MARKDOWNPreviewer from "../components/MARKDOWNPreviewer";
 import Head from "next/head";
 
-function htmljsxConverterPage() {
+function MARKDOWNPreviewerPage() {
   return (
     <>
       <Head>
         <title>
-          DevLoom HTML to JSX Formatter - Effortless Code Beautification and
-          Formatting HTML Tool
+          DevLoom MARKDOWN Previewer - Effortless and professional Live Preview
+          of Markdown
         </title>
         <meta
           name="description"
-          content="Elevate your coding experience with DevLoom Formatter. Simplify code formatting and beautification for HTML, JavaScript, CSS, and JSON effortlessly. Streamline your development workflow with our powerful code beautifier tool."
+          content="Elevate ah your coding experience with DevLoom Formatter. Simplify code formatting and beautification for HTML, JavaScript, CSS, and JSON effortlessly. Streamline your development workflow with our powerful code beautifier tool."
         />
       </Head>
       <div className="top-section">
@@ -25,9 +24,9 @@ function htmljsxConverterPage() {
         </p>
         <p className="get-started">No ads - No Bullshit ;)</p>
       </div>
-      <HTMLJSXConverter />
+      <MARKDOWNPreviewer />
     </>
   );
 }
 
-export default htmljsxConverterPage;
+export default MARKDOWNPreviewerPage;
