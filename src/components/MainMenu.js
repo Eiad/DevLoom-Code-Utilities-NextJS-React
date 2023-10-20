@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/router";
 
-function MainMenu() {
+function MainMenu({ isMobileView, closeMenu }) {
   const router = useRouter();
 
   const getLinkClass = (path) => {
@@ -13,7 +13,7 @@ function MainMenu() {
     <section className="menu-logo">
       <div className="header-logo">
         <div className="logo-img">
-          <Link href="/">
+          <Link href="/" onClick={isMobileView ? closeMenu : null}>
             <Image
               src="/logo/devloom-logo-white-side-2.png"
               width={500}
@@ -27,7 +27,7 @@ function MainMenu() {
         <ul>
           <li className={getLinkClass("/")}>
             <div>
-              <Link href="/">
+              <Link href="/" onClick={isMobileView ? closeMenu : null}>
                 <Image
                   src="/icons/format-icon.svg"
                   width={20}
@@ -40,7 +40,10 @@ function MainMenu() {
           </li>
           <li className={getLinkClass("/HTMLFormatterPage")}>
             <div>
-              <Link href="/HTMLFormatterPage">
+              <Link
+                href="/HTMLFormatterPage"
+                onClick={isMobileView ? closeMenu : null}
+              >
                 <Image
                   src="/icons/html5-line-icon.svg"
                   width={20}
@@ -53,7 +56,10 @@ function MainMenu() {
           </li>
           <li className={getLinkClass("/CSSFormatterPage")}>
             <div>
-              <Link href="/CSSFormatterPage">
+              <Link
+                href="/CSSFormatterPage"
+                onClick={isMobileView ? closeMenu : null}
+              >
                 <Image
                   src="/icons/css3-icon.svg"
                   width={20}
@@ -66,7 +72,10 @@ function MainMenu() {
           </li>
           <li className={getLinkClass("/JSFormatterPage")}>
             <div>
-              <Link href="/JSFormatterPage">
+              <Link
+                href="/JSFormatterPage"
+                onClick={isMobileView ? closeMenu : null}
+              >
                 <Image
                   src="/icons/js-icon.svg"
                   width={20}
@@ -84,15 +93,34 @@ function MainMenu() {
                   src="/icons/json-file-icon.svg"
                   width={20}
                   height={20}
-                  alt="Format Icon"
+                  alt="JSON Formatter"
                 />
                 <span>JSON Formatter</span>
               </Link>
             </div>
           </li>
+          <li className={getLinkClass("/LESSFormatterPage")}>
+            <div>
+              <Link
+                href="/LESSFormatterPage"
+                onClick={isMobileView ? closeMenu : null}
+              >
+                <Image
+                  src="/icons/less-icon.svg"
+                  width={20}
+                  height={20}
+                  alt="LESS Formatter"
+                />
+                <span>LESS Formatter</span>
+              </Link>
+            </div>
+          </li>
           <li className={getLinkClass("/XMLFormatterPage")}>
             <div>
-              <Link href="/XMLFormatterPage">
+              <Link
+                href="/XMLFormatterPage"
+                onClick={isMobileView ? closeMenu : null}
+              >
                 <Image
                   src="/icons/xml-file-icon.svg"
                   width={20}
@@ -108,7 +136,10 @@ function MainMenu() {
           </li> */}
           <li className={getLinkClass("/HTMLJSXConverterPage")}>
             <div>
-              <Link href="/HTMLJSXConverterPage">
+              <Link
+                href="/HTMLJSXConverterPage"
+                onClick={isMobileView ? closeMenu : null}
+              >
                 <Image
                   src="/icons/convert-icon.svg"
                   width={20}
@@ -121,7 +152,10 @@ function MainMenu() {
           </li>
           <li className={getLinkClass("/JSONYAMLConverterPage")}>
             <div>
-              <Link href="/JSONYAMLConverterPage">
+              <Link
+                href="/JSONYAMLConverterPage"
+                onClick={isMobileView ? closeMenu : null}
+              >
                 <Image
                   src="/icons/convert-icon.svg"
                   width={20}
@@ -134,7 +168,10 @@ function MainMenu() {
           </li>
           <li className={getLinkClass("/YAMLJSONConverterPage")}>
             <div>
-              <Link href="/YAMLJSONConverterPage">
+              <Link
+                href="/YAMLJSONConverterPage"
+                onClick={isMobileView ? closeMenu : null}
+              >
                 <Image
                   src="/icons/convert-icon.svg"
                   width={20}

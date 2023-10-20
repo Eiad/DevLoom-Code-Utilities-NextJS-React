@@ -9,12 +9,26 @@ import Image from "next/image";
 function MyApp({ Component, pageProps }) {
   // State to manage the open/close status of the menu
   const [isMenuOpen, setIsMenuOpen] = useState(true);
+  const [isMobileView, setIsMobileView] = useState(false);
 
   // Set the menu's initial state based on the viewport width
   useEffect(() => {
+    // By default mobile menu is hidden on mobile
     if (window.innerWidth <= 768) {
-      // 768px is a common breakpoint for tablets. Adjust as needed.
       setIsMenuOpen(false);
+    }
+    // When a menu item is selected, the whole navigation menu closes on mobile.
+    if (typeof window !== "undefined") {
+      const handleResize = () => {
+        setIsMobileView(window.innerWidth <= 768);
+      };
+      // Set initial value
+      handleResize();
+      window.addEventListener("resize", handleResize);
+      // Cleanup
+      return () => {
+        window.removeEventListener("resize", handleResize);
+      };
     }
   }, []);
 
@@ -34,7 +48,11 @@ function MyApp({ Component, pageProps }) {
         />
       </Head>
       {/*  Main body content */}
-      <div className="main-container">
+      <div
+        className={`main-container ${
+          isMenuOpen ? "lefthand-open" : "lefthand-closed"
+        }`}
+      >
         <section
           className={`left-hand-column ${isMenuOpen ? "open" : "closed"}`}
         >
@@ -48,7 +66,10 @@ function MyApp({ Component, pageProps }) {
             />
           </div>
           <div className="menu-content">
-            <MainMenu />
+            <MainMenu
+              isMobileView={isMobileView}
+              closeMenu={() => setIsMenuOpen(false)}
+            />
           </div>
         </section>
         <section
@@ -56,7 +77,7 @@ function MyApp({ Component, pageProps }) {
             isMenuOpen ? "menu-open" : "menu-closed"
           }`}
         >
-          <div class="top-section">
+          <div className="top-section">
             <h1>Welcome to DEVLOOM</h1>
             <p>
               Dive into DevLoom, your hub for multi-language code formatting and
@@ -64,7 +85,7 @@ function MyApp({ Component, pageProps }) {
               more, or easily switch between diverse formats. With DevLoom,
               elevate every coding session.
             </p>
-            <p class="get-started">No ads - No Bullshit ;)</p>
+            <p className="get-started">No ads - No Bullshit ;)</p>
           </div>
           <Component {...pageProps} />
         </section>

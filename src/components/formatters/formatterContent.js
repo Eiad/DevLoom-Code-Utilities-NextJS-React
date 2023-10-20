@@ -5,6 +5,7 @@ import "prismjs/components/prism-javascript";
 import "prismjs/components/prism-json";
 import "prismjs/components/prism-cshtml";
 import "prismjs/components/prism-css";
+import "prismjs/components/prism-less";
 import Footer from "../Footer";
 
 function FormatterContent(props) {
