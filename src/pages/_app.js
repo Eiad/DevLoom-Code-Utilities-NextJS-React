@@ -81,7 +81,7 @@ function MyApp({ Component, pageProps }) {
           }`}
         >
           <div className="top-section">
-            <h1>Welcome to DEVLOOM</h1>
+            <h1>Meet DevLoom: Every Developer&#39;s Good Friend</h1>
             <p>
               Dive into DevLoom, your hub for multi-language code formatting and
               conversion. Perfect codes from HTML, CSS, JavaScript, JSON, and
