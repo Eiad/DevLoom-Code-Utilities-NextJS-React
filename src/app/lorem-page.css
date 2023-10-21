@@ -50,6 +50,12 @@
   display: flex;
   gap: 5px;
   align-items: center;
+  justify-content: center;
+}
+
+.lorem-count-input p {
+  min-width: 140px;
+  text-align: right;
 }
 
 .lorem-count-input {
@@ -94,6 +100,7 @@
 
   .lorem-page-container nav > button {
     width: calc(33% - 10px);
+    font-size: 13px;
   }
 
   .lorem-page-container nav button.lorem-generate {
