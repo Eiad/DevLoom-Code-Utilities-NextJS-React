@@ -1,6 +1,6 @@
-# DevLoom - Code Formatter and Converter
+# DevLoom - The All-in-One Code Formatter, Converter and Previewer
 
-DevLoom is a comprehensive tool built with Next.js and Electron. It provides functionalities to format HTML, CSS, JavaScript, and JSON code, as well as conversion tools for a number of code types.
+DevLoom is your hub for multi-language code formatting, conversion, and previewing. Perfect and convert code from HTML, CSS, JavaScript, JSON, YAML, and more. Elevate your coding experience with our powerful yet simple tool.
 
 ## See it in action at [devloom.net](https://devloom.net)
 
@@ -38,12 +38,14 @@ This will generate installers for your app in the `release` folder.
 
 ## Formatter Components
 
-The main formatter components are:
+The formatter components are:
 
 - `HTMLFormatter.js` - Formats HTML code
 - `CSSFormatter.js` - Formats CSS code
 - `JSFormatter.js` - Formats JavaScript code
 - `JSONFormatter.js` - Formats JSON code
+- `LESSFormatter.js` - Formats LESS code
+- `XMLFormatter.js` - Formats XML code
 
 These components use the `prettier` library to format the code. They take in user input, call the appropriate `prettier` formatting function based on the code type, and display the formatted output.
 
@@ -59,6 +61,11 @@ DevLoom also introduces code conversion components:
 
 These modules facilitate seamless code conversion, enriching the DevLoom experience.
 
+## Previewer Components
+
+- `HTMLPreviewer.js` - Provides live previews of HTML code.
+- `MARKDOWNPreviewer.js` - Provides live previews of Markdown content.
+
 ## Pages
 
 The main pages are:
@@ -67,16 +74,18 @@ The main pages are:
 - `/HTMLFormatterPage` - HTML formatter page
 - `/CSSFormatterPage` - CSS formatter page
 - `/JSFormatterPage` - JS formatter page
-- `/HTMLJSXConverterPage` - JSON formatter page
 - `/JSONFormatterPage` - JSON formatter page
+- `/LESSFormatterPage` - LESS formatter page
+- `/XMLFormatterPage` - XML formatter page
+- `/HTMLJSXConverterPage` - HTML to JSX converter page
 - `/JSONYAMLConverterPage` - JSON to YAML converter page
 - `/YAMLJSONConverterPage` - YAML to JSON converter page
+- `/HTMLPreviewer` - HTML previewer page
+- `/MARKDOWNPreviewer` - Markdown previewer page
 
-These pages render the appropriate formatter component based on the route.
+These pages render the appropriate formatter, converter, or previewer component based on the route.
 
 ## Assumptions
 
 - Node.js and npm are installed
 - Familiarity with Next.js, React, and Electron
-
-Let me know if you have any other questions!

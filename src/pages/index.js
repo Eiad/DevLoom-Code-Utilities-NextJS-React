@@ -36,7 +36,8 @@ function HomePage() {
     <>
       <Head>
         <title>
-          DevLoom Formatter - Effortless Code Beautification and Formatting Tool
+          DevLoom - The All-in-One Code Formatter, Converter and Previewer - No
+          Ads - No Trackers - No Bullshit!
         </title>
         <meta
           name="description"
