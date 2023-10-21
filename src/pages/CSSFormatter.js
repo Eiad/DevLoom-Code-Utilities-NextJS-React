@@ -5,7 +5,9 @@ function CSSFormatterPage() {
   return (
     <>
       <Head>
-        <title>DevLoom CSS Formatter - Streamline Your CSS Formatting</title>
+        <title>
+          DevLoom Online Free CSS Formatter - Streamline Your CSS Formatting
+        </title>
         <meta
           name="description"
           content="Enhance your CSS workflow with DevLoom CSS Formatter. Simplify code formatting and beautification specifically for CSS."

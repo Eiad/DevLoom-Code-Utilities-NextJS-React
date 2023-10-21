@@ -6,12 +6,12 @@ function HTMLPreviewerPage() {
     <>
       <Head>
         <title>
-          Experience the power of DevLoom HTML Previewer - Real-time HTML Code
-          Preview.
+          Experience the power of DevLoom Online Free HTML Previewer - Real-time
+          HTML Code Preview.
         </title>
         <meta
           name="description"
-          content="Elevate your HTML editing using DevLoom's HTML Previewer. Obtain dynamic previews of your HTML content to simplify your writing workflow."
+          content="Elevate your HTML editing using DevLoom&#39;s HTML Previewer. Obtain dynamic previews of your HTML content to simplify your writing workflow."
         />
       </Head>
       <div className="top-section">

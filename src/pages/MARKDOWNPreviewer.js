@@ -5,7 +5,9 @@ function MARKDOWNPreviewerPage() {
   return (
     <>
       <Head>
-        <title>DevLoom Markdown Previewer - Live Preview for Markdown</title>
+        <title>
+          DevLoom Online Free Markdown Previewer - Live Preview for Markdown
+        </title>
         <meta
           name="description"
           content="Enhance your Markdown editing with DevLoom Markdown Previewer. Get live previews of your Markdown content to streamline your writing process."

@@ -7,7 +7,8 @@ function htmljsxConverterPage() {
     <>
       <Head>
         <title>
-          DevLoom HTML to JSX Converter - Simplify Your Code Conversion
+          DevLoom Online Free HTML to JSX Converter - Simplify Your Code
+          Conversion
         </title>
         <meta
           name="description"

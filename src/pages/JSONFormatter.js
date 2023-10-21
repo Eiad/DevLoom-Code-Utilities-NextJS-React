@@ -5,7 +5,9 @@ function JSONFormatterPage() {
   return (
     <>
       <Head>
-        <title>DevLoom JSON Formatter - Enhance Your JSON Formatting</title>
+        <title>
+          DevLoom Online Free JSON Formatter - Enhance Your JSON Formatting
+        </title>
       </Head>
       <meta
         name="description"

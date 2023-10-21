@@ -6,7 +6,8 @@ function YAMLJSONConverterPage() {
     <>
       <Head>
         <title>
-          DevLoom YAML to JSON Converter - Optimize Your Code Conversion
+          DevLoom Online Free YAML to JSON Converter - Optimize Your Code
+          Conversion
         </title>
         <meta
           name="description"

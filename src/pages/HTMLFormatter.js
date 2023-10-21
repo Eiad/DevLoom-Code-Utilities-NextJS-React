@@ -5,7 +5,9 @@ function HTMLFormatterPage() {
   return (
     <>
       <Head>
-        <title>DevLoom HTML Formatter - Simplify Your HTML Coding</title>
+        <title>
+          DevLoom Online Free HTML Formatter - Simplify Your HTML Coding
+        </title>
         <meta
           name="description"
           content="Make your HTML coding seamless with DevLoom HTML Formatter. Effortless code beautification and formatting tailored for HTML. - Meta Keywords: HTML formatter, code beautifier, code formatter, DevLoom"

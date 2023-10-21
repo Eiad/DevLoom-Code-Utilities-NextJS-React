@@ -5,7 +5,9 @@ function XMLFormatterPage() {
   return (
     <>
       <Head>
-        <title>DevLoom XML Formatter - Streamline Your XML Formatting</title>
+        <title>
+          DevLoom Online Free XML Formatter - Streamline Your XML Formatting
+        </title>
         <meta
           name="description"
           content="Improve your XML workflow with DevLoom XML Formatter. Simplify code formatting and beautification specifically for XML."

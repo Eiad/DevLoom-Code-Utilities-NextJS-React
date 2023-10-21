@@ -6,7 +6,8 @@ function JSFormatterPage() {
     <>
       <Head>
         <title>
-          DevLoom JavaScript Formatter - Optimize Your JavaScript Coding
+          DevLoom Online Free JavaScript Formatter - Optimize Your JavaScript
+          Coding
         </title>
         <meta
           name="description"
