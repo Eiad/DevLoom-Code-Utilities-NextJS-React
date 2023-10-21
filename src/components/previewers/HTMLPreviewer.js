@@ -10,13 +10,14 @@ function HTMLPreviewer() {
   return (
     <div className="markdownpage-container">
       <textarea
+        placeholder="Paste your HTML code here..."
         className="markdown-input border-round"
         value={markdown}
         onChange={(e) => setMarkdown(e.target.value)}
       />
       <div className="markdown-preview border-round">
         <ReactMarkdown rehypePlugins={[rehypeRaw]} remarkPlugins={[remarkGfm]}>
-          {markdown || "Markdown preview..."}
+          {markdown || "HTML preview..."}
         </ReactMarkdown>
       </div>
     </div>

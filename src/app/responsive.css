@@ -4,6 +4,10 @@
     transform: translateX(0);
     display: block;
   }
+
+  .main-body nav {
+    flex-direction: row-reverse;
+  }
 }
 
 /* Tablets */

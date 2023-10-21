@@ -4,10 +4,11 @@ import HTMLFormatter from "../components/formatters/HTMLFormatter";
 import JSFormatter from "../components/formatters/JSFormatter";
 import CSSFormatter from "../components/formatters/CSSFormatter";
 import JSONFormatter from "../components/formatters/JSONFormatter";
+import LESSFormatter from "../components/formatters/LESSFormatter";
+import XMLFormatter from "../components/formatters/XMLFormatter";
 
 function HomePage() {
   const [selectedFormatter, setSelectedFormatter] = useState("HTML"); // default formatter to display
-  const currentYear = new Date().getFullYear();
 
   let ComponentToShow;
   switch (selectedFormatter) {
@@ -20,6 +21,13 @@ function HomePage() {
     case "JSON":
       ComponentToShow = JSONFormatter;
       break;
+    case "LESS":
+      ComponentToShow = LESSFormatter;
+      break;
+    case "XML":
+      ComponentToShow = XMLFormatter;
+      break;
+
     default:
       ComponentToShow = HTMLFormatter;
   }
@@ -56,16 +64,16 @@ function HomePage() {
             HTML
           </button>
           <button
-            onClick={() => setSelectedFormatter("JS")}
-            className={selectedFormatter === "JS" ? "selected-nav" : ""}
-          >
-            JS
-          </button>
-          <button
             onClick={() => setSelectedFormatter("CSS")}
             className={selectedFormatter === "CSS" ? "selected-nav" : ""}
           >
             CSS
+          </button>
+          <button
+            onClick={() => setSelectedFormatter("JS")}
+            className={selectedFormatter === "JS" ? "selected-nav" : ""}
+          >
+            JS
           </button>
           <button
             onClick={() => setSelectedFormatter("JSON")}
@@ -73,7 +81,19 @@ function HomePage() {
           >
             JSON
           </button>
-          {/* Add more formatters as needed */}
+
+          <button
+            onClick={() => setSelectedFormatter("LESS")}
+            className={selectedFormatter === "LESS" ? "selected-nav" : ""}
+          >
+            LESS
+          </button>
+          <button
+            onClick={() => setSelectedFormatter("XML")}
+            className={selectedFormatter === "XML" ? "selected-nav" : ""}
+          >
+            XML
+          </button>
         </nav>
 
         <div id="formattersWindow">

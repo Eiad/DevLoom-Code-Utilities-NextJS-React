@@ -242,8 +242,10 @@ li.menu-converters p {
 }
 
 .main-body nav {
+  display: flex;
+  justify-content: end;
+  gap: 5px;
   margin-bottom: 20px;
-  text-align: right;
 }
 
 .main-body nav button {
