@@ -20,7 +20,7 @@ const LoremIpsum = () => {
   const handleCopy = async () => {
     try {
       await navigator.clipboard.writeText(generatedText);
-      setCopyButtonText("Copied");
+      setCopyButtonText("Copied!");
 
       // Reset the button text back to "Copy to Clipboard" after 2 seconds
       setTimeout(() => {
