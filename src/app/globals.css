@@ -5,13 +5,13 @@
   box-sizing: border-box;
 }
 
+/* General styles */
 body {
   background-color: #e6f7ff;
   color: #333;
   font-family: Arial, sans-serif;
-  margin: 0;
 }
-/* General */
+
 a,
 button,
 select,
@@ -27,17 +27,6 @@ p {
   font-size: 14px;
 }
 
-.left-hand-column .menu-content,
-.left-hand-column.closed .menu-content {
-  display: none;
-}
-
-h1 {
-  color: #007bff;
-  font-weight: 600;
-  margin: 0 0 30px 0;
-}
-
 .text-center {
   text-align: center;
 }
@@ -46,7 +35,7 @@ h1 {
   text-align: right;
 }
 
-/*  Main container */
+/* Main container styles */
 .main-container {
   position: relative;
   display: flex;
@@ -64,6 +53,7 @@ h1 {
   width: 250px;
 }
 
+/* Top section styles */
 .top-section {
   background-color: #f7f9fc;
   padding: 20px;
@@ -95,6 +85,7 @@ h1 {
   cursor: default;
 }
 
+/* Right-hand column styles */
 .right-hand-column {
   flex-grow: 1;
   padding: 20px;
@@ -106,18 +97,15 @@ h1 {
   margin: 0 auto;
 }
 
+/* Left-hand column styles */
 .left-hand-column {
   position: relative;
 }
 
-.left-hand-column .menu-content {
-  transform: translateX(-100%);
-  transition: transform 0.3s ease-in-out;
-}
-
+.left-hand-column .menu-content,
 .left-hand-column.closed .menu-content {
   transform: translateX(-100%);
-  transition: transform 1s ease-in-out;
+  transition: transform 0.3s ease-in-out;
 }
 
 .left-hand-column.open .menu-content {
@@ -138,8 +126,7 @@ h1 {
   padding: 6px 6px 6px 32px;
 }
 
-/* Header */
-
+/* Header styles */
 .menu-logo {
   width: 250px;
   background-color: #0161d5;
@@ -188,6 +175,7 @@ h1 {
   box-shadow: 1px 5px 11px -6px #000000;
 }
 
+/* Main menu styles */
 .main-menu {
   padding: 0 0 0 10px;
 }
@@ -236,11 +224,12 @@ li.menu-converters p {
   cursor: default;
 }
 
-/* Style the navigation buttons */
+/* Home page styles */
 .home-page {
   margin: 20px;
 }
 
+/* Main body styles */
 .main-body nav {
   display: flex;
   justify-content: end;
@@ -263,10 +252,9 @@ li.menu-converters p {
 .main-body nav button:hover,
 .main-body nav button.selected-nav {
   background-color: #0056b3;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-/* Style the main content container */
+/* Formatters window styles */
 div#formattersWindow {
   padding-bottom: 20px;
 }
@@ -291,6 +279,7 @@ div#formattersWindow {
   font-weight: bold;
   margin-right: 10px;
 }
+
 .format-options select {
   padding: 5px 10px;
   border: 1px solid #ccc;
@@ -304,7 +293,7 @@ div#formattersWindow {
   outline: none;
 }
 
-/* Style the input section */
+/* Input section styles */
 textarea {
   height: 250px;
   width: 100%;
@@ -318,7 +307,7 @@ textarea {
   box-shadow: -1px 4px 19px -6px rgba(0, 0, 0, 0.13);
 }
 
-/* Style the format button */
+/* Format button styles */
 button {
   padding: 10px 25px;
   background-color: #007bff;
@@ -333,7 +322,6 @@ button {
 
 button:hover {
   background-color: #0056b3;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 button[disabled] {
@@ -343,12 +331,12 @@ button[disabled] {
   box-shadow: none;
 }
 
-/* Style the output section */
+/* Output section styles */
 .output-section {
   margin-top: 50px;
 }
 
-/* Style the preformatted code container */
+/* Preformatted code container styles */
 .output-content {
   padding: 15px;
   border: 1px solid #dedede;
@@ -373,10 +361,11 @@ pre {
   color: #333;
 }
 
-/* Style the footer */
+/* Footer styles */
 .footer {
   margin: 20px 0;
 }
+
 .copyrights {
   color: #a5bdd7;
   font-weight: 600;

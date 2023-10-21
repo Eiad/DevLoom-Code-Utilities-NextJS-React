@@ -1,0 +1,78 @@
+/* General Styles */
+.lorem-page-container {
+  margin-top: 50px;
+}
+
+.lorem-page-container input {
+  border: 1px solid #ccc;
+}
+
+.lorem-page-container input,
+.lorem-page-container button {
+  padding: 10px 15px;
+  margin: 5px;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.lorem-page-container button:hover {
+  background-color: #0056b3;
+}
+
+.lorem-page-container textarea {
+  width: 100%;
+  height: 300px;
+  margin-top: 20px;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Navigation Buttons */
+.lorem-page-container nav {
+  display: flex;
+  gap: 5px;
+}
+
+.lorem-page-container nav button {
+  background-color: #007bff;
+}
+
+.lorem-page-container .selected-nav {
+  background-color: #0056b3;
+}
+
+/* Selected Button Style */
+
+.lorem-input {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.lorem-count-input {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.lorem-input input[type="number"] {
+  width: 70px;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  height: 40px;
+}
+
+.lorem-page-container nav button.lorem-generate {
+  background-color: #ff8080;
+  padding: 10px 50px;
+}
+.lorem-page-container nav button.lorem-generate:hover {
+  background-color: #ec7575;
+}
+.lorem-page-container nav button.lorem-generate:active {
+  background-color: #d86969;
+}

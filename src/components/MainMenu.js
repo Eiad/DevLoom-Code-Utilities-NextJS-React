@@ -187,7 +187,7 @@ function MainMenu({ isMobileView, closeMenu, isFWView }) {
           </li>
           <li className={getLinkClass("/HTMLPreviewer")}>
             <div>
-              <Link href="/HTMLPreviewer" onClick={closeMenu}>
+              <Link href="/HTMLPreviewer">
                 <Image
                   src="/icons/html-fill.svg"
                   width={20}
@@ -200,7 +200,7 @@ function MainMenu({ isMobileView, closeMenu, isFWView }) {
           </li>
           <li className={getLinkClass("/MARKDOWNPreviewer")}>
             <div>
-              <Link href="/MARKDOWNPreviewer" onClick={closeMenu}>
+              <Link href="/MARKDOWNPreviewer">
                 <Image
                   src="/icons/markdown-fill.svg"
                   width={20}
@@ -208,6 +208,22 @@ function MainMenu({ isMobileView, closeMenu, isFWView }) {
                   alt="Format Icon"
                 />
                 <span>Markdown Previewer</span>
+              </Link>
+            </div>
+          </li>
+          <li className="menu-converters">
+            <p>Helpful Tools</p>
+          </li>
+          <li className={getLinkClass("/LoremIpsum")}>
+            <div>
+              <Link href="/LoremIpsum">
+                <Image
+                  src="/icons/lorem-icon.svg"
+                  width={20}
+                  height={20}
+                  alt="Format Icon"
+                />
+                <span>Lorem Ipsum Generator</span>
               </Link>
             </div>
           </li>
