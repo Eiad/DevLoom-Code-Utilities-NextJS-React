@@ -12,7 +12,7 @@ function HTMLFormatterPage() {
         />
       </Head>
       <div className="top-section">
-        <h1>Meet DevLoom: Every Developer&#39;s Good Friend</h1>
+        <h1>DevLoom HTML Formatter - Simplify Your HTML Coding</h1>
         <p>
           Simplify your HTML coding with DevLoom&#39;s HTML Formatter.
           Experience effortless code beautification and formatting tailored

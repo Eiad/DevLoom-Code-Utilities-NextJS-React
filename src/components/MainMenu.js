@@ -131,9 +131,9 @@ function MainMenu({ isMobileView, closeMenu, isFWView }) {
               </Link>
             </div>
           </li>
-          {/* <li className="menu-converters">
+          <li className="menu-converters">
             <p>Converters</p>
-          </li> */}
+          </li>
           <li className={getLinkClass("/HTMLJSXConverter")}>
             <div>
               <Link
@@ -179,6 +179,22 @@ function MainMenu({ isMobileView, closeMenu, isFWView }) {
                   alt="Format Icon"
                 />
                 <span>YAML to JSON</span>
+              </Link>
+            </div>
+          </li>
+          <li className="menu-converters">
+            <p>Previewers</p>
+          </li>
+          <li className={getLinkClass("/HTMLPreviewer")}>
+            <div>
+              <Link href="/HTMLPreviewer" onClick={closeMenu}>
+                <Image
+                  src="/icons/html-fill.svg"
+                  width={20}
+                  height={20}
+                  alt="Format Icon"
+                />
+                <span>HTML Previewer</span>
               </Link>
             </div>
           </li>

@@ -5,7 +5,7 @@ function LESSFormatterPage() {
   return (
     <>
       <Head>
-        <title>DevLoom LESS Formatter - Enhance Your LESS Formatting</title>
+        <title>Optimize Your LESS Formatting with DevLoom LESS Formatter</title>
         <meta
           name="description"
           content="Boost your LESS workflow with DevLoom LESS Formatter. Simplify code formatting and beautification specifically for LESS. 
@@ -13,11 +13,11 @@ function LESSFormatterPage() {
         />
       </Head>
       <div className="top-section">
-        <h1>Meet DevLoom: Every Developer&#39;s Good Friend</h1>
+        <h1>Optimize Your LESS Formatting with DevLoom&#39;s LESS Formatter</h1>
         <p>
-          Boost your LESS workflow with DevLoom&#39;s LESS Formatter. Simplify
-          your code formatting and beautification tasks with our specialized
-          tool. Start optimizing your LESS now!
+          Enhance Your LESS Workflow Using DevLoom's LESS Formatter. Streamline
+          the Process of Code Formatting and Beautification with Our Specialized
+          Tool. Get Started with LESS Optimization Today!
         </p>
         <p className="get-started">No ads - No Bullshit ;)</p>
       </div>

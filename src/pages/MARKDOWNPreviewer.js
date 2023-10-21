@@ -1,4 +1,4 @@
-import MARKDOWNPreviewer from "../components/MARKDOWNPreviewer";
+import MARKDOWNPreviewer from "../components/previewers/MARKDOWNPreviewer";
 import Head from "next/head";
 
 function MARKDOWNPreviewerPage() {
@@ -12,7 +12,7 @@ function MARKDOWNPreviewerPage() {
         />
       </Head>
       <div className="top-section">
-        <h1>Meet DevLoom: Every Developer&#39;s Good Friend</h1>
+        <h1>DevLoom Markdown Previewer - Live Preview for Markdown</h1>
         <p>
           Enhance your Markdown editing with DevLoom&#39;s Markdown Previewer.
           Get live previews of your Markdown files to streamline your writing

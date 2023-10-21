@@ -12,7 +12,7 @@ function JSONFormatterPage() {
         content="Boost your JSON workflow with DevLoom JSON Formatter. Simplify code formatting and beautification specifically for JSON."
       />
       <div className="top-section">
-        <h1>Meet DevLoom: Every Developer&#39;s Good Friend</h1>
+        <h1>DevLoom JSON Formatter - Enhance Your JSON Formatting</h1>
         <p>
           Boost your JSON workflow with DevLoom&#39;s JSON Formatter. Simplify
           your code formatting and beautification tasks and focus on creating.

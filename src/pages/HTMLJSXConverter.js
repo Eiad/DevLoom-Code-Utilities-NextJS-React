@@ -15,7 +15,7 @@ function htmljsxConverterPage() {
         />
       </Head>
       <div className="top-section">
-        <h1>Meet DevLoom: Every Developer&#39;s Good Friend</h1>
+        <h1>DevLoom HTML to JSX Converter - Simplify Your Code Conversion</h1>
         <p>
           Dive into DevLoom, your hub for multi-language code formatting and
           conversion. Perfect codes from HTML, CSS, JavaScript, JSON, and more,

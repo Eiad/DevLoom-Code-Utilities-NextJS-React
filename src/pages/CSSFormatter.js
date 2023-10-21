@@ -12,7 +12,7 @@ function CSSFormatterPage() {
         />
       </Head>
       <div className="top-section">
-        <h1>Meet DevLoom: Every Developer&#39;s Good Friend</h1>
+        <h1>DevLoom CSS Formatter - Streamline Your CSS Formatting</h1>
         <p>
           Streamline your CSS formatting with DevLoom&#39;s CSS Formatter. Our
           tool makes code beautification a breeze, allowing you to focus on what

@@ -15,7 +15,9 @@ function JSONYAMLConverterPage() {
         />
       </Head>
       <div className="top-section">
-        <h1>Meet DevLoom: Every Developer&#39;s Good Friend</h1>
+        <h1>
+          DevLoom JSON to YAML Converter - Streamline Your Code Conversion
+        </h1>
         <p>
           Simplify your code conversion tasks with DevLoom&#39;s JSON to YAML
           Converter. Enhance your development workflow with our efficient

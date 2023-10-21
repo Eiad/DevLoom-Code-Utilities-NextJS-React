@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import ReactMarkdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
 import remarkGfm from "remark-gfm";
-import "../app/markdown-page.css";
+import "../../app/markdown-page.css";
 
-function MARKDOWNPreviewer() {
+function HTMLPreviewer() {
   const [markdown, setMarkdown] = useState("");
 
   return (
@@ -23,4 +23,4 @@ function MARKDOWNPreviewer() {
   );
 }
 
-export default MARKDOWNPreviewer;
+export default HTMLPreviewer;

@@ -12,7 +12,7 @@ function XMLFormatterPage() {
         />
       </Head>
       <div className="top-section">
-        <h1>Meet DevLoom: Every Developer&#39;s Good Friend</h1>
+        <h1>DevLoom XML Formatter - Streamline Your XML Formatting</h1>
         <p>
           Improve your XML workflow with DevLoom&#39;s XML Formatter. Experience
           effortless code beautification and formatting designed specifically

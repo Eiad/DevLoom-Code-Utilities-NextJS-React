@@ -20,14 +20,13 @@ select,
 }
 
 .border-round {
-  border-radius: 8px;
+  border-radius: 5px;
 }
 
 p {
   font-size: 14px;
 }
 
-.menu-app-version-info,
 .left-hand-column .menu-content,
 .left-hand-column.closed .menu-content {
   display: none;
@@ -125,6 +124,9 @@ h1 {
   transform: translateX(0);
   display: block;
   transition: transform 1s ease-in-out;
+  background: #000;
+  position: relative;
+  z-index: 1;
 }
 
 .left-hand-column.closed .menu-burger {
@@ -134,22 +136,6 @@ h1 {
   border-bottom-right-radius: 0;
   width: calc(35px + 32px);
   padding: 6px 6px 6px 32px;
-}
-
-.left-hand-column.open .menu-app-version-info {
-  display: block;
-  text-align: center;
-  position: absolute;
-  bottom: 0;
-  width: 250px;
-  color: #e6e6e6;
-
-  padding: 5px;
-  margin-bottom: 10px;
-}
-
-.left-hand-column.open .menu-app-version-info p {
-  font-size: 12px;
 }
 
 /* Header */
@@ -179,7 +165,7 @@ h1 {
 .menu-burger {
   position: absolute;
   right: 10px;
-  z-index: 1;
+  z-index: 3;
   top: 20px;
   background: #004eac;
   padding: 6px;
@@ -255,12 +241,12 @@ li.menu-converters p {
   margin: 20px;
 }
 
-nav {
+.main-body nav {
   margin-bottom: 20px;
   text-align: right;
 }
 
-nav button {
+.main-body nav button {
   padding: 10px 20px;
   margin: 5px;
   background-color: #007bff;
@@ -272,8 +258,8 @@ nav button {
   font-weight: 600;
 }
 
-nav button:hover,
-nav button.selected-nav {
+.main-body nav button:hover,
+.main-body nav button.selected-nav {
   background-color: #0056b3;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }

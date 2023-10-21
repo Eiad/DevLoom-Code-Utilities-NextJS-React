@@ -14,7 +14,7 @@ function JSFormatterPage() {
         />
       </Head>
       <div className="top-section">
-        <h1>Meet DevLoom: Every Developer&#39;s Good Friend</h1>
+        <h1>DevLoom JavaScript Formatter - Optimize Your JavaScript Coding</h1>
         <p>
           Optimize your JavaScript coding with DevLoom&#39;s JavaScript
           Formatter. Experience effortless code beautification and formatting
