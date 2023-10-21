@@ -22,7 +22,7 @@ function JSFormatterPage() {
           designed specifically for JavaScript. Give it a try and elevate your
           coding!
         </p>
-        <p className="get-started">No ads - No Bullshit ;)</p>
+        <p className="get-started">No ads - No Trackers - No Bullshit ;)</p>
       </div>
       <JSFormatter />
     </>

@@ -20,7 +20,7 @@ function CSSFormatterPage() {
           tool makes code beautification a breeze, allowing you to focus on what
           truly matters. Start optimizing your CSS now!
         </p>
-        <p className="get-started">No ads - No Bullshit ;)</p>
+        <p className="get-started">No ads - No Trackers - No Bullshit ;)</p>
       </div>
       <CSSFormatter />
     </>

@@ -20,7 +20,7 @@ function JSONFormatterPage() {
           your code formatting and beautification tasks and focus on creating.
           Start your journey with us today!
         </p>
-        <p className="get-started">No ads - No Bullshit ;)</p>
+        <p className="get-started">No ads - No Trackers - No Bullshit ;)</p>
       </div>
       <JSONFormatter />
     </>

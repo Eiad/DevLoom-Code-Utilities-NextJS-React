@@ -20,7 +20,7 @@ function MARKDOWNPreviewerPage() {
           Get live previews of your Markdown files to streamline your writing
           process. Start previewing and feel the ease of writing!
         </p>
-        <p className="get-started">No ads - No Bullshit ;)</p>
+        <p className="get-started">No ads - No Trackers - No Bullshit ;)</p>
       </div>
       <MARKDOWNPreviewer />
     </>

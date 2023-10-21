@@ -53,7 +53,7 @@ function HomePage() {
           or easily switch between diverse formats. With DevLoom, elevate every
           coding session.
         </p>
-        <p className="get-started">No ads - No Bullshit ;)</p>
+        <p className="get-started">No ads - No Trackers - No Bullshit ;)</p>
       </div>
       <div className="main-body">
         <nav>

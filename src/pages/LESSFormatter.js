@@ -21,7 +21,7 @@ function LESSFormatterPage() {
           Streamline the Process of Code Formatting and Beautification with Our
           Specialized Tool. Get Started with LESS Optimization Today!
         </p>
-        <p className="get-started">No ads - No Bullshit ;)</p>
+        <p className="get-started">No ads - No Trackers - No Bullshit ;)</p>
       </div>
       <LESSFormatter />
     </>

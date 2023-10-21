@@ -22,7 +22,7 @@ function HTMLPreviewerPage() {
           streamline your content creation. Begin previewing and enjoy the
           convenience of writing effortlessly!
         </p>
-        <p className="get-started">No ads - No Bullshit ;)</p>
+        <p className="get-started">No ads - No Trackers - No Bullshit ;)</p>
       </div>
       <HTMLPreviewer />
     </>

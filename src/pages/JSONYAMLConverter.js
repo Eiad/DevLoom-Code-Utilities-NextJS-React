@@ -24,7 +24,7 @@ function JSONYAMLConverterPage() {
           Converter. Enhance your development workflow with our efficient
           conversion tool. Start converting and save your valuable time!
         </p>
-        <p className="get-started">No ads - No Bullshit ;)</p>
+        <p className="get-started">No ads - No Trackers - No Bullshit ;)</p>
       </div>
       <JSONYAMLConverter />
     </>

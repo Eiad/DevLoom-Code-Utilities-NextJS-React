@@ -21,7 +21,7 @@ function YAMLJSONConverterPage() {
           Converter. Improve your development workflow with our effective
           conversion tool. Give it a try and feel the power of efficient coding!
         </p>
-        <p className="get-started">No ads - No Bullshit ;)</p>
+        <p className="get-started">No ads - No Trackers - No Bullshit ;)</p>
       </div>
       <YAMLJSONConverter />
     </>

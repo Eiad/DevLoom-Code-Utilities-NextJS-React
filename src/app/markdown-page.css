@@ -6,6 +6,11 @@
 .markdown-input {
   flex: 0 0 40%;
   height: 50vh;
+  transition: transform 0.3s ease-in-out;
+}
+
+.markdown-input.prev-active {
+  flex: 0 0 30%;
 }
 .markdown-preview {
   flex: 1;

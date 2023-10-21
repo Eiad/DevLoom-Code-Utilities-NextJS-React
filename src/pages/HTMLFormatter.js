@@ -20,7 +20,7 @@ function HTMLFormatterPage() {
           Experience effortless code beautification and formatting tailored
           specifically for HTML. Get started and see the magic unfold!
         </p>
-        <p className="get-started">No ads - No Bullshit ;)</p>
+        <p className="get-started">No ads - No Trackers - No Bullshit ;)</p>
       </div>
       <HTMLFormatter />
     </>
