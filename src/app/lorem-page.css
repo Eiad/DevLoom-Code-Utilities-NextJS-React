@@ -67,12 +67,12 @@
 }
 
 .lorem-page-container nav button.lorem-generate {
-  background-color: #ff8080;
+  background-color: #fd4242;
   padding: 10px 50px;
 }
 .lorem-page-container nav button.lorem-generate:hover {
-  background-color: #ec7575;
+  background-color: #e93b3b;
 }
 .lorem-page-container nav button.lorem-generate:active {
-  background-color: #d86969;
+  background-color: #fd4242;
 }
