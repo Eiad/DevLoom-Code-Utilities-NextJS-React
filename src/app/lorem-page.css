@@ -76,3 +76,38 @@
 .lorem-page-container nav button.lorem-generate:active {
   background-color: #fd4242;
 }
+
+@media (max-width: 767px) {
+  .lorem-input,
+  .lorem-page-container nav,
+  .lorem-count-input {
+    display: block;
+  }
+
+  .lorem-input input[type="number"] {
+    width: calc(100% - 20px);
+  }
+
+  .lorem-page-container nav {
+    text-align: center;
+  }
+
+  .lorem-page-container nav > button {
+    width: calc(33% - 10px);
+  }
+
+  .lorem-page-container nav button.lorem-generate {
+    width: calc(100% - 10px);
+    padding: 14px;
+    margin-top: 12px;
+  }
+
+  .lorem-count-input {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .lorem-count-input > p {
+    margin-bottom: 20px;
+  }
+}

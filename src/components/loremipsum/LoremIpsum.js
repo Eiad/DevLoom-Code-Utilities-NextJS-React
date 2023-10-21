@@ -3,7 +3,7 @@ import { loremIpsum } from "lorem-ipsum";
 import "../../app/lorem-page.css";
 
 const LoremIpsum = () => {
-  const [count, setCount] = useState(1);
+  const [count, setCount] = useState(5);
   const [units, setUnits] = useState("paragraphs"); // or "words" or "sentences"
   const [generatedText, setGeneratedText] = useState("");
   const [copyButtonText, setCopyButtonText] = useState("Copy to Clipboard");
@@ -35,7 +35,7 @@ const LoremIpsum = () => {
     <div className="lorem-page-container">
       <div className="lorem-input">
         <div className="lorem-count-input">
-          <p>Generate parameters</p>
+          <p>Number of {units}</p>
           <input
             type="number"
             value={count}
@@ -47,6 +47,7 @@ const LoremIpsum = () => {
               setCount(value);
             }}
             max="1200"
+            placeholder="Number of generated items"
           />
         </div>
         <nav>

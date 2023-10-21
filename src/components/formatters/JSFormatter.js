@@ -70,7 +70,7 @@ function JSFormatter() {
       handleInputChange={handleInputChange}
       formatCode={formatJSCode}
       formattedCode={formattedCode}
-      codeType="javaScript"
+      codeType="JavaScript"
       formatOption={formatOption}
       setFormatOption={setFormatOption}
     />

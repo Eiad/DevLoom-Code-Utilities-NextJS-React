@@ -88,7 +88,10 @@ function MainMenu({ isMobileView, closeMenu, isFWView }) {
           </li>
           <li className={getLinkClass("/JSONFormatter")}>
             <div>
-              <Link href="/JSONFormatter">
+              <Link
+                href="/JSONFormatter"
+                onClick={isMobileView ? closeMenu : null}
+              >
                 <Image
                   src="/icons/json-file-icon.svg"
                   width={20}
@@ -187,7 +190,10 @@ function MainMenu({ isMobileView, closeMenu, isFWView }) {
           </li>
           <li className={getLinkClass("/HTMLPreviewer")}>
             <div>
-              <Link href="/HTMLPreviewer">
+              <Link
+                href="/HTMLPreviewer"
+                onClick={isMobileView ? closeMenu : null}
+              >
                 <Image
                   src="/icons/html-fill.svg"
                   width={20}
@@ -200,7 +206,10 @@ function MainMenu({ isMobileView, closeMenu, isFWView }) {
           </li>
           <li className={getLinkClass("/MARKDOWNPreviewer")}>
             <div>
-              <Link href="/MARKDOWNPreviewer">
+              <Link
+                href="/MARKDOWNPreviewer"
+                onClick={isMobileView ? closeMenu : null}
+              >
                 <Image
                   src="/icons/markdown-fill.svg"
                   width={20}
@@ -216,7 +225,10 @@ function MainMenu({ isMobileView, closeMenu, isFWView }) {
           </li>
           <li className={getLinkClass("/LoremIpsum")}>
             <div>
-              <Link href="/LoremIpsum">
+              <Link
+                href="/LoremIpsum"
+                onClick={isMobileView ? closeMenu : null}
+              >
                 <Image
                   src="/icons/lorem-icon.svg"
                   width={20}

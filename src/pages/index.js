@@ -74,7 +74,7 @@ function HomePage() {
             onClick={() => setSelectedFormatter("JS")}
             className={selectedFormatter === "JS" ? "selected-nav" : ""}
           >
-            JS
+            JavaScript
           </button>
           <button
             onClick={() => setSelectedFormatter("JSON")}

@@ -35,6 +35,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>
           DevLoom - The All-in-One Code Formatter, Converter, Previewers,
           generators and more - No Ads - No Trackers - No Bullshit!

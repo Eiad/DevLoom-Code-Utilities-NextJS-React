@@ -12,21 +12,32 @@
 
 /* Tablets */
 @media (min-width: 768px) and (max-width: 1023px) {
-  nav {
+  .main-body nav {
     text-align: center;
+    display: block;
   }
 }
 
 /* Larger phones */
 @media (max-width: 767px) {
+  .main-body nav {
+    display: block;
+  }
+
+  .main-container.lefthand-open:after {
+    content: "";
+    position: absolute;
+    width: calc(100% - 250px);
+    background: rgb(0 0 0 / 80%);
+    top: 0;
+    right: 0;
+    bottom: 0;
+  }
+
   .top-section {
     background-color: transparent;
     padding: 20px 0 0 0;
     margin-bottom: 20px;
-  }
-
-  section.right-hand-column.menu-open {
-    min-width: 120%;
   }
 
   nav button {
