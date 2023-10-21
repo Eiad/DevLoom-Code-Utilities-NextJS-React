@@ -1,25 +1,32 @@
-import React, { useState } from "react";
-import ReactMarkdown from "react-markdown";
-import rehypeRaw from "rehype-raw";
-import remarkGfm from "remark-gfm";
+import React, { useState, useEffect } from "react";
 import "../../app/markdown-page.css";
 
 function HTMLPreviewer() {
-  const [markdown, setMarkdown] = useState("");
+  const [htmlCode, setHtmlCode] = useState("");
+  const [sanitizedHtml, setSanitizedHtml] = useState("");
+  const textareaClassName = htmlCode
+    ? "markdown-input border-round prev-active"
+    : "markdown-input border-round";
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const DOMPurify = require("dompurify");
+      setSanitizedHtml(DOMPurify.sanitize(htmlCode));
+    }
+  }, [htmlCode]);
 
   return (
     <div className="markdownpage-container">
       <textarea
         placeholder="Paste your HTML code here..."
-        className="markdown-input border-round"
-        value={markdown}
-        onChange={(e) => setMarkdown(e.target.value)}
+        className={textareaClassName}
+        value={htmlCode}
+        onChange={(e) => setHtmlCode(e.target.value)}
       />
-      <div className="markdown-preview border-round">
-        <ReactMarkdown rehypePlugins={[rehypeRaw]} remarkPlugins={[remarkGfm]}>
-          {markdown || "HTML preview..."}
-        </ReactMarkdown>
-      </div>
+      <div
+        className="markdown-preview border-round"
+        dangerouslySetInnerHTML={{ __html: sanitizedHtml || "HTML preview..." }}
+      ></div>
     </div>
   );
 }
