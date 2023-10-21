@@ -36,17 +36,15 @@ function MyApp({ Component, pageProps }) {
     <>
       <Head>
         <title>
-          DevLoom - The All-in-One Code Formatter, Converter and Previewer - No
+          DevLoom - The All-in-One Code Formatter, Converter, Previewers, generators and more - No
           Ads - No Trackers - No Bullshit!
         </title>
         <meta
           name="description"
           content="Elevate your coding experience with DevLoom Formatter. Simplify code formatting and beautification for HTML, JavaScript, CSS, and JSON effortlessly. Streamline your development workflow with our powerful code beautifier tool."
         />
-        <meta
-          name="keywords"
-          content="DevLoom Formatter, coding assistant, code beautifier, code formatter, HTML formatter, JavaScript formatter, CSS formatter, JSON formatter, code formatting tool, development workflow, coding experience, code optimization"
-        />
+          <meta name="keywords" content="DevLoom, Code Formatter, HTML Formatter, LESS Formatter, Code Beautifier, Coding Assistant, Development Workflow, Code Optimization, JSON to YAML Converter, YAML to JSON Converter, HTML Previewer, Markdown Previewer, Code Conversion Tool, Simplify Coding, Improve Coding Experience, Dynamic Code Previews, Live Markdown Previews, Coding Tools, Efficient Coding Tools, Streamline Coding Process, Code Beautification, lorem ipsum generator">
+
       </Head>
       {/*  Main body content */}
       <div
