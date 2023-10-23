@@ -134,6 +134,38 @@ function MainMenu({ isMobileView, closeMenu, isFWView }) {
               </Link>
             </div>
           </li>
+          <li className={getLinkClass("/TypeScriptFormatter")}>
+            <div>
+              <Link
+                href="/TypeScriptFormatter"
+                onClick={isMobileView ? closeMenu : null}
+              >
+                <Image
+                  src="/icons/typescript-icon.svg"
+                  width={20}
+                  height={20}
+                  alt="Format Icon"
+                />
+                <span>TypeScript Formatter</span>
+              </Link>
+            </div>
+          </li>
+          <li className={getLinkClass("/GraphQLFormatter")}>
+            <div>
+              <Link
+                href="/GraphQLFormatter"
+                onClick={isMobileView ? closeMenu : null}
+              >
+                <Image
+                  src="/icons/file-gql.svg"
+                  width={20}
+                  height={20}
+                  alt="Format Icon"
+                />
+                <span>GraphQL Formatter</span>
+              </Link>
+            </div>
+          </li>
           <li className="menu-converters">
             <p>Converters</p>
           </li>

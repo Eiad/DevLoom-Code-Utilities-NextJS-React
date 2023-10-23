@@ -41,6 +41,16 @@
         <priority>0.8</priority>
     </url>    
     <url>
+        <loc>https://www.devloom.net/GraphQLFormatter</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.devloom.net/TypeScriptFormatter</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://www.devloom.net/JSONYAMLConverter</loc>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>

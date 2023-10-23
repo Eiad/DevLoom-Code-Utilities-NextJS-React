@@ -352,13 +352,8 @@ button[disabled] {
   color: #027bff;
 }
 
-pre {
-  white-space: pre-wrap;
-  word-wrap: break-word;
-  max-height: 400px;
-  overflow: auto;
-  font-size: 15px;
-  color: #333;
+.output-content pre {
+  max-height: 650px;
 }
 
 /* Footer styles */
