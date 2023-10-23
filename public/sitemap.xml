@@ -1,53 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>https://devloom.net/</loc>
+        <loc>https://www.devloom.net/</loc>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://devloom.net/HTMLFormatterPage</loc>
+        <loc>https://www.devloom.net/HTMLFormatter</loc>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://devloom.net/CSSFormatterPage</loc>
+        <loc>https://www.devloom.net/CSSFormatter</loc>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://devloom.net/JSFormatterPage</loc>
+        <loc>https://www.devloom.net/LESSFormatter</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>    
+    <url>
+        <loc>https://www.devloom.net/JSFormatter</loc>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://devloom.net/JSONFormatterPage</loc>
+        <loc>https://www.devloom.net/JSONFormatter</loc>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://devloom.net/HTMLJSXConverterPage</loc>
+        <loc>https://www.devloom.net/HTMLJSXConverter</loc>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://devloom.net/JSONYAMLConverterPage</loc>
+        <loc>https://www.devloom.net/XMLFormatter</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>    
+    <url>
+        <loc>https://www.devloom.net/JSONYAMLConverter</loc>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://devloom.net/YAMLJSONConverterPage</loc>
+        <loc>https://www.devloom.net/YAMLJSONConverter</loc>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://devloom.net/HTMLPreviewer</loc>
+        <loc>https://www.devloom.net/HTMLPreviewer</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+        <url>
+        <loc>https://www.devloom.net/LoremIpsum</loc>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://devloom.net/MARKDOWNPreviewer</loc>
+        <loc>https://www.devloom.net/MARKDOWNPreviewer</loc>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
-    </url>
+    </url> 
 </urlset>
