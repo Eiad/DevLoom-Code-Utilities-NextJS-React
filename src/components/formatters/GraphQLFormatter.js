@@ -36,8 +36,8 @@ function GraphQLFormatter() {
 
     try {
       const formatOptions = {
-        parser: "graphql", // Using 'graphql' parser
-        plugins: [graphqlParser], // Using GraphQL parser
+        parser: "graphql",
+        plugins: [graphqlParser],
         tabWidth: formatOption === "no-Spaces" ? 0 : tabWidth,
         useTabs: formatOption === "no-Spaces" ? false : useTabs,
         printWidth: formatOption === "no-Spaces" ? 10000 : 80,

@@ -6,6 +6,8 @@ import CSSFormatter from "../components/formatters/CSSFormatter";
 import JSONFormatter from "../components/formatters/JSONFormatter";
 import LESSFormatter from "../components/formatters/LESSFormatter";
 import XMLFormatter from "../components/formatters/XMLFormatter";
+import TypeScriptFormatter from "../components/formatters/TypeScriptFormatter";
+import GraphQLFormatter from "../components/formatters/GraphQLFormatter";
 
 function HomePage() {
   const [selectedFormatter, setSelectedFormatter] = useState("HTML"); // default formatter to display
@@ -26,6 +28,12 @@ function HomePage() {
       break;
     case "XML":
       ComponentToShow = XMLFormatter;
+      break;
+    case "TYPESCRIPT":
+      ComponentToShow = TypeScriptFormatter;
+      break;
+    case "GRAPHQL":
+      ComponentToShow = GraphQLFormatter;
       break;
 
     default:
@@ -82,7 +90,6 @@ function HomePage() {
           >
             JSON
           </button>
-
           <button
             onClick={() => setSelectedFormatter("LESS")}
             className={selectedFormatter === "LESS" ? "selected-nav" : ""}
@@ -94,6 +101,18 @@ function HomePage() {
             className={selectedFormatter === "XML" ? "selected-nav" : ""}
           >
             XML
+          </button>
+          <button
+            onClick={() => setSelectedFormatter("TYPESCRIPT")}
+            className={selectedFormatter === "TYPESCRIPT" ? "selected-nav" : ""}
+          >
+            TypeScript
+          </button>{" "}
+          <button
+            onClick={() => setSelectedFormatter("GRAPHQL")}
+            className={selectedFormatter === "GRAPHQL" ? "selected-nav" : ""}
+          >
+            GraphQL
           </button>
         </nav>
 
