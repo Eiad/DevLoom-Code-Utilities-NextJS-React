@@ -11,7 +11,7 @@ function HTMLPreviewerPage() {
         </title>
         <meta
           name="description"
-          content="Elevate your HTML editing using DevLoom&#39;s HTML Previewer. Obtain dynamic previews of your HTML content to simplify your writing workflow."
+          content="Elevate your HTML editing using DevLoom HTML Previewer. Obtain dynamic previews of your HTML content to simplify your writing workflow."
         />
       </Head>
       <div className="top-section">
