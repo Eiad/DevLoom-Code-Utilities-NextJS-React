@@ -10,7 +10,7 @@ function LoremIpsumPage() {
         </title>
         <meta
           name="description"
-          content="Simplify your design and development process with DevLoom's Lorem Ipsum Generator. Generate customizable placeholder text in seconds to speed up your project workflow. Try it now."
+          content="Simplify your design and development process with DevLoom Lorem Ipsum Generator. Generate customizable placeholder text in seconds to speed up your project workflow. Try it now."
         />
       </Head>
       <div className="top-section">

@@ -17,7 +17,7 @@ function TypeScriptFormatterPage() {
       <div className="top-section">
         <h1>DevLoom TypeScript Formatter - Optimize Your TypeScript Coding</h1>
         <p>
-          Streamline your TypeScript development with DevLoom's TypeScript
+          Streamline your TypeScript development with DevLoom&#39;s TypeScript
           Formatter. Take advantage of effortless code beautification and
           formatting specifically designed for TypeScript. Get started and level
           up your coding!
