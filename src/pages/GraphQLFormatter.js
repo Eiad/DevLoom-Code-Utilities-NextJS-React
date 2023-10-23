@@ -16,9 +16,10 @@ function GraphQLFormatterPage() {
       <div className="top-section">
         <h1>DevLoom GraphQL Formatter - Optimize Your GraphQL Queries</h1>
         <p>
-          Fine-tune your GraphQL development with DevLoom's GraphQL Formatter.
-          Experience simplified query formatting and beautification crafted
-          explicitly for GraphQL. Give it a spin and elevate your GraphQL work!
+          Fine-tune your GraphQL development with DevLoom&#39;s GraphQL
+          Formatter. Experience simplified query formatting and beautification
+          crafted explicitly for GraphQL. Give it a spin and elevate your
+          GraphQL work!
         </p>
         <p className="get-started">No ads - No Trackers - No Bullshit ;)</p>
       </div>
