@@ -227,6 +227,10 @@ li.menu-converters p {
 }
 
 /* Main body styles */
+.main-body h1 {
+  margin-bottom: 20px;
+}
+
 .main-body nav {
   display: flex;
   gap: 5px;
