@@ -40,9 +40,9 @@
     margin-bottom: 20px;
   }
 
-  nav button {
-    font-size: 12px;
-    width: calc(50% - 13px);
+  .main-body nav button {
+    font-size: 13px;
+    width: calc(50% - 10px);
   }
 }
 

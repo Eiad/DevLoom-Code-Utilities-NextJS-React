@@ -103,17 +103,17 @@ function HomePage() {
             XML
           </button>
           <button
-            onClick={() => setSelectedFormatter("TYPESCRIPT")}
-            className={selectedFormatter === "TYPESCRIPT" ? "selected-nav" : ""}
-          >
-            TypeScript
-          </button>{" "}
-          <button
             onClick={() => setSelectedFormatter("GRAPHQL")}
             className={selectedFormatter === "GRAPHQL" ? "selected-nav" : ""}
           >
             GraphQL
           </button>
+          <button
+            onClick={() => setSelectedFormatter("TYPESCRIPT")}
+            className={selectedFormatter === "TYPESCRIPT" ? "selected-nav" : ""}
+          >
+            TypeScript
+          </button>{" "}
         </nav>
 
         <div id="formattersWindow">
