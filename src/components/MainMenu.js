@@ -224,7 +224,7 @@ function MainMenu({ isMobileView, closeMenu, isFWView }) {
                 onClick={isMobileView ? closeMenu : null}
               >
                 <Image
-                  src="/icons/base64-encode-file.svg"
+                  src="/icons/base64-icon.svg"
                   width={20}
                   height={20}
                   alt="Format Icon"
