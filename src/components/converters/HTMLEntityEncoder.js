@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import "../../app/base64-page.css";
 
-function Base64Encoder() {
-  // State variables to manage input, encoded/decoded output,
-  // copy status, output visibility, processing status, and encode/decode mode
+function HTMLEntityEncoder() {
   const [inputText, setInputText] = useState("");
   const [encodedText, setEncodedText] = useState("");
   const [isCopied, setIsCopied] = useState(false);
@@ -27,28 +25,31 @@ function Base64Encoder() {
   const handleEncodeDecodeClick = () => {
     setIsProcessing(true);
     setTimeout(() => {
-      encodeMode ? encodeToBase64() : decodeFromBase64();
+      if (!inputText.trim()) {
+        setShowOutput(false);
+      } else {
+        encodeMode ? encodeHTMLEntities() : decodeHTMLEntities();
+      }
       setIsProcessing(false);
     }, 300);
   };
 
-  // Encode the provided text to Base64 format
-  const encodeToBase64 = () => {
-    const result = btoa(inputText);
+  // Encode the provided text to HTML entities format
+  const encodeHTMLEntities = () => {
+    const result = inputText.replace(/[\u00A0-\u9999<>\&]/gim, function (i) {
+      return "&#" + i.charCodeAt(0) + ";";
+    });
     setEncodedText(result);
     setShowOutput(true);
   };
 
-  // Decode the provided Base64 string back to text
-  const decodeFromBase64 = () => {
-    try {
-      const result = atob(inputText);
-      setEncodedText(result);
-      setShowOutput(true);
-    } catch {
-      alert("Invalid Base64 encoded string.");
-      setShowOutput(false);
-    }
+  // Decode the provided HTML entities back to text
+  const decodeHTMLEntities = () => {
+    const textArea = document.createElement("textarea");
+    textArea.innerHTML = inputText;
+    const result = textArea.value;
+    setEncodedText(result);
+    setShowOutput(true);
   };
 
   // Handle copying the encoded/decoded text to clipboard
@@ -62,8 +63,7 @@ function Base64Encoder() {
   return (
     <div className="main-body">
       <div className="base64-encoder-page">
-        <h1 className="text-center">DevLoom Base64 Encoder/Decoder</h1>
-        {/* Radio buttons to choose between encoding and decoding */}
+        <h1 className="text-center">DevLoom HTML Entity Encoder/Decoder</h1>
         <div className="radio-buttons">
           <label>
             <input
@@ -91,16 +91,12 @@ function Base64Encoder() {
             placeholder={"Paste / Type here..."}
           />
         </div>
-
-        {/* Button to trigger encoding/decoding */}
         <button
           onClick={handleEncodeDecodeClick}
           disabled={!inputText.trim() || isProcessing}
         >
           {isProcessing ? "Processing..." : encodeMode ? "Encode" : "Decode"}
         </button>
-
-        {/* Display the encoded/decoded output */}
         {showOutput && (
           <div className="output-section">
             <h3 className="text-center">Output</h3>
@@ -119,4 +115,4 @@ function Base64Encoder() {
   );
 }
 
-export default Base64Encoder;
+export default HTMLEntityEncoder;

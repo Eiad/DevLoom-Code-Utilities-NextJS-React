@@ -5,6 +5,7 @@ import "../app/responsive.css";
 import Head from "next/head";
 import MainMenu from "../components/MainMenu";
 import Image from "next/image";
+import Link from "next/link";
 
 function MyApp({ Component, pageProps }) {
   // State to manage the open/close status of the menu
@@ -79,6 +80,16 @@ function MyApp({ Component, pageProps }) {
             isMenuOpen ? "menu-open" : "menu-closed"
           }`}
         >
+          <section className={`full-width-logo ${isMenuOpen ? "hide" : ""}`}>
+            <Link alt="DevLoom Home page" href="/">
+              <Image
+                src="/logo/devloom-logo.jpg"
+                width={132}
+                height={80}
+                alt="Devloom logo"
+              />
+            </Link>
+          </section>
           <Component {...pageProps} />
         </section>
       </div>

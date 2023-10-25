@@ -19,6 +19,10 @@ select,
   cursor: pointer;
 }
 
+.hide {
+  display: none !important;
+}
+
 .border-round {
   border-radius: 5px;
 }
@@ -124,6 +128,12 @@ p {
 }
 
 /* Header styles */
+section.full-width-logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
 .menu-logo {
   width: 250px;
   background-color: #0161d5;
@@ -259,7 +269,8 @@ div#formattersWindow {
   padding-bottom: 20px;
 }
 
-.formatter-page {
+.formatter-page,
+.base64-encoder-page {
   padding: 20px;
   margin: 0;
   background-color: #fff;

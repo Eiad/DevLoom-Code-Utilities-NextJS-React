@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Prism from "prismjs";
-import "prismjs/themes/prism-okaidia.css";
+import "../../app/highligh-styling.css";
 import "prismjs/components/prism-javascript";
 import "prismjs/components/prism-jsx";
 import Footer from "../Footer";

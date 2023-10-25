@@ -233,6 +233,22 @@ function MainMenu({ isMobileView, closeMenu, isFWView }) {
               </Link>
             </div>
           </li>
+          <li className={getLinkClass("/HTMLEntityEncoder")}>
+            <div>
+              <Link
+                href="/HTMLEntityEncoder"
+                onClick={isMobileView ? closeMenu : null}
+              >
+                <Image
+                  src="/icons/html-entity-icon.svg"
+                  width={20}
+                  height={20}
+                  alt="Format Icon"
+                />
+                <span>HTML Entity Encoder</span>
+              </Link>
+            </div>
+          </li>
           <li className="menu-converters">
             <p>Previewers</p>
           </li>

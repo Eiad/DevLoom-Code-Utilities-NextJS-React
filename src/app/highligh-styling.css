@@ -1,0 +1,116 @@
+.formatter-page code[class*="language-"],
+.formatter-page pre[class*="language-"] {
+  color: #f8f8f2;
+  background: none;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+  font-size: 1em;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+.formatter-page pre[class*="language-"] {
+  padding: 1em;
+  margin: 0.5em 0;
+  overflow: auto;
+  border-radius: 0.3em;
+}
+
+.formatter-page :not(pre) > code[class*="language-"],
+.formatter-page pre[class*="language-"] {
+  background: #272822;
+}
+
+.formatter-page :not(pre) > code[class*="language-"] {
+  padding: 0.1em;
+  border-radius: 0.3em;
+  white-space: normal;
+}
+
+.formatter-page .token.comment,
+.formatter-page .token.prolog,
+.formatter-page .token.doctype,
+.formatter-page .token.cdata {
+  color: #8292a2;
+}
+
+.formatter-page .token.punctuation {
+  color: #f8f8f2;
+}
+
+.formatter-page .token.namespace {
+  opacity: 0.7;
+}
+
+.formatter-page .token.property,
+.formatter-page .token.tag,
+.formatter-page .token.constant,
+.formatter-page .token.symbol,
+.formatter-page .token.deleted {
+  color: #f92672;
+}
+
+.formatter-page .token.boolean,
+.formatter-page .token.number {
+  color: #ae81ff;
+}
+
+.formatter-page .token.selector,
+.formatter-page .token.attr-name,
+.formatter-page .token.string,
+.formatter-page .token.char,
+.formatter-page .token.builtin,
+.formatter-page .token.inserted {
+  color: #a6e22e;
+}
+
+.formatter-page .token.operator,
+.formatter-page .token.entity,
+.formatter-page .token.url,
+.formatter-page .language-css .token.string,
+.formatter-page .style .token.string,
+.formatter-page .token.variable {
+  color: #f8f8f2;
+}
+
+.formatter-page .token.atrule,
+.formatter-page .token.attr-value,
+.formatter-page .token.function,
+.formatter-page .token.class-name {
+  color: #e6db74;
+}
+
+.formatter-page .token.keyword {
+  color: #66d9ef;
+}
+
+.formatter-page .token.regex,
+.formatter-page .token.important {
+  color: #fd971f;
+}
+
+.formatter-page .token.important,
+.formatter-page .token.bold {
+  font-weight: bold;
+}
+
+.formatter-page .token.italic {
+  font-style: italic;
+}
+
+.formatter-page .token.entity {
+  cursor: help;
+}

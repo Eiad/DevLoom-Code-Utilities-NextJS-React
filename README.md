@@ -11,7 +11,6 @@ npm install
 Then, run the development server:
 npm run dev
 This will start Next.js in development mode. Open http://localhost:3000 to view it in the browser.
-
 You can also run the Electron app in development mode with:
 npm run electron-dev
 This will start the React app and Electron simultaneously. The React app will run on http://localhost:3000 and the Electron app will load that URL.
@@ -46,10 +45,10 @@ The formatter components are:
 - `JSONFormatter.js` - Formats JSON code
 - `LESSFormatter.js` - Formats LESS code
 - `XMLFormatter.js` - Formats XML code
-
-These components use the `prettier` library to format the code. They take in user input, call the appropriate `prettier` formatting function based on the code type, and display the formatted output.
-
-The `FormatterContent.js` component is a reusable component that contains the input, output, and copy functionality shared between the formatters.
+- `TypeScriptFormatter.js` - Formats TypeScript code
+- `GraphQLFormatter.js` - Formats GraphQL code
+  These components use the `prettier` library to format the code. They take in user input, call the appropriate `prettier` formatting function based on the code type, and display the formatted output.
+  The `FormatterContent.js` component is a reusable component that contains the input, output, and copy functionality shared between the formatters.
 
 ## Converter Components
 
@@ -58,8 +57,9 @@ DevLoom also introduces code conversion components:
 - `HTMLJSXConverter.js` - Converts HTML code to JSX.
 - `JSONYAMLConverter.js` - Transforms JSON data to YAML.
 - `YAMLJSONConverter.js` - Converts YAML data back to JSON.
-
-These modules facilitate seamless code conversion, enriching the DevLoom experience.
+- `Base64Encoder.js` - Encodes text to Base64
+- `HTMLEntityEncoder.js` - Encodes text to HTML entities
+  These modules facilitate seamless code conversion, enriching the DevLoom experience.
 
 ## Previewer Components
 
@@ -77,13 +77,16 @@ The main pages are:
 - `/JSONFormatterPage` - JSON formatter page
 - `/LESSFormatterPage` - LESS formatter page
 - `/XMLFormatterPage` - XML formatter page
+- `/TypeScriptFormatterPage` - TypeScript formatter page
+- `/GraphQLFormatterPage` - GraphQL formatter page
 - `/HTMLJSXConverterPage` - HTML to JSX converter page
 - `/JSONYAMLConverterPage` - JSON to YAML converter page
 - `/YAMLJSONConverterPage` - YAML to JSON converter page
+- `/Base64EncoderPage` - Base64 Encoder page
+- `/HTMLEntityEncoderPage` - HTML Entity Encoder page
 - `/HTMLPreviewer` - HTML previewer page
 - `/MARKDOWNPreviewer` - Markdown previewer page
-
-These pages render the appropriate formatter, converter, or previewer component based on the route.
+  These pages render the appropriate formatter, converter, or previewer component based on the route.
 
 ## Assumptions
 

@@ -18,10 +18,10 @@ function Base64EncoderPage() {
           Decoding
         </h1>
         <p>
-          Make your data encoding and decoding seamless with DevLoom's Base64
-          Encoder/Decoder. Our tool offers a user-friendly way to transform text
-          to Base64 or decode Base64 strings. Enhance your data processing
-          workflow today!
+          Make your data encoding and decoding seamless with DevLoom&#39;s
+          Base64 Encoder/Decoder. Our tool offers a user-friendly way to
+          transform text to Base64 or decode Base64 strings. Enhance your data
+          processing workflow today!
         </p>
         <p className="get-started">No ads - No Trackers - No Bullshit ;)</p>
       </div>
