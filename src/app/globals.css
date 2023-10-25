@@ -99,10 +99,12 @@ p {
   padding: 20px;
   max-width: 1200px;
   margin: 0 auto;
+  transition: transform 0.3s ease-in;
 }
 
-.right-hand-column.menu-closed {
+.right-hand-column.menu-open {
   margin: 0 auto;
+  transform: translate(0, -104px);
 }
 
 /* Left-hand column styles */

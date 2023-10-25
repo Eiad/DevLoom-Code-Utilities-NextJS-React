@@ -80,7 +80,7 @@ function MyApp({ Component, pageProps }) {
             isMenuOpen ? "menu-open" : "menu-closed"
           }`}
         >
-          <section className={`full-width-logo ${isMenuOpen ? "hide" : ""}`}>
+          <section className="full-width-logo">
             <Link alt="DevLoom Home page" href="/">
               <Image
                 src="/logo/devloom-logo.jpg"
