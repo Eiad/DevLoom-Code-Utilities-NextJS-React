@@ -37,16 +37,16 @@ function MyApp({ Component, pageProps }) {
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>
-          DevLoom - The All-in-One Code Formatter, Converter, Previewers,
-          generators and more - No Ads - No Trackers - No Bullshit!
+          DevLoom - The All-in-One Code Formatter, Converter, Encoder, and
+          Previewer - No Ads - No Trackers - No Bullshit!
         </title>
         <meta
           name="description"
-          content="Elevate your coding experience with DevLoom Formatter. Simplify code formatting and beautification for HTML, JavaScript, CSS, and JSON effortlessly. Streamline your development workflow with our powerful code beautifier tool."
+          content="Elevate your coding experience with DevLoom. Simplify code formatting, encoding, and beautification for HTML, JavaScript, CSS, JSON, and Base64 effortlessly. Streamline your development workflow with our comprehensive suite of tools."
         />
         <meta
           name="keywords"
-          content="DevLoom, Code Formatter, HTML Formatter, LESS Formatter, Code Beautifier, Coding Assistant, Development Workflow, Code Optimization, JSON to YAML Converter, YAML to JSON Converter, HTML Previewer, Markdown Previewer, Code Conversion Tool, Simplify Coding, Improve Coding Experience, Dynamic Code Previews, Live Markdown Previews, Coding Tools, Efficient Coding Tools, Streamline Coding Process, Code Beautification, lorem ipsum generator"
+          content="DevLoom, Code Formatter, HTML Formatter, LESS Formatter, Code Beautifier, Coding Assistant, Development Workflow, Code Optimization, JSON to YAML Converter, YAML to JSON Converter, HTML Previewer, Markdown Previewer, Base64 Encoder, Code Conversion Tool, Simplify Coding, Improve Coding Experience, Dynamic Code Previews, Live Markdown Previews, Coding Tools, Efficient Coding Tools, Streamline Coding Process, Code Beautification, lorem ipsum generator, Base64 Encoding"
         />
       </Head>
       {/*  Main body content */}

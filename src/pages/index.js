@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Head from "next/head";
 import HTMLFormatter from "../components/formatters/HTMLFormatter";
 import JSFormatter from "../components/formatters/JSFormatter";
 import CSSFormatter from "../components/formatters/CSSFormatter";
@@ -42,25 +41,15 @@ function HomePage() {
 
   return (
     <>
-      <Head>
-        <title>
-          DevLoom - The All-in-One Code Formatter, Converter and Previewer - No
-          Ads - No Trackers - No Bullshit!
-        </title>
-        <meta
-          name="description"
-          content="Elevate your coding experience with DevLoom Formatter. Simplify code formatting and beautification for HTML, JavaScript, CSS, and JSON effortlessly. Streamline your development workflow with our powerful code beautifier tool."
-        />
-      </Head>
       <div className="top-section">
         <h1>
-          Meet DevLoom: Every Developer&#39;s Good Friend - Online and Free
+          Meet DevLoom: Every Developer&#39;s Ultimate Toolkit - Online and Free
         </h1>
         <p>
-          Dive into DevLoom, your hub for multi-language code formatting and
-          conversion. Perfect codes from HTML, CSS, JavaScript, JSON, and more,
-          or easily switch between diverse formats. With DevLoom, elevate every
-          coding session.
+          Explore DevLoom, the ultimate destination for multi-language code
+          formatting, encoding, and conversion. Perfect your codes from HTML,
+          CSS, JavaScript, JSON, Base64, and more. Seamlessly switch between
+          diverse formats and elevate every coding session.
         </p>
         <p className="get-started">No ads - No Trackers - No Bullshit ;)</p>
       </div>

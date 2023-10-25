@@ -217,6 +217,22 @@ function MainMenu({ isMobileView, closeMenu, isFWView }) {
               </Link>
             </div>
           </li>
+          <li className={getLinkClass("/Base64Encoder")}>
+            <div>
+              <Link
+                href="/Base64Encoder"
+                onClick={isMobileView ? closeMenu : null}
+              >
+                <Image
+                  src="/icons/base64-encode-file.svg"
+                  width={20}
+                  height={20}
+                  alt="Format Icon"
+                />
+                <span>Base64 Encoder</span>
+              </Link>
+            </div>
+          </li>
           <li className="menu-converters">
             <p>Previewers</p>
           </li>

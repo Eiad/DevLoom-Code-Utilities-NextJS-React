@@ -1,0 +1,28 @@
+.base64-encoder-page .radio-buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.base64-encoder-page .radio-buttons label {
+  display: flex;
+  line-height: 30px;
+  margin: 20px;
+  gap: 7px;
+  cursor: pointer;
+}
+
+pre.language-text {
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f2fdff;
+  resize: vertical;
+  box-shadow: -1px 4px 19px -6px rgba(0, 0, 0, 0.13);
+  max-height: 400px;
+  overflow: auto;
+}
+
+code.language-text {
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}
