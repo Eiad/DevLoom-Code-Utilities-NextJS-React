@@ -1,5 +1,5 @@
-// Import dependencies
-import { db } from "../../firebase"; // Import Firestore
+import Cors from "cors";
+import { db } from "../../firebase";
 import {
   doc,
   updateDoc,
@@ -7,9 +7,30 @@ import {
   where,
   getDocs,
   collection,
-} from "firebase/firestore"; // Firestore methods
+} from "firebase/firestore";
+
+// Initialize cors middleware to allow all origins
+const cors = Cors({
+  origin: true,
+  methods: ["POST", "HEAD", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+});
+
+function runMiddleware(req, res, fn) {
+  return new Promise((resolve, reject) => {
+    fn(req, res, (result) => {
+      if (result instanceof Error) {
+        return reject(result);
+      }
+      return resolve(result);
+    });
+  });
+}
 
 export default async (req, res) => {
+  // Run the cors middleware
+  await runMiddleware(req, res, cors);
+
   const { licenseKey } = req.body;
   const GUMROAD_PRODUCT_ID = process.env.NEXT_PUBLIC_GUMROAD_PRODUCT_ID;
 

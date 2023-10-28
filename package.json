@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "export": "next export",
     "lint": "next lint",
     "electron-start": "electron .",
     "react-start": "react-scripts start",
@@ -28,6 +29,7 @@
   },
   "dependencies": {
     "@vercel/analytics": "^1.1.1",
+    "cors": "^2.8.5",
     "dompurify": "^3.0.6",
     "electron-serve": "^1.1.0",
     "firebase": "^10.5.2",

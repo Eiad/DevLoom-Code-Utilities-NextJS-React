@@ -303,6 +303,22 @@ function MainMenu({ isMobileView, closeMenu, isFWView }) {
               </Link>
             </div>
           </li>
+          <li className={getLinkClass("/LicenseActivation")}>
+            <div>
+              <Link
+                href="/LicenseActivation"
+                onClick={isMobileView ? closeMenu : null}
+              >
+                <Image
+                  src="/icons/lorem-icon.svg"
+                  width={20}
+                  height={20}
+                  alt="Format Icon"
+                />
+                <span>License info</span>
+              </Link>
+            </div>
+          </li>
         </ul>
       </div>
     </section>

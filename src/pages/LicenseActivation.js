@@ -6,7 +6,7 @@ const LicenseActivation = () => {
 
   const handleActivate = async () => {
     try {
-      const res = await fetch("/api/validateLicense", {
+      const res = await fetch("https://www.devloom.net/api/validateLicense", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ licenseKey }),
@@ -25,8 +25,14 @@ const LicenseActivation = () => {
         localStorage.setItem("Devloom", "Activated");
       }
     } catch (error) {
-      console.error("Error:", error.message);
-      setResponseMessage("An error occurred while validating the license.");
+      if (error.message === "Failed to fetch") {
+        setResponseMessage(
+          "Please ensure you're connected to the internet to activate your license."
+        );
+      } else {
+        console.error("Error:", error.message);
+        setResponseMessage("An error occurred while validating the license.");
+      }
     }
   };
 
