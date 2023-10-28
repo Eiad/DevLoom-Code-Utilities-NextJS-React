@@ -1,5 +1,3 @@
-// src/pages/LicenseActivation.js
-
 import React, { useState } from "react";
 
 const LicenseActivation = () => {
@@ -21,6 +19,11 @@ const LicenseActivation = () => {
 
       const data = await res.json();
       setResponseMessage(data.message);
+
+      // If the license was activated successfully, update localStorage
+      if (data.message === "License Activated") {
+        localStorage.setItem("Devloom", "Activated");
+      }
     } catch (error) {
       console.error("Error:", error.message);
       setResponseMessage("An error occurred while validating the license.");
