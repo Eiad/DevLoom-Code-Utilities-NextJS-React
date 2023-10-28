@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: "export",
+  // output Needs to be enabled for electron
+  //output: "export",
 
   // disable the Image Optimization feature during static export
   images: {

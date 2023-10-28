@@ -27,7 +27,7 @@ function runMiddleware(req, res, fn) {
   });
 }
 
-export default async (req, res) => {
+const validateLicense = async (req, res) => {
   // Run the cors middleware
   await runMiddleware(req, res, cors);
 
@@ -94,3 +94,5 @@ export default async (req, res) => {
       .json({ message: "An error occurred while validating the license." });
   }
 };
+
+export default validateLicense;
