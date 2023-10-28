@@ -88,7 +88,14 @@ const validateLicense = async (req, res) => {
     } else if (documentID) {
       const documentRef = doc(db, "GUMROAD_SALES", documentID);
       await updateDoc(documentRef, { isValidated: true });
-      return res.status(200).json({ message: "License Activated" });
+      const docData = (await getDocs(q)).docs[0].data();
+      const responseData = {
+        message: "License Activated",
+        EMail: docData.EMail,
+        LicenseKey: docData.LicenseKey,
+        PurchaseDate: docData.PurchaseDate,
+      };
+      return res.status(200).json(responseData);
     } else {
       return res
         .status(400)

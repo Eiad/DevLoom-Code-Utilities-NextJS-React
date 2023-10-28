@@ -1,8 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const LicenseActivation = () => {
   const [licenseKey, setLicenseKey] = useState("");
   const [responseMessage, setResponseMessage] = useState("");
+  const [licenseActivated, setLicenseActivated] = useState(false);
+  const [licenseData, setLicenseData] = useState({});
+
+  useEffect(() => {
+    const activationStatus = localStorage.getItem("Devloom");
+    if (activationStatus === "Activated") {
+      setLicenseActivated(true);
+    }
+  }, []);
 
   const handleActivate = async () => {
     try {
@@ -12,40 +21,54 @@ const LicenseActivation = () => {
         body: JSON.stringify({ licenseKey }),
       });
 
-      if (!res.ok) {
-        const text = await res.text();
-        throw new Error(`Server error: ${res.status}, ${text}`);
-      }
-
       const data = await res.json();
       setResponseMessage(data.message);
+      setLicenseData({
+        EMail: data.EMail,
+        LicenseKey: data.LicenseKey,
+        PurchaseDate: data.PurchaseDate,
+      });
 
-      // If the license was activated successfully, update localStorage
       if (data.message === "License Activated") {
         localStorage.setItem("Devloom", "Activated");
+        setLicenseActivated(true);
       }
     } catch (error) {
-      if (error.message === "Failed to fetch") {
-        setResponseMessage(
-          "Please ensure you're connected to the internet to activate your license."
-        );
-      } else {
-        console.error("Error:", error.message);
-        setResponseMessage("An error occurred while validating the license.");
-      }
+      setResponseMessage("An error occurred while validating the license.");
     }
   };
 
   return (
-    <div>
-      <input
-        type="text"
-        value={licenseKey}
-        onChange={(e) => setLicenseKey(e.target.value)}
-        placeholder="Enter License Key"
-      />
-      <button onClick={handleActivate}>Activate it</button>
-      <p>{responseMessage}</p>
+    <div className="activation-container">
+      <h1>License Activation</h1>
+      {!licenseActivated && (
+        <div>
+          <h2>Activate Your License</h2>
+          <input
+            type="text"
+            value={licenseKey}
+            onChange={(e) => setLicenseKey(e.target.value)}
+            placeholder="Enter License Key"
+            className="license-input"
+          />
+          <button onClick={handleActivate} className="activate-button">
+            Activate it
+          </button>
+          {responseMessage && <div className="alert">{responseMessage}</div>}
+        </div>
+      )}
+      {licenseActivated && (
+        <div>
+          <h2>Welcome to the Premium Features</h2>
+          <p>
+            Thanks for activating your license. Enjoy all the premium features
+            available!
+          </p>
+          <p>Email: {licenseData.EMail}</p>
+          <p>License Key: {licenseData.LicenseKey}</p>
+          <p>Purchase Date: {licenseData.PurchaseDate}</p>
+        </div>
+      )}
     </div>
   );
 };
