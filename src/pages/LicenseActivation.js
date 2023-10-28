@@ -12,6 +12,12 @@ const LicenseActivation = () => {
     const activationStatus = localStorage.getItem("Devloom");
     if (activationStatus === "Activated") {
       setLicenseActivated(true);
+      const storedLicenseData = {
+        EMail: localStorage.getItem("EMail"),
+        LicenseKey: localStorage.getItem("LicenseKey"),
+        PurchaseDate: localStorage.getItem("PurchaseDate"),
+      };
+      setLicenseData(storedLicenseData);
     }
   }, []);
 
@@ -38,6 +44,9 @@ const LicenseActivation = () => {
       // If the license is activated, store the status in local storage
       if (data.message === "License Activated") {
         localStorage.setItem("Devloom", "Activated");
+        localStorage.setItem("EMail", data.EMail);
+        localStorage.setItem("LicenseKey", data.LicenseKey);
+        localStorage.setItem("PurchaseDate", data.PurchaseDate);
         setLicenseActivated(true);
       }
     } catch (error) {
