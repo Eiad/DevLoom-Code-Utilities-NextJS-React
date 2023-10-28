@@ -36,7 +36,6 @@ const validateLicense = async (req, res) => {
   // Destructuring to get the license key from the request body
   const { licenseKey } = req.body;
 
-  // Using environment variable for product ID
   const GUMROAD_PRODUCT_ID = process.env.NEXT_PUBLIC_GUMROAD_PRODUCT_ID;
 
   try {
