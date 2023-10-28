@@ -7,6 +7,7 @@ vercel --prod
 
 
 ===========================================================================================
+0-remind yourself with our conversion exchange.
 1-I have code formatter Next.js app
 
 2-i use prettier
@@ -16,27 +17,3 @@ vercel --prod
 <Script formatterContent.js>
 </Script formatterContent.js>
 ========================================================================
-0-remind yourself with our conversion exchange.
-1-give meta title and description and page hero title description and  for both formatters we did. use the example below as inspiration.
-2-give the exact format below for Typescript and GrapghQL we just did
-
-      <Head>
-        <title>
-          DevLoom Online Free JavaScript Formatter - Optimize Your JavaScript
-          Coding
-        </title>
-        <meta
-          name="description"
-          content="Improve your JavaScript coding with DevLoom JavaScript Formatter. Effortless code beautification and formatting designed for JavaScript."
-        />
-      </Head>
-      <div className="top-section">
-        <h1>DevLoom JavaScript Formatter - Optimize Your JavaScript Coding</h1>
-        <p>
-          Optimize your JavaScript coding with DevLoom&#39;s JavaScript
-          Formatter. Experience effortless code beautification and formatting
-          designed specifically for JavaScript. Give it a try and elevate your
-          coding!
-        </p>
-        <p className="get-started">No ads - No Trackers - No Bullshit ;)</p>
-      </div>
