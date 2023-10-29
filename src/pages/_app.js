@@ -6,13 +6,36 @@ import Head from "next/head";
 import MainMenu from "../components/MainMenu";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 function MyApp({ Component, pageProps }) {
   // State to manage the open/close status of the menu
   const [isMenuOpen, setIsMenuOpen] = useState(true);
   const [isMobileView, setIsMobileView] = useState(false);
 
-  // Set the menu's initial state based on the viewport width
+  const router = useRouter();
+
+  // List of routes that can be accessed without license activation
+  const freeRoutes = ["/HTMLFormatter"];
+
+  useEffect(() => {
+    // Function to check license activation
+    const checkLicenseActivation = () => {
+      // If the current route is in the freeRoutes array, return early (do not check for activation)
+      if (freeRoutes.includes(router.pathname)) {
+        return;
+      }
+
+      const activationStatus = localStorage.getItem("Devloom");
+      if (activationStatus !== "Activated") {
+        router.push("/LicenseActivation");
+      }
+    };
+
+    checkLicenseActivation();
+  }, [router.pathname]);
+
+  // Set the menu's initial state based on the viewport width for mobile menu handling
   useEffect(() => {
     // By default mobile menu is hidden on mobile
     if (window.innerWidth <= 768) {
@@ -50,7 +73,7 @@ function MyApp({ Component, pageProps }) {
           content="DevLoom, Code Formatter, HTML Formatter, LESS Formatter, Code Beautifier, Coding Assistant, Development Workflow, Code Optimization, JSON to YAML Converter, YAML to JSON Converter, HTML Previewer, Markdown Previewer, Base64 Encoder, Code Conversion Tool, Simplify Coding, Improve Coding Experience, Dynamic Code Previews, Live Markdown Previews, Coding Tools, Efficient Coding Tools, Streamline Coding Process, Code Beautification, lorem ipsum generator, Base64 Encoding"
         />
       </Head>
-      {/*  Main body content */}
+      {/* Main body content */}
       <div
         className={`main-container ${
           isMenuOpen ? "lefthand-open" : "lefthand-closed"

@@ -95,6 +95,7 @@ const validateLicense = async (req, res) => {
         LicenseKey: docData.LicenseKey,
         PurchaseDate: docData.PurchaseDate,
       };
+      //On Success show "License Activated"
       return res.status(200).json(responseData);
     } else {
       return res

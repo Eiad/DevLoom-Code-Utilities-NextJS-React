@@ -48,10 +48,15 @@ const LicenseActivation = () => {
         localStorage.setItem("LicenseKey", data.LicenseKey);
         localStorage.setItem("PurchaseDate", data.PurchaseDate);
         setLicenseActivated(true);
+
+        // Reload the entire page to reflect the changes
+        window.location.reload();
       }
     } catch (error) {
       // Handle errors
-      setResponseMessage("An error occurred while validating the license.");
+      setResponseMessage(
+        "An error occurred while validating the license. please contact Devloom support"
+      );
     }
   };
 

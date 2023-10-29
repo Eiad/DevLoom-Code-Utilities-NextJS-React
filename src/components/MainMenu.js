@@ -1,9 +1,18 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 
-function MainMenu({ isMobileView, closeMenu, isFWView }) {
+function MainMenu({ isMobileView, closeMenu }) {
   const router = useRouter();
+  const [isActivated, setIsActivated] = useState(false);
+
+  useEffect(() => {
+    if (typeof window !== "undefined" && window.localStorage) {
+      const activationStatus = localStorage.getItem("Devloom");
+      setIsActivated(activationStatus === "Activated");
+    }
+  }, []);
 
   const getLinkClass = (path) => {
     return router.pathname === path ? "current-page" : "";
@@ -23,7 +32,9 @@ function MainMenu({ isMobileView, closeMenu, isFWView }) {
           </Link>
         </div>
       </div>
-      <div className="main-menu">
+      <div
+        className={`main-menu ${isActivated ? "full-access" : "demo-access"}`}
+      >
         <ul>
           <li className={getLinkClass("/")}>
             <div>
