@@ -18,22 +18,23 @@ function MyApp({ Component, pageProps }) {
   // List of routes that can be accessed without license activation
   const freeRoutes = ["/HTMLFormatter"];
 
-  useEffect(() => {
-    // Function to check license activation
-    const checkLicenseActivation = () => {
-      // If the current route is in the freeRoutes array, return early (do not check for activation)
-      if (freeRoutes.includes(router.pathname)) {
-        return;
-      }
+  // Uncomment to activate the license checker
+  // useEffect(() => {
+  //   // Function to check license activation
+  //   const checkLicenseActivation = () => {
+  //     // If the current route is in the freeRoutes array, return early (do not check for activation)
+  //     if (freeRoutes.includes(router.pathname)) {
+  //       return;
+  //     }
 
-      const activationStatus = localStorage.getItem("Devloom");
-      if (activationStatus !== "Activated") {
-        router.push("/LicenseActivation");
-      }
-    };
+  //     const activationStatus = localStorage.getItem("Devloom");
+  //     if (activationStatus !== "Activated") {
+  //       router.push("/LicenseActivation");
+  //     }
+  //   };
 
-    checkLicenseActivation();
-  }, [router.pathname]);
+  //   checkLicenseActivation();
+  // }, [router.pathname]);
 
   // Set the menu's initial state based on the viewport width for mobile menu handling
   useEffect(() => {
