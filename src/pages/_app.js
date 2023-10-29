@@ -6,14 +6,14 @@ import Head from "next/head";
 import MainMenu from "../components/MainMenu";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/router";
+// import { useRouter } from "next/router";
 
 function MyApp({ Component, pageProps }) {
   // State to manage the open/close status of the menu
   const [isMenuOpen, setIsMenuOpen] = useState(true);
   const [isMobileView, setIsMobileView] = useState(false);
 
-  const router = useRouter();
+  // const router = useRouter();
 
   // List of routes that can be accessed without license activation
   const freeRoutes = ["/HTMLFormatter"];
