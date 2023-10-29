@@ -6,19 +6,18 @@ import Head from "next/head";
 import MainMenu from "../components/MainMenu";
 import Image from "next/image";
 import Link from "next/link";
+// TEMO COMMENTING
 // import { useRouter } from "next/router";
 
 function MyApp({ Component, pageProps }) {
   // State to manage the open/close status of the menu
   const [isMenuOpen, setIsMenuOpen] = useState(true);
   const [isMobileView, setIsMobileView] = useState(false);
-
+  // TEMO COMMENTING
   // const router = useRouter();
 
-  // List of routes that can be accessed without license activation
-  const freeRoutes = ["/HTMLFormatter"];
-
-  // Uncomment to activate the license checker
+  // TEMO COMMENTING - List of routes that can be accessed without license activation
+  // const freeRoutes = ["/HTMLFormatter"];
   // useEffect(() => {
   //   // Function to check license activation
   //   const checkLicenseActivation = () => {
