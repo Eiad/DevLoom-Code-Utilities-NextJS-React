@@ -91,6 +91,7 @@ const validateLicense = async (req, res) => {
       const docData = (await getDocs(q)).docs[0].data();
       const responseData = {
         message: "License Activated",
+        Name: docData.Name,
         EMail: docData.EMail,
         LicenseKey: docData.LicenseKey,
         PurchaseDate: docData.PurchaseDate,

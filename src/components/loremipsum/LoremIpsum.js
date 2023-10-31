@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { loremIpsum } from "lorem-ipsum";
-import "../../app/lorem-page.css";
+import "../../app/css/lorem-page.css";
 
 const LoremIpsum = () => {
   const [count, setCount] = useState(5);

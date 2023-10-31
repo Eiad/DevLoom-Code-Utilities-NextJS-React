@@ -13,6 +13,7 @@ const LicenseActivation = () => {
     if (activationStatus === "Activated") {
       setLicenseActivated(true);
       const storedLicenseData = {
+        Name: localStorage.getItem("Name"),
         EMail: localStorage.getItem("EMail"),
         LicenseKey: localStorage.getItem("LicenseKey"),
         PurchaseDate: localStorage.getItem("PurchaseDate"),
@@ -36,6 +37,7 @@ const LicenseActivation = () => {
       // Set the response message and license data and get the document keys value from front end use
       setResponseMessage(data.message);
       setLicenseData({
+        Name: data.Name,
         EMail: data.EMail,
         LicenseKey: data.LicenseKey,
         PurchaseDate: data.PurchaseDate,
@@ -44,6 +46,7 @@ const LicenseActivation = () => {
       // If the license is activated, store the status in local storage
       if (data.message === "License Activated") {
         localStorage.setItem("Devloom", "Activated");
+        localStorage.setItem("Name", data.Name);
         localStorage.setItem("EMail", data.EMail);
         localStorage.setItem("LicenseKey", data.LicenseKey);
         localStorage.setItem("PurchaseDate", data.PurchaseDate);
@@ -90,6 +93,7 @@ const LicenseActivation = () => {
             Thanks for activating your license. Enjoy all the premium features
             available!
           </p>
+          <p>Name: {licenseData.Name}</p>
           <p>Email: {licenseData.EMail}</p>
           <p>License Key: {licenseData.LicenseKey}</p>
           <p>Purchase Date: {licenseData.PurchaseDate}</p>

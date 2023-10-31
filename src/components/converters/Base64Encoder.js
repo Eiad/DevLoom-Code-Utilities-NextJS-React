@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../../app/base64-page.css";
+import "../../app/css/base64-page.css";
 
 function Base64Encoder() {
   // State variables to manage input, encoded/decoded output,
