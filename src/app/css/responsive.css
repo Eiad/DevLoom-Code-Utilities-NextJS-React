@@ -4,26 +4,14 @@
     transform: translateX(0);
     display: block;
   }
-
-  .main-body nav {
-    flex-direction: row-reverse;
-  }
 }
 
 /* Tablets */
 @media (min-width: 768px) and (max-width: 1023px) {
-  .main-body nav {
-    text-align: center;
-    display: block;
-  }
 }
 
 /* Larger phones */
 @media (max-width: 767px) {
-  .main-body nav {
-    display: block;
-  }
-
   .main-container.lefthand-open:after {
     content: "";
     position: absolute;
