@@ -326,7 +326,11 @@ function MainMenu({ isMobileView, closeMenu }) {
                   height={20}
                   alt="Format Icon"
                 />
-                <span>License info</span>
+                {isActivated ? (
+                  <span>License Details</span>
+                ) : (
+                  <span>License Activation</span>
+                )}
               </Link>
             </div>
           </li>

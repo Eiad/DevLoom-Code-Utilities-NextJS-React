@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
+import Head from "next/head";
+import "../app/css/license-page.css";
 
 const LicenseActivation = () => {
-  // State variables for the license key, response message, activation status, and license data
   const [licenseKey, setLicenseKey] = useState("");
   const [responseMessage, setResponseMessage] = useState("");
   const [licenseActivated, setLicenseActivated] = useState(false);
   const [licenseData, setLicenseData] = useState({});
+  const [isLoading, setIsLoading] = useState(false);
 
-  // useEffect hook to check if the license has been activated (stored in local storage)
   useEffect(() => {
     const activationStatus = localStorage.getItem("Devloom");
     if (activationStatus === "Activated") {
@@ -22,84 +23,123 @@ const LicenseActivation = () => {
     }
   }, []);
 
-  // Function to handle license activation
   const handleActivate = async () => {
     try {
-      // Make a POST request to validate the license key
+      setIsLoading(true);
+
       const res = await fetch("https://www.devloom.net/api/validateLicense", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ licenseKey }),
       });
 
-      // Parse the response data
-      const data = await res.json();
-      // Set the response message and license data and get the document keys value from front end use
-      setResponseMessage(data.message);
-      setLicenseData({
-        Name: data.Name,
-        EMail: data.EMail,
-        LicenseKey: data.LicenseKey,
-        PurchaseDate: data.PurchaseDate,
-      });
+      setTimeout(async () => {
+        const data = await res.json();
+        setIsLoading(false);
 
-      // If the license is activated, store the status in local storage
-      if (data.message === "License Activated") {
-        localStorage.setItem("Devloom", "Activated");
-        localStorage.setItem("Name", data.Name);
-        localStorage.setItem("EMail", data.EMail);
-        localStorage.setItem("LicenseKey", data.LicenseKey);
-        localStorage.setItem("PurchaseDate", data.PurchaseDate);
-        setLicenseActivated(true);
+        setResponseMessage(data.message);
+        setLicenseData({
+          Name: data.Name,
+          EMail: data.EMail,
+          LicenseKey: data.LicenseKey,
+          PurchaseDate: data.PurchaseDate,
+        });
 
-        // Reload the entire page to reflect the changes
-        window.location.reload();
-      }
+        if (data.message === "License Activated") {
+          localStorage.setItem("Devloom", "Activated");
+          localStorage.setItem("Name", data.Name);
+          localStorage.setItem("EMail", data.EMail);
+          localStorage.setItem("LicenseKey", data.LicenseKey);
+          localStorage.setItem("PurchaseDate", data.PurchaseDate);
+          setLicenseActivated(true);
+          window.location.reload();
+        }
+      }, 3000);
     } catch (error) {
-      // Handle errors
+      setIsLoading(false);
+      if (mainContainer) {
+        mainContainer.classList.remove("global-loader");
+      }
       setResponseMessage(
-        "An error occurred while validating the license. please contact Devloom support"
+        "An error occurred while validating the license. Please contact Devloom support"
       );
     }
   };
 
-  // Render the component
   return (
-    <div className="activation-container">
-      <h1>License Activation</h1>
-      {/* Check if the license is not activated to display activation input */}
+    <>
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>DevLoom License Activation - Unlock Premium Features</title>
+        <meta
+          name="description"
+          content="Activate your DevLoom license and dive into a world of premium developer tools. Experience enhanced coding with added features, faster performance, offline access, and the assurance that your code remains on your machine."
+        />
+      </Head>
+      <div className="top-section">
+        <h1>Experience the Best of DevLoom Premium</h1>
+        <p>
+          Activate your DevLoom license and discover the future of coding. With
+          our premium suite, you not only get access to advanced features but
+          also benefit from offline functionality. No more dependency on fickle
+          internet connections.
+        </p>
+        <p>
+          Your privacy matters to us. At DevLoom, your code remains safely on
+          your machine. Ditch those untrustworthy platforms and ensure your
+          work&#39;s security with us.
+        </p>
+        <p className="get-started">
+          Work offline - No ads - No Trackers - No Bullshit ;)
+        </p>
+      </div>
+
       {!licenseActivated && (
-        <div>
-          <h2>Activate Your License</h2>
+        <div className="activation-container">
+          <h3 className="activation-header">Activate Your License</h3>
           <input
             type="text"
             value={licenseKey}
             onChange={(e) => setLicenseKey(e.target.value)}
             placeholder="Enter License Key"
-            className="license-input"
+            className="license-input text-center"
+            disabled={isLoading}
           />
-          <button onClick={handleActivate} className="activate-button">
-            Activate it
+          <button
+            onClick={handleActivate}
+            className="activate-button"
+            disabled={isLoading}
+          >
+            {isLoading ? "Activating.." : "Activate it"}
           </button>
-          {/* Display the response message */}
-          {responseMessage && <div className="alert">{responseMessage}</div>}
+          {responseMessage && (
+            <div className="activation-alert">{responseMessage}</div>
+          )}
         </div>
       )}
-      {/* Display the license information when activated */}
       {licenseActivated && (
-        <div>
-          <h2>Welcome to the Premium Features</h2>
-          <p>
-            Thanks for activating your license. Enjoy all the premium features
-            available!
+        <div className="license-container border-round">
+          <h2 className="license-header text-center">
+            Thanks for your Purchase
+          </h2>
+          <p className="license-introText ">
+            Your license is activated. Happy Coding!
           </p>
-          <p>Name: {licenseData.Name}</p>
-          <p>Email: {licenseData.EMail}</p>
-          <p>License Key: {licenseData.LicenseKey}</p>
-          <p>Purchase Date: {licenseData.PurchaseDate}</p>
+          <p className="license-infoText">
+            Name: <span>{licenseData.Name}</span>
+          </p>
+          <p className="license-infoText">
+            Email: <span>{licenseData.EMail}</span>
+          </p>
+          <p className="license-infoText">
+            License Key: <span>{licenseData.LicenseKey}</span>
+          </p>
+          <p className="license-infoText">
+            Purchase Date: <span>{licenseData.PurchaseDate}</span>
+          </p>
         </div>
       )}
-    </div>
+    </>
   );
 };
 

@@ -16,7 +16,7 @@ function MyApp({ Component, pageProps }) {
   // TEMO COMMENTING
   // const router = useRouter();
 
-  // TEMO COMMENTING - List of routes that can be accessed without license activation
+  // DEMO COMMENTING - List of routes that can be accessed without license activation
   // const freeRoutes = ["/HTMLFormatter"];
   // useEffect(() => {
   //   // Function to check license activation
