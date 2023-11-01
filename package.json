@@ -1,6 +1,8 @@
 {
   "name": "devloom",
   "version": "0.2.5",
+  "description": "A development tool by Devloom",
+  "author": "Devloom",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -20,10 +22,16 @@
       "index.js",
       "package.json"
     ],
+    "icon": "public/logo/devloom-app-logo.png",
     "mac": {
       "category": "public.app-category.developer-tools",
       "target": [
         "dmg"
+      ]
+    },
+    "win": {
+      "target": [
+        "msi"
       ]
     }
   },
