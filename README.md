@@ -48,7 +48,7 @@ The formatter components are:
 - `TypeScriptFormatter.js` - Formats TypeScript code
 - `GraphQLFormatter.js` - Formats GraphQL code
 
-  > **Hint:** These components use the `prettier` library to format the code. They take in user input, call the appropriate `prettier` formatting function based on the code type, and display the formatted output. The `FormatterContent.js` component is a reusable component that contains the input, output, and copy functionality shared between the formatters.
+  > These components use the `prettier` library to format the code. They take in user input, call the appropriate `prettier` formatting function based on the code type, and display the formatted output. The `FormatterContent.js` component is a reusable component that contains the input, output, and copy functionality shared between the formatters.
 
 ## Converter Components
 
