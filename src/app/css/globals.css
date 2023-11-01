@@ -19,6 +19,10 @@ select,
   cursor: pointer;
 }
 
+img {
+  max-width: 100%;
+}
+
 .hide {
   display: none !important;
 }
@@ -150,7 +154,16 @@ section.full-width-logo {
 
 .header-logo a img {
   max-width: 140px;
+}
+
+.header-logo a img,
+.footer-logo img {
   height: auto;
+}
+
+.footer-logo {
+  background: #0161d5;
+  padding-top: 40px;
 }
 
 .menu-burger {
@@ -213,6 +226,10 @@ section.full-width-logo {
   text-decoration: none;
   color: white;
   transition: background-color 0.3s;
+}
+
+.main-menu li a:last-child {
+  margin-bottom: 0;
 }
 
 .main-menu li.current-page p {
