@@ -83,7 +83,7 @@ const validateLicense = async (req, res) => {
     // Handling the scenarios based on whether the license is already activated or exists in the database
     if (alreadyActivated) {
       return res.status(400).json({
-        message: "License is correct but it's been already activated",
+        message: "The license is valid, but it has already been activated.",
       });
     } else if (documentID) {
       const documentRef = doc(db, "GUMROAD_SALES", documentID);
@@ -105,9 +105,10 @@ const validateLicense = async (req, res) => {
     }
   } catch (error) {
     console.error("Error:", error.message);
-    res
-      .status(400)
-      .json({ message: "An error occurred while validating the license." });
+    res.status(400).json({
+      message:
+        "An error has occurred; you may be using an invalid license key. Please reach out to support..",
+    });
   }
 };
 

@@ -1,3 +1,5 @@
+0-remind yourself with our conversion exchange history.
+
 Gumroad Customer license: B2F488E0-34AB4CF1-BAAA4E77-4DE6D741
 
 0-remind yourself with our conversion exchange history.
@@ -5,6 +7,8 @@ Gumroad Customer license: B2F488E0-34AB4CF1-BAAA4E77-4DE6D741
 npm run build
 npm run electron-pack
 npm run electron-pack -- --mac --win
+
+npm run electron-pack --win msi
 
 
 git commit -m "Update"
