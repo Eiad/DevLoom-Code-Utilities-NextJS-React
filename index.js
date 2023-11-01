@@ -1,8 +1,8 @@
 // Offline Index build for Mac and apps. Use 'out' folder static files
-const { app, BrowserWindow } = require("electron");
+const { app, BrowserWindow, Menu } = require("electron");
 const serve = require("electron-serve");
 
-const loadURL = serve({ directory: "out" }); // 'out' pickup the build
+const loadURL = serve({ directory: "out" });
 
 let mainWindow;
 
@@ -12,10 +12,73 @@ function createWindow() {
     height: 900,
     webPreferences: {
       nodeIntegration: true,
+      devTools: false,
     },
   });
 
-  loadURL(mainWindow); // Use the loadURL function from electron-serve to load local static files
+  // Disable the default menu
+  mainWindow.setMenu(null);
+
+  const isMac = process.platform === "darwin";
+
+  const template = [
+    ...(isMac
+      ? [
+          {
+            label: app.name,
+            submenu: [
+              { role: "about" },
+              { type: "separator" },
+              { role: "quit" },
+            ],
+          },
+        ]
+      : []),
+    {
+      label: "File",
+      submenu: [isMac ? { role: "close" } : { role: "quit" }],
+    },
+    {
+      label: "View",
+      submenu: [
+        { role: "reload" },
+        { role: "forcereload" },
+        { role: "togglefullscreen" },
+      ],
+    },
+    {
+      label: "Window",
+      submenu: [
+        { role: "minimize" },
+        { role: "zoom" },
+        ...(isMac
+          ? [
+              { type: "separator" },
+              { role: "front" },
+              { type: "separator" },
+              { role: "window" },
+            ]
+          : [{ role: "close" }]),
+      ],
+    },
+    {
+      role: "help",
+      submenu: [
+        {
+          label: "Learn More",
+          click: async () => {
+            const { shell } = require("electron");
+            await shell.openExternal("https://devloom.net");
+          },
+        },
+      ],
+    },
+  ];
+
+  const menu = Menu.buildFromTemplate(template);
+  Menu.setApplicationMenu(menu);
+
+  loadURL(mainWindow);
 
   mainWindow.on("closed", function () {
     mainWindow = null;

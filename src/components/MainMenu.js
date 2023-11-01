@@ -327,7 +327,7 @@ function MainMenu({ isMobileView, closeMenu }) {
                   alt="Format Icon"
                 />
                 {isActivated ? (
-                  <span>License Details</span>
+                  <span>My License Details</span>
                 ) : (
                   <span>License Activation</span>
                 )}
