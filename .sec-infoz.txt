@@ -1,0 +1,5 @@
+Gumroad Customer license: B2F488E0-34AB4CF1-BAAA4E77-4DE6D741
+
+0-remind yourself with our conversion exchange.
+
+npm run electron-pack
