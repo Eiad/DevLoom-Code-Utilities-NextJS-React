@@ -195,6 +195,7 @@ section.full-width-logo {
 /* Main menu styles */
 .main-menu {
   padding: 0 0 0 10px;
+  background: #0162d6;
 }
 
 .main-menu h3 {

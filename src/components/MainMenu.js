@@ -338,14 +338,12 @@ function MainMenu({ isMobileView, closeMenu }) {
       </div>
       <div className="footer-logo">
         <div className="logo-img">
-          <Link href="/" onClick={isMobileView ? closeMenu : null}>
-            <Image
-              src="/logo/devloom-logo-full-square.png"
-              width={500}
-              height={500}
-              alt="Devloom logo"
-            />
-          </Link>
+          <Image
+            src="/logo/devloom-logo-full-square.png"
+            width={500}
+            height={500}
+            alt="Devloom logo"
+          />
         </div>
       </div>
     </section>
