@@ -176,6 +176,7 @@ const JWTDebugger = () => {
             <textarea
               className="full-jwt-show"
               value={`${encodedHeader}.${encodedPayload}.${encodedSignature}`}
+              readOnly
             />
           </div>
         </div>
