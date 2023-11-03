@@ -5,23 +5,23 @@ function JWTDebuggerPage() {
   return (
     <>
       <Head>
-        <title>DevLoom Base64 Encoder/Decoder</title>
+        <title>DevLoom JWT Debugger - Verify, Create, Decode JWTs</title>
         <meta
           name="description"
-          content="Optimize your data processing with DevLoom Base64 Encoder/Decoder. Convert text to Base64 format or decode Base64 strings back to text effortlessly."
+          content="Empower your JWT operations with DevLoom JWT Debugger. Verify the authenticity of your JWT, create new tokens, or decode existing ones with ease. Your essential tool for JWT debugging and operations."
         />
       </Head>
 
       <div className="top-section">
         <h1>
-          DevLoom Base64 Encoder/Decoder - Simplify Your Data Encoding &
-          Decoding
+          DevLoom JWT Debugger - The Ultimate JWT Verification, Creation &
+          Decoding Tool
         </h1>
         <p>
-          Make your data encoding and decoding seamless with DevLoom&#39;s
-          Base64 Encoder/Decoder. Our tool offers a user-friendly way to
-          transform text to Base64 or decode Base64 strings. Enhance your data
-          processing workflow today!
+          Experience effortless JWT operations with DevLoom's JWT Debugger.
+          Designed for developers, our tool enables seamless JWT verification,
+          token creation, and decoding. Enhance your JWT workflows and debugging
+          processes today!
         </p>
         <p className="get-started">No ads - No Trackers - No Bullshit ;)</p>
       </div>

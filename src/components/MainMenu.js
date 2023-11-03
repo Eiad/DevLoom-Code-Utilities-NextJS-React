@@ -91,7 +91,7 @@ function MainMenu({ isMobileView, closeMenu }) {
                   src="/icons/js-icon.svg"
                   width={20}
                   height={20}
-                  alt="Format Icon"
+                  alt="JavaScript Formatter"
                 />
                 <span>JavaScript Formatter</span>
               </Link>
@@ -139,7 +139,7 @@ function MainMenu({ isMobileView, closeMenu }) {
                   src="/icons/xml-file-icon.svg"
                   width={20}
                   height={20}
-                  alt="Format Icon"
+                  alt="XML Formatter"
                 />
                 <span>XML Formatter</span>
               </Link>
@@ -155,7 +155,7 @@ function MainMenu({ isMobileView, closeMenu }) {
                   src="/icons/typescript-icon.svg"
                   width={20}
                   height={20}
-                  alt="Format Icon"
+                  alt="TypeScript Formatter"
                 />
                 <span>TypeScript Formatter</span>
               </Link>
@@ -171,7 +171,7 @@ function MainMenu({ isMobileView, closeMenu }) {
                   src="/icons/file-gql.svg"
                   width={20}
                   height={20}
-                  alt="Format Icon"
+                  alt="GraphQL Formatter"
                 />
                 <span>GraphQL Formatter</span>
               </Link>
@@ -190,7 +190,7 @@ function MainMenu({ isMobileView, closeMenu }) {
                   src="/icons/convert-icon.svg"
                   width={20}
                   height={20}
-                  alt="Format Icon"
+                  alt="HTML to JSX"
                 />
                 <span>HTML to JSX</span>
               </Link>
@@ -206,7 +206,7 @@ function MainMenu({ isMobileView, closeMenu }) {
                   src="/icons/convert-icon.svg"
                   width={20}
                   height={20}
-                  alt="Format Icon"
+                  alt="JSON to YAML"
                 />
                 <span>JSON to YAML</span>
               </Link>
@@ -222,7 +222,7 @@ function MainMenu({ isMobileView, closeMenu }) {
                   src="/icons/convert-icon.svg"
                   width={20}
                   height={20}
-                  alt="Format Icon"
+                  alt="YAML to JSON"
                 />
                 <span>YAML to JSON</span>
               </Link>
@@ -238,7 +238,7 @@ function MainMenu({ isMobileView, closeMenu }) {
                   src="/icons/base64-icon.svg"
                   width={20}
                   height={20}
-                  alt="Format Icon"
+                  alt="Base64 Encoder"
                 />
                 <span>Base64 Encoder</span>
               </Link>
@@ -254,7 +254,7 @@ function MainMenu({ isMobileView, closeMenu }) {
                   src="/icons/html-entity-icon.svg"
                   width={20}
                   height={20}
-                  alt="Format Icon"
+                  alt="HTML Entity Encoder"
                 />
                 <span>HTML Entity Encoder</span>
               </Link>
@@ -273,7 +273,7 @@ function MainMenu({ isMobileView, closeMenu }) {
                   src="/icons/html-fill.svg"
                   width={20}
                   height={20}
-                  alt="Format Icon"
+                  alt="HTML Previewer"
                 />
                 <span>HTML Previewer</span>
               </Link>
@@ -289,7 +289,7 @@ function MainMenu({ isMobileView, closeMenu }) {
                   src="/icons/markdown-fill.svg"
                   width={20}
                   height={20}
-                  alt="Format Icon"
+                  alt="Markdown Previewer"
                 />
                 <span>Markdown Previewer</span>
               </Link>
@@ -308,7 +308,7 @@ function MainMenu({ isMobileView, closeMenu }) {
                   src="/icons/lorem-icon.svg"
                   width={20}
                   height={20}
-                  alt="Format Icon"
+                  alt="Lorem Ipsum Generator"
                 />
                 <span>Lorem Ipsum Generator</span>
               </Link>
@@ -324,7 +324,7 @@ function MainMenu({ isMobileView, closeMenu }) {
                   src="/icons/license-icon.svg"
                   width={20}
                   height={20}
-                  alt="Format Icon"
+                  alt="License Details"
                 />
                 {isActivated ? (
                   <span>My License Details</span>
@@ -341,10 +341,10 @@ function MainMenu({ isMobileView, closeMenu }) {
                 onClick={isMobileView ? closeMenu : null}
               >
                 <Image
-                  src="/icons/license-icon.svg"
+                  src="/icons/jwt-icon"
                   width={20}
                   height={20}
-                  alt="Format Icon"
+                  alt="JWT Debugger"
                 />
                 <span>JWT Debugger</span>
               </Link>

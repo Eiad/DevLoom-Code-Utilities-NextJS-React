@@ -11,6 +11,22 @@ const JWTDebugger = () => {
   });
   const [secret, setSecret] = useState("demoSecret123");
   const [algorithm, setAlgorithm] = useState("HS256");
+  const [copyBtnTextGeneratedJWT, setCopyBtnTextGeneratedJWT] =
+    useState("Copy");
+  const [copyBtnTextDecodedHeader, setCopyBtnTextDecodedHeader] =
+    useState("Copy");
+  const [copyBtnTextDecodedPayload, setCopyBtnTextDecodedPayload] =
+    useState("Copy");
+
+  // Handle copy action and change button text
+  const handleCopyText = (text, setCopyBtnTextFunction) => {
+    navigator.clipboard.writeText(text);
+    setCopyBtnTextFunction("Copied!");
+
+    setTimeout(() => {
+      setCopyBtnTextFunction("Copy");
+    }, 2000);
+  };
 
   const algorithms = {
     HS256: CryptoJS.HmacSHA256,
@@ -102,29 +118,35 @@ const JWTDebugger = () => {
     <>
       <section className="jwt-container">
         {/* Component 1 */}
-        <div className="jwt-container-type-1">
-          <div className="jwd-verification-text">
-            <h4>Verification</h4>
-            <p>
-              Sunt ea commodo in sint cillum velit labore tempor. Enim veniam
-              incididunt cillum ipsum labore id enim Lorem labore culpa.
-            </p>
-          </div>
-          <div className="jwd-verification-inputs">
-            <input
-              value={verifySecret}
-              onChange={(e) => setVerifySecret(e.target.value)}
-              placeholder="Enter Secret"
-            />
-            <textarea
-              value={token}
-              className="full-jwt-show"
-              onChange={(e) => setToken(e.target.value)}
-              placeholder="Enter JWT"
-            />
-            <button onClick={handleVerifyJWT}>Verify JWT</button>
-          </div>
+        <div className="jwt-header">
+          <h2>JWT Verification</h2>
+          <p>
+            Verify the authenticity of your JWT by providing the secret key and
+            token.
+          </p>
+        </div>
 
+        <div className="jwt-container-type-1">
+          <div className="jwd-verification-inputs">
+            <label>
+              Enter your secret key
+              <input
+                value={verifySecret}
+                onChange={(e) => setVerifySecret(e.target.value)}
+                placeholder="Enter Secret Key"
+              />
+            </label>
+            <label>
+              Add your JWT string
+              <textarea
+                value={token}
+                className="full-jwt-show"
+                onChange={(e) => setToken(e.target.value)}
+                placeholder="Paste Your JWT Here"
+              />
+            </label>
+            <button onClick={handleVerifyJWT}>Verify Token</button>
+          </div>
           <div className="verification-submit">
             <p
               className={`jwt-verify-msg ${
@@ -138,11 +160,14 @@ const JWTDebugger = () => {
           </div>
         </div>
         {/* Component 2 */}
+        <div className="jwt-header">
+          <h2>Create JWT</h2>
+          <p>Input the required details to generate a JWT.</p>
+        </div>
         <div className="jwt-container-type-2">
           <div className="jwt-input-container">
-            <h3 className="text-center">Input</h3>
-            <label>
-              Algorithm:
+            <label className="alg-selector">
+              Select Algorithm:
               <select
                 value={algorithm}
                 onChange={(e) => setAlgorithm(e.target.value)}
@@ -152,52 +177,87 @@ const JWTDebugger = () => {
                 <option value="HS512">HS512</option>
               </select>
             </label>
-
-            <h4>Secret</h4>
+            <h4>Enter Secret Key</h4>
             <input
               value={secret}
               onChange={(e) => setSecret(e.target.value)}
               placeholder="Secret Key"
             />
-            <h4>Header</h4>
+            <h4>Enter JWT Header</h4>
             <textarea
               value={JSON.stringify(header, null, 2)}
               onChange={(e) => setHeader(JSON.parse(e.target.value))}
             />
-            <h4>Payload</h4>
+            <h4>Enter JWT Payload</h4>
             <textarea
               value={JSON.stringify(payload, null, 2)}
               onChange={(e) => setPayload(JSON.parse(e.target.value))}
             />
           </div>
           <div className="jwt-output-container text-center">
-            <h3 className="text-center">Generated JWT</h3>
-            <h4>Full JWT Output</h4>
+            <h3>Generated JWT Token</h3>
+            <h4>Your JWT Token</h4>
             <textarea
               className="full-jwt-show"
               value={`${encodedHeader}.${encodedPayload}.${encodedSignature}`}
               readOnly
             />
+            <button
+              className="btn-copy"
+              onClick={() =>
+                handleCopyText(
+                  `${encodedHeader}.${encodedPayload}.${encodedSignature}`,
+                  setCopyBtnTextGeneratedJWT
+                )
+              }
+            >
+              {copyBtnTextGeneratedJWT}
+            </button>
           </div>
         </div>
         {/* Component 3 */}
+        <div className="jwt-header">
+          <h2>JWT Decoding</h2>
+          <p>Decode an existing JWT to reveal its header and payload.</p>
+        </div>
         <div className="jwt-container-type-2">
           <div className="jwt-output-container text-center">
-            <h4>Decode JWT</h4>
-
             <textarea
-              placeholder="Enter JWT to decode"
+              className="decode-input-area"
+              placeholder="Paste JWT for Decoding"
               onChange={(e) => handleDecodeJWT(e.target.value)}
             />
           </div>
           <div className="jwt-input-container">
-            <h4>Decoded Header</h4>
+            <h4>Decoded JWT Header</h4>
             <textarea readOnly value={JSON.stringify(decodedHeader, null, 2)} />
-            <h4>Decoded Payload</h4>
+            <button
+              className="btn-copy"
+              onClick={() =>
+                handleCopyText(
+                  JSON.stringify(decodedHeader, null, 2),
+                  setCopyBtnTextDecodedHeader
+                )
+              }
+            >
+              {copyBtnTextDecodedHeader}
+            </button>
+            <h4>Decoded JWT Payload</h4>
             <textarea
               readOnly
               value={JSON.stringify(decodedPayload, null, 2)}
             />
+            <button
+              className="btn-copy"
+              onClick={() =>
+                handleCopyText(
+                  JSON.stringify(decodedPayload, null, 2),
+                  setCopyBtnTextDecodedPayload
+                )
+              }
+            >
+              {copyBtnTextDecodedPayload}
+            </button>
           </div>
         </div>
       </section>

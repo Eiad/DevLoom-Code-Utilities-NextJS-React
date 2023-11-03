@@ -3,13 +3,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  outline: none;
 }
 
 /* General styles */
 body {
   background-color: #e6f7ff;
   color: #333;
-  font-family: Arial, sans-serif;
 }
 
 a,
@@ -294,7 +294,6 @@ div#formattersWindow {
 }
 
 .format-options {
-  font-family: Arial, sans-serif;
   border-radius: 5px;
   margin: 0 0 20px 0;
   display: block;
@@ -315,16 +314,11 @@ div#formattersWindow {
   font-size: 14px;
 }
 
-.format-options select:focus {
-  outline: none;
-}
-
 /* Input section styles */
 textarea {
   height: 250px;
   width: 100%;
   padding: 15px;
-  font-family: Arial, sans-serif;
   font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 5px;
