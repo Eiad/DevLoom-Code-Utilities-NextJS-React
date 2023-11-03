@@ -314,6 +314,22 @@ function MainMenu({ isMobileView, closeMenu }) {
               </Link>
             </div>
           </li>
+          <li className={getLinkClass("/JWTDebugger")}>
+            <div>
+              <Link
+                href="/JWTDebugger"
+                onClick={isMobileView ? closeMenu : null}
+              >
+                <Image
+                  src="/icons/jwt-icon.svg"
+                  width={20}
+                  height={20}
+                  alt="JWT Debugger"
+                />
+                <span>JWT Debugger</span>
+              </Link>
+            </div>
+          </li>
           <li className={getLinkClass("/LicenseActivation")}>
             <div>
               <Link
@@ -331,22 +347,6 @@ function MainMenu({ isMobileView, closeMenu }) {
                 ) : (
                   <span>License Activation</span>
                 )}
-              </Link>
-            </div>
-          </li>
-          <li className={getLinkClass("/JWTDebugger")}>
-            <div>
-              <Link
-                href="/JWTDebugger"
-                onClick={isMobileView ? closeMenu : null}
-              >
-                <Image
-                  src="/icons/jwt-icon"
-                  width={20}
-                  height={20}
-                  alt="JWT Debugger"
-                />
-                <span>JWT Debugger</span>
               </Link>
             </div>
           </li>
