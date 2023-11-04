@@ -1,0 +1,88 @@
+.regex-tester-container {
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  background: #fff;
+}
+
+.regex-tester-form .error-message {
+  color: red;
+  margin-top: 10px;
+  padding: 10px;
+  text-align: center;
+}
+.regex-tester-form .form-group {
+  margin-bottom: 40px;
+}
+
+.regex-tester-form .form-group:last-of-type {
+  margin-bottom: 10px;
+}
+
+.regex-tester-header {
+  margin-bottom: 20px;
+}
+
+.regex-tester-form label {
+  display: block;
+  margin: 10px 0;
+}
+
+.regex-tester-form input,
+.regex-tester-form textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.regex-tester-form textarea {
+  background: #ffffff;
+  padding: 15px;
+}
+
+.regex-tester-form button {
+  color: white;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.regex-tester-results h2 {
+  color: #333;
+}
+
+.regex-tester-results ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.regex-tester-container {
+  position: relative;
+}
+
+.regex-tester-results {
+  padding: 20px 0;
+  margin: 30px 0;
+}
+
+.regex-tester-results h2 {
+  color: #333;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+span.highlight {
+  background: #004eac;
+  color: #fff;
+  padding: 0 5px;
+}
+
+div#results {
+  line-height: 2.5;
+  font-size: 17px;
+  padding: 20px;
+  background: #e6f7ff;
+}

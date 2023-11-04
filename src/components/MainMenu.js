@@ -14,6 +14,15 @@ function MainMenu({ isMobileView, closeMenu }) {
     }
   }, []);
 
+  const navigateAndRefresh = (url) => {
+    // If mobile view, close the menu first.
+    if (isMobileView && closeMenu) {
+      closeMenu();
+    }
+    // Next.js router push followed by window location reload.
+    router.push(url).then(() => window.location.reload());
+  };
+
   const getLinkClass = (path) => {
     return router.pathname === path ? "current-page" : "";
   };
@@ -327,6 +336,22 @@ function MainMenu({ isMobileView, closeMenu }) {
                   alt="JWT Debugger"
                 />
                 <span>JWT Debugger</span>
+              </Link>
+            </div>
+          </li>
+          <li className={getLinkClass("/RegExpTester")}>
+            <div>
+              <Link
+                href="/RegExpTester"
+                onClick={isMobileView ? closeMenu : null}
+              >
+                <Image
+                  src="/icons/jwt-icon.svg"
+                  width={20}
+                  height={20}
+                  alt="RegExp Tester"
+                />
+                <span>RegExpTester</span>
               </Link>
             </div>
           </li>
