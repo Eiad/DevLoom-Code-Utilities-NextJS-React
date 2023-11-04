@@ -1,8 +1,12 @@
+// Importing necessary hooks and modules from React and CryptoJS
 import React, { useState, useEffect } from "react";
 import * as CryptoJS from "crypto-js";
+// Importing the JWT Debugger styles
 import "../../app/css/jwt-debugger.css";
 
+// The main JWTDebugger functional component
 const JWTDebugger = () => {
+  // State management for header, payload, and secret of JWT preloaded sample
   const [header, setHeader] = useState({ alg: "HS256", typ: "JWT" });
   const [payload, setPayload] = useState({
     sub: "demo12345",
@@ -10,7 +14,11 @@ const JWTDebugger = () => {
     iat: 1619100000,
   });
   const [secret, setSecret] = useState("demoSecret123");
+
+  // Algorithm selection for hashing
   const [algorithm, setAlgorithm] = useState("HS256");
+
+  // State for managing button text for copying the generated JWT
   const [copyBtnTextGeneratedJWT, setCopyBtnTextGeneratedJWT] =
     useState("Copy");
   const [copyBtnTextDecodedHeader, setCopyBtnTextDecodedHeader] =
@@ -18,22 +26,24 @@ const JWTDebugger = () => {
   const [copyBtnTextDecodedPayload, setCopyBtnTextDecodedPayload] =
     useState("Copy");
 
-  // Handle copy action and change button text
+  // Function to handle the copy to clipboard action and change button text temporarily
   const handleCopyText = (text, setCopyBtnTextFunction) => {
     navigator.clipboard.writeText(text);
     setCopyBtnTextFunction("Copied!");
-
+    // Revert button text back to "Copy" after 2 seconds
     setTimeout(() => {
       setCopyBtnTextFunction("Copy");
     }, 2000);
   };
 
+  // Mapping algorithm names to the corresponding functions in CryptoJS
   const algorithms = {
     HS256: CryptoJS.HmacSHA256,
     HS384: CryptoJS.HmacSHA384,
     HS512: CryptoJS.HmacSHA512,
   };
 
+  // Effect hook to update the header's algorithm whenever the selected algorithm changes
   useEffect(() => {
     setHeader((prevHeader) => ({
       ...prevHeader,
@@ -41,6 +51,7 @@ const JWTDebugger = () => {
     }));
   }, [algorithm]);
 
+  // Helper function to encode data to Base64URL
   const base64UrlEncode = (input) => {
     var output = CryptoJS.enc.Base64.stringify(input);
     output = output.split("=")[0];
@@ -49,10 +60,12 @@ const JWTDebugger = () => {
     return output;
   };
 
+  // Helper function to decode Base64URL data
   const base64UrlDecode = (input) => {
     var output = input;
     output = output.replace("-", "+");
     output = output.replace("_", "/");
+    // Pad with '=' to make the base64 string length a multiple of 4
     switch (output.length % 4) {
       case 0:
         break;
@@ -68,21 +81,26 @@ const JWTDebugger = () => {
     return CryptoJS.enc.Base64.parse(output).toString(CryptoJS.enc.Utf8);
   };
 
+  // Getting the corresponding signature function based on the selected algorithm
   const signatureFunction = algorithms[algorithm];
+  // Encoding the header and payload parts of the JWT
   const encodedHeader = base64UrlEncode(
     CryptoJS.enc.Utf8.parse(JSON.stringify(header))
   );
   const encodedPayload = base64UrlEncode(
     CryptoJS.enc.Utf8.parse(JSON.stringify(payload))
   );
+  // Generating the signature part of the JWT
   const signature = signatureFunction(
     encodedHeader + "." + encodedPayload,
     secret
   );
   const encodedSignature = base64UrlEncode(signature);
 
-  const jwt = encodedHeader + "." + encodedPayload + "." + encodedSignature;
+  // Concatenating all parts to form the complete JWT
+  const jwt = `${encodedHeader}.${encodedPayload}.${encodedSignature}`;
 
+  // State management for the token verification section
   const [token, setToken] = useState(jwt);
   const [verifySecret, setVerifySecret] = useState(secret);
   const [verificationResult, setVerificationResult] = useState(
@@ -91,10 +109,11 @@ const JWTDebugger = () => {
   const [decodedHeader, setDecodedHeader] = useState("");
   const [decodedPayload, setDecodedPayload] = useState("");
 
+  // Function to handle JWT verification
   const handleVerifyJWT = () => {
     const [header, payload, providedSignature] = token.split(".");
     const computedSignature = base64UrlEncode(
-      signatureFunction(header + "." + payload, verifySecret)
+      signatureFunction(`${header}.${payload}`, verifySecret)
     );
 
     if (providedSignature === computedSignature) {
@@ -104,6 +123,7 @@ const JWTDebugger = () => {
     }
   };
 
+  // Function to decode a JWT and update state with the decoded header and payload
   const handleDecodeJWT = (jwt) => {
     try {
       const [header, payload] = jwt.split(".");
