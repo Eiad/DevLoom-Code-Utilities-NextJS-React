@@ -346,7 +346,7 @@ function MainMenu({ isMobileView, closeMenu }) {
                 onClick={isMobileView ? closeMenu : null}
               >
                 <Image
-                  src="/icons/jwt-icon.svg"
+                  src="/icons/regex-icon.svg"
                   width={20}
                   height={20}
                   alt="RegExp Tester"

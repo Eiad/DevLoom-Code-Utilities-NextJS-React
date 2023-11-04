@@ -10,21 +10,21 @@ function RegExpTesterPage() {
         </title>
         <meta
           name="description"
-          content="Master regular expressions with DevLoom's RegExp Tester. Test your patterns, find matches, and learn RegEx with real-time results. Perfect for beginners and experts alike."
+          content="Master regular expressions with DevLoom&#39;s RegExp Tester. Test your patterns, find matches, and learn RegEx with real-time results. Perfect for beginners and experts alike."
         />
       </Head>
 
       <div className="top-section">
         <h1>DevLoom RegExp Tester - Fine-tune Your Pattern Matching Skills</h1>
         <p>
-          Streamline your RegEx testing with DevLoom's RegExp Tester. Our
+          Streamline your RegEx testing with DevLoom&#39;s RegExp Tester. Our
           interactive tool provides instant feedback on your regular
           expressions, making it easier to match, search, and extract data like
           a pro.
         </p>
         <p>
-          Whether you're crafting complex patterns or learning the basics, our
-          RegExp Tester is designed to support and enhance your development
+          Whether you&#39;re crafting complex patterns or learning the basics,
+          our RegExp Tester is designed to support and enhance your development
           workflow. Get precise with your patterns today!
         </p>
         <p className="get-started">
