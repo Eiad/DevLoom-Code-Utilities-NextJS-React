@@ -253,6 +253,22 @@ function MainMenu({ isMobileView, closeMenu }) {
               </Link>
             </div>
           </li>
+          <li className={getLinkClass("/NumerBaseConverter")}>
+            <div>
+              <Link
+                href="/NumerBaseConverter"
+                onClick={isMobileView ? closeMenu : null}
+              >
+                <Image
+                  src="/icons/binary-icon.svg"
+                  width={20}
+                  height={20}
+                  alt="Numer Base Converter"
+                />
+                <span>Numer Base Converter</span>
+              </Link>
+            </div>
+          </li>
           <li className={getLinkClass("/HTMLEntityEncoder")}>
             <div>
               <Link
