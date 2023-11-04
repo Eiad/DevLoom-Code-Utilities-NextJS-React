@@ -232,7 +232,7 @@ section.full-width-logo {
   width: 100%;
 }
 
-.main-menu li.current-page a,
+.main-menu li.current-page .menu-a,
 .main-menu li span.menu-a:hover {
   background: rgb(0, 78, 172);
 }
