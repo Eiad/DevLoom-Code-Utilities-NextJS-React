@@ -4,7 +4,8 @@ import "../app/css/reset.css";
 import "../app/css/globals.css";
 import "../app/css/responsive.css";
 import Head from "next/head";
-import MainMenu from "../components/MainMenu";
+import MainMenu from "../components/MainMenu-web";
+//import MainMenu from "../components/MainMenu-app";
 import Image from "next/image";
 import Link from "next/link";
 // TEMO COMMENTING

@@ -233,11 +233,11 @@ section.full-width-logo {
 }
 
 .main-menu li.current-page a,
-.main-menu li a:hover {
+.main-menu li span.menu-a:hover {
   background: rgb(0, 78, 172);
 }
 
-.main-menu li a {
+.main-menu li span.menu-a {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -251,9 +251,10 @@ section.full-width-logo {
   text-decoration: none;
   color: white;
   transition: background-color 0.3s;
+  cursor: pointer;
 }
 
-.main-menu li:last-child a {
+.main-menu li:last-child span.menu-a {
   margin-bottom: 0;
 }
 
