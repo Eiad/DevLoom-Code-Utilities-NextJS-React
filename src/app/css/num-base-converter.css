@@ -77,6 +77,7 @@
   position: relative;
   display: inline-block;
   cursor: pointer;
+  min-width: 20px;
   transition: transform 0.3s ease-in;
 }
 
@@ -108,8 +109,16 @@ button.clear-button:active {
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
+  .input-group {
+    flex-wrap: wrap;
+  }
   .input-group label,
   .input-group button {
     margin: 0.5rem 0;
+    flex: 0 0 100%;
+  }
+
+  .input-group input {
+    margin: 0 20px 0 0;
   }
 }
