@@ -1,48 +1,21 @@
-import React, { useState, useEffect } from "react";
-import DOMPurify from "dompurify"; // Import DOMPurify
+import React, { useState, useEffect, useCallback } from "react";
+import DOMPurify from "dompurify";
 
 const StringCaseConverter = () => {
   const [input, setInput] = useState("");
   const [caseType, setCaseType] = useState("camelCase");
   const [output, setOutput] = useState("");
-  const [sanitizedOutput, setSanitizedOutput] = useState(""); // State for sanitized output
-
-  useEffect(() => {
-    convertString(); // Call convertString on input or caseType change
-  }, [input, caseType]); // Dependencies for useEffect
-
-  useEffect(() => {
-    // Sanitize the output
-    setSanitizedOutput(DOMPurify.sanitize(output));
-  }, [output]);
-
-  const handleInputChange = (e) => {
-    setInput(e.target.value);
-  };
-
-  const handleCaseChange = (e) => {
-    setCaseType(e.target.value);
-  };
+  const [sanitizedOutput, setSanitizedOutput] = useState("");
 
   // Conversion functions
   const toCamelCase = (str) => {
-    // Replace any non-alphanumeric character (excluding emojis) followed by an alphanumeric
-    // with the uppercase version of the alphanumeric character
-    return (
-      str
-        // Step 1: Insert a space before any uppercase letter followed by a lowercase letter
-        .replace(/([a-z])([A-Z])/g, "$1 $2")
-        // Step 2: Replace underscores, hyphens, and spaces with a space
-        .replace(/[_\-]+/g, " ")
-        // Step 3: Lowercase the entire string
-        .toLowerCase()
-        // Step 4: Replace space followed by an alphanumeric with the uppercase version of the alphanumeric
-        .replace(/ (.)/g, (match) => match.toUpperCase())
-        // Step 5: Remove all spaces
-        .replace(/ /g, "")
-        // Step 6: Lowercase the first character if it's uppercase
-        .replace(/^[A-Z]/, (match) => match.toLowerCase())
-    );
+    return str
+      .replace(/([a-z])([A-Z])/g, "$1 $2")
+      .replace(/[_\-]+/g, " ")
+      .toLowerCase()
+      .replace(/ (.)/g, (match) => match.toUpperCase())
+      .replace(/ /g, "")
+      .replace(/^[A-Z]/, (match) => match.toLowerCase());
   };
 
   const toPascalCase = (str) => {
@@ -97,7 +70,7 @@ const StringCaseConverter = () => {
     return str.toLowerCase().replace(/\W+/g, "-");
   };
 
-  const convertString = () => {
+  const convertString = useCallback(() => {
     const convertLine = (line) => {
       switch (caseType) {
         case "camelCase":
@@ -129,9 +102,24 @@ const StringCaseConverter = () => {
       }
     };
 
-    // Split the input into lines, convert each line, and join them back
     const convertedLines = input.split("\n").map(convertLine);
     setOutput(convertedLines.join("\n"));
+  }, [input, caseType]);
+
+  useEffect(() => {
+    convertString();
+  }, [convertString]);
+
+  useEffect(() => {
+    setSanitizedOutput(DOMPurify.sanitize(output));
+  }, [output]);
+
+  const handleInputChange = (e) => {
+    setInput(e.target.value);
+  };
+
+  const handleCaseChange = (e) => {
+    setCaseType(e.target.value);
   };
 
   return (

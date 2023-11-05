@@ -7,29 +7,31 @@ function StringCaseConverterPage() {
     <>
       <Head>
         <title>
-          DevLoom RegExp Tester - Test and Learn Regular Expressions Easily
+          DevLoom String Case Converter - Easily Convert Text to Different Case
+          Styles
         </title>
         <meta
           name="description"
-          content="Master regular expressions with DevLoom&#39;s RegExp Tester. Test your patterns, find matches, and learn RegEx with real-time results. Perfect for beginners and experts alike."
+          content="Effortlessly transform text with DevLoom's String Case Converter. Convert to camelCase, PascalCase, snake_case, and more. Ideal for developers, content creators, and anyone needing versatile text formatting."
         />
       </Head>
 
       <div className="top-section">
-        <h1>DevLoom RegExp Tester - Fine-tune Your Pattern Matching Skills</h1>
+        <h1>DevLoom String Case Converter - Transform Text with Ease</h1>
         <p>
-          Streamline your RegEx testing with DevLoom&#39;s RegExp Tester. Our
-          interactive tool provides instant feedback on your regular
-          expressions, making it easier to match, search, and extract data like
-          a pro.
+          Simplify your text formatting with DevLoom's String Case Converter.
+          Our tool allows you to effortlessly convert strings into various case
+          styles, such as camelCase, PascalCase, snake_case, kebab-case, and
+          more.
         </p>
         <p>
-          Whether you&#39;re crafting complex patterns or learning the basics,
-          our RegExp Tester is designed to support and enhance your development
-          workflow. Get precise with your patterns today!
+          Perfect for developers, content creators, and digital marketers, our
+          String Case Converter is designed to make text manipulation simple and
+          efficient. Enhance your coding and content creation workflow with our
+          user-friendly interface.
         </p>
         <p className="get-started">
-          Free to Use - User-Friendly - Efficient RegEx Testing
+          Free to Use - Intuitive Design - Versatile Text Conversion
         </p>
       </div>
 
