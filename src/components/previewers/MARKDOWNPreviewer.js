@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import ReactMarkdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
 import remarkGfm from "remark-gfm";
-import "../../app/css/markdown-page.css";
+import "../../app/css/previewers.css";
 
 function MARKDOWNPreviewer() {
   const [markdown, setMarkdown] = useState("");

@@ -113,3 +113,23 @@
 .markdown-preview th {
   background-color: #e6f7ff;
 }
+
+/* String case converter styles */
+.string-case-converter * {
+  font-family: monospace;
+  line-height: 1.5;
+  font-size: 15px;
+}
+
+.case-list-selector {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+  margin: 20px 0;
+  font-size: 14px;
+}
+
+.case-list-selector select {
+  padding: 5px 10px;
+}
