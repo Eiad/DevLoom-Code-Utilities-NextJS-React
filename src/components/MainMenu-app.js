@@ -269,6 +269,22 @@ function MainMenu({ isMobileView, closeMenu }) {
               </Link>
             </div>
           </li>
+          <li className={getLinkClass("/StringCaseConverter")}>
+            <div>
+              <Link
+                href="/StringCaseConverter"
+                onClick={isMobileView ? closeMenu : null}
+              >
+                <Image
+                  src="/icons/convert-icon.svg"
+                  width={20}
+                  height={20}
+                  alt="YAML to JSON"
+                />
+                <span>String Case Converter</span>
+              </Link>
+            </div>
+          </li>
           <li className={getLinkClass("/HTMLEntityEncoder")}>
             <div>
               <Link
