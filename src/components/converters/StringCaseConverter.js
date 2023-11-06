@@ -6,6 +6,8 @@ const StringCaseConverter = () => {
   const [caseType, setCaseType] = useState("camelCase");
   const [output, setOutput] = useState("");
   const [sanitizedOutput, setSanitizedOutput] = useState("");
+  const [copyButtonText, setCopyButtonText] = useState("Copy");
+  const [isCopyButtonDisabled, setIsCopyButtonDisabled] = useState(true);
 
   // Conversion functions
   const toCamelCase = (str) => {
@@ -19,25 +21,52 @@ const StringCaseConverter = () => {
   };
 
   const toPascalCase = (str) => {
-    return str
-      .replace(/(?:^\w|[A-Z]|\b\w|\s+)/g, (match) => match.toUpperCase())
-      .replace(/\s+/g, "");
+    return (
+      str
+        // Replace underscores and hyphens with a space
+        .replace(/[-_]+/g, " ")
+        // Capitalize the first character of each word, convert the rest to lowercase
+        .replace(/\w\S*/g, (match) => {
+          return match.charAt(0).toUpperCase() + match.substr(1).toLowerCase();
+        })
+        // Remove all spaces
+        .replace(/\s+/g, "")
+    );
   };
 
   const toSnakeCase = (str) => {
-    return str.toLowerCase().replace(/\W+/g, "_");
+    // Insert an underscore before each uppercase letter that follows a lowercase letter or another uppercase letter followed by a lowercase letter
+    str = str.replace(/([a-z])([A-Z])|([A-Z])([A-Z][a-z])/g, "$1$3_$2$4");
+
+    // Replace spaces and punctuation with underscore, preserving emojis and foreign characters
+    str = str.replace(/[\s\p{P}]+/gu, "_");
+
+    return str.toLowerCase();
   };
 
   const toKebabCase = (str) => {
-    return str.toLowerCase().replace(/\W+/g, "-");
+    let kebab = str.replace(/([a-z])([A-Z])/g, "$1-$2").toLowerCase();
+    return kebab.replace(/[\s_]+|[^a-z0-9-\u0080-\uFFFF]/gi, "-");
   };
 
   const toScreamingKebabCase = (str) => {
-    return str.toUpperCase().replace(/\W+/g, "-");
+    let kebab = str.replace(/([a-z])([A-Z])/g, "$1-$2").toLowerCase();
+    kebab = kebab.replace(/[\s_]+|[^a-z0-9-\u0080-\uFFFF]/gi, "-");
+    return kebab.toUpperCase(); // Convert the entire string to uppercase
   };
 
   const toConstantCase = (str) => {
-    return str.toUpperCase().replace(/\W+/g, "_");
+    // Insert underscores before uppercase letters following lowercase letters
+    str = str.replace(/([a-z])([A-Z])/g, "$1_$2");
+
+    // Transform to uppercase
+    str = str.toUpperCase();
+
+    // Replace non-alphanumeric characters (excluding emojis and underscores) with underscores
+    // This regex keeps emojis and non-ASCII characters intact while replacing other non-alphanumeric characters
+    str = str.replace(/([^\w\_\u0080-\uFFFF]|_)+/g, "_");
+
+    return str;
   };
 
   const toUpperCase = (str) => {
@@ -49,25 +78,47 @@ const StringCaseConverter = () => {
   };
 
   const toCapitalizedCase = (str) => {
-    return str.replace(/\w\S*/g, (txt) => {
-      return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+    return str.toLowerCase().replace(/(^|_|-|\s)\w/g, (match) => {
+      return match.toUpperCase();
     });
   };
 
   const toSentenceCase = (str) => {
-    return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+    return str.charAt(0).toUpperCase() + str.slice(1);
   };
 
   const toTitleCase = (str) => {
     return str
-      .replace(/\w\S*/g, (txt) => {
-        return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+      .split(" ")
+      .map((word) => {
+        // Check for snake_case, camelCase, or hyphenated words
+        if (/_/.test(word) || /[a-z][A-Z]/.test(word)) {
+          return word; // Leave camelCase and snake_case words as they are
+        } else if (/-/.test(word)) {
+          // For hyphenated words, only capitalize after the hyphen
+          return word
+            .split("-")
+            .map((part, index) => {
+              if (index === 0) return part; // First part remains as is
+              return (
+                part.charAt(0).toUpperCase() + part.substr(1).toLowerCase()
+              );
+            })
+            .join("-");
+        } else {
+          // For normal words, capitalize the first letter
+          return word.charAt(0).toUpperCase() + word.substr(1).toLowerCase();
+        }
       })
-      .replace(/\s+/g, " ");
+      .join(" ");
   };
 
   const toSlugCase = (str) => {
-    return str.toLowerCase().replace(/\W+/g, "-");
+    return str
+      .normalize("NFD") // Normalize to decompose special characters
+      .replace(/[\u0300-\u036f]/g, "") // Remove diacritics
+      .toLowerCase()
+      .replace(/\W+/g, "-"); // Replace one or more non-word characters with a single hyphen
   };
 
   const convertString = useCallback(() => {
@@ -105,6 +156,22 @@ const StringCaseConverter = () => {
     const convertedLines = input.split("\n").map(convertLine);
     setOutput(convertedLines.join("\n"));
   }, [input, caseType]);
+
+  // New function to handle copying text
+  const handleCopy = () => {
+    navigator.clipboard
+      .writeText(sanitizedOutput)
+      .then(() => {
+        setCopyButtonText("Copied!");
+        setTimeout(() => setCopyButtonText("Copy"), 2000);
+      })
+      .catch((err) => console.error("Error copying text: ", err));
+  };
+
+  // Update the disabled state of the copy button based on input
+  useEffect(() => {
+    setIsCopyButtonDisabled(input.trim() === "");
+  }, [input]);
 
   useEffect(() => {
     convertString();
@@ -161,12 +228,19 @@ const StringCaseConverter = () => {
           cols="50"
         />
         <div className="markdown-preview border-round">
-          {sanitizedOutput.split("\n").map((line, index) => (
-            <React.Fragment key={index}>
-              <span>{line}</span>
-              <br />
-            </React.Fragment>
-          ))}
+          <div className="markdown-preview-area">
+            {sanitizedOutput.split("\n").map((line, index) => (
+              <React.Fragment key={index}>
+                <span>{line}</span>
+                <br />
+              </React.Fragment>
+            ))}
+          </div>
+          <div className="copy-text text-right">
+            <button onClick={handleCopy} disabled={isCopyButtonDisabled}>
+              {copyButtonText}
+            </button>
+          </div>
         </div>
       </div>
     </div>

@@ -330,6 +330,26 @@ function MainMenu({ isMobileView, closeMenu }) {
               </span>
             </div>
           </li>
+          <li className={getLinkClass("/StringCaseConverter")}>
+            <div>
+              <span
+                className="menu-a"
+                href="/HTMLEntityEncoder"
+                onClick={(e) => {
+                  e.preventDefault();
+                  navigateAndRefresh("/StringCaseConverter");
+                }}
+              >
+                <Image
+                  src="/icons/convert-icon.svg"
+                  width={20}
+                  height={20}
+                  alt="HTML Entity Encoder"
+                />
+                <span>String Case Converter</span>
+              </span>
+            </div>
+          </li>
           <li className={getLinkClass("/HTMLEntityEncoder")}>
             <div>
               <span
@@ -353,7 +373,6 @@ function MainMenu({ isMobileView, closeMenu }) {
           <li className="menu-converters">
             <p>Previewers</p>
           </li>
-
           <li className={getLinkClass("/HTMLPreviewer")}>
             <div>
               <span
