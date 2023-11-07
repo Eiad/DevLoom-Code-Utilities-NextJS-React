@@ -86,8 +86,10 @@ const validateLicense = async (req, res) => {
         message: "The license is valid, but it has already been activated.",
       });
     } else if (documentID) {
+      const usageID = Math.random().toString(36).substring(2, 7);
       const documentRef = doc(db, "GUMROAD_SALES", documentID);
-      await updateDoc(documentRef, { isValidated: true });
+      await updateDoc(documentRef, { isValidated: true, usageID });
+
       const docData = (await getDocs(q)).docs[0].data();
       const responseData = {
         message: "License Activated",
@@ -95,6 +97,7 @@ const validateLicense = async (req, res) => {
         EMail: docData.EMail,
         LicenseKey: docData.LicenseKey,
         PurchaseDate: docData.PurchaseDate,
+        usageID,
       };
       //On Success show "License Activated"
       return res.status(200).json(responseData);

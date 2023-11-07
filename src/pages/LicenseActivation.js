@@ -18,6 +18,7 @@ const LicenseActivation = () => {
         EMail: localStorage.getItem("EMail"),
         LicenseKey: localStorage.getItem("LicenseKey"),
         PurchaseDate: localStorage.getItem("PurchaseDate"),
+        usageID: localStorage.getItem("usageID"), // retrieving usageID
       };
       setLicenseData(storedLicenseData);
     }
@@ -51,6 +52,7 @@ const LicenseActivation = () => {
           localStorage.setItem("EMail", data.EMail);
           localStorage.setItem("LicenseKey", data.LicenseKey);
           localStorage.setItem("PurchaseDate", data.PurchaseDate);
+          localStorage.setItem("usageID", data.usageID); // storing usageID
           setLicenseActivated(true);
           window.location.reload();
         }
