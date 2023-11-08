@@ -17,8 +17,8 @@ const LicenseDeactivated = () => {
         </p>
         <p className="deactivated-instruction">
           If you believe this is an error, kindly contact us via your Gumroad
-          account and we'll help out! You can also try adding your license again{" "}
-          <Link href="/LicenseActivation">here</Link>.
+          account and we&#39;ll help out! You can also try adding your license
+          again <Link href="/LicenseActivation">here</Link>.
         </p>
       </div>
     </>
