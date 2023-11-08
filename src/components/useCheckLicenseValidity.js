@@ -1,25 +1,34 @@
 import { useEffect } from "react";
+import { useRouter } from "next/router";
 
 const useCheckLicenseValidity = (setLicenseActivated) => {
+  const router = useRouter();
+
   useEffect(() => {
-    let isOnline = () => navigator.onLine;
+    const isOnline = () => navigator.onLine;
 
     const checkLicenseValidity = async () => {
       const licenseKey = localStorage.getItem("LicenseKey");
       const usageID = localStorage.getItem("usageID");
 
       if (licenseKey && usageID && isOnline()) {
-        const res = await fetch("https://www.devloom.net/api/verifyLicense", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ licenseKey, usageID }),
-        });
+        try {
+          const res = await fetch("https://www.devloom.net/api/verifyLicense", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ licenseKey, usageID }),
+          });
 
-        if (res.ok) {
-          setLicenseActivated(true);
-        } else {
-          localStorage.clear();
-          window.location.href = "/LicenseDeactivated";
+          if (res.ok) {
+            setLicenseActivated(true);
+          } else {
+            localStorage.clear();
+            router
+              .push("/LicenseDeactivated")
+              .then(() => window.location.reload());
+          }
+        } catch (error) {
+          console.error("Error verifying license:", error);
         }
       }
     };
@@ -41,7 +50,7 @@ const useCheckLicenseValidity = (setLicenseActivated) => {
         );
       }
     }
-  }, [setLicenseActivated]);
+  }, [setLicenseActivated, router]);
 };
 
 export default useCheckLicenseValidity;
