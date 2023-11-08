@@ -1,4 +1,4 @@
-import XMLFormatter from "../components/formatters/XMLFormatter";
+import XMLFormatter from "../../components/formatters/XMLFormatter";
 import Head from "next/head";
 
 function XMLFormatterPage() {

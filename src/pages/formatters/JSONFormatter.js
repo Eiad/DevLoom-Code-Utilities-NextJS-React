@@ -1,4 +1,4 @@
-import JSONFormatter from "../components/formatters/JSONFormatter";
+import JSONFormatter from "../../components/formatters/JSONFormatter";
 import Head from "next/head";
 
 function JSONFormatterPage() {

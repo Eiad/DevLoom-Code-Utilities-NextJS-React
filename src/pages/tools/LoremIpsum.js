@@ -1,4 +1,4 @@
-import LoremIpsum from "../components/loremipsum/LoremIpsum";
+import LoremIpsum from "../../components/loremipsum/LoremIpsum";
 import Head from "next/head";
 
 function LoremIpsumPage() {

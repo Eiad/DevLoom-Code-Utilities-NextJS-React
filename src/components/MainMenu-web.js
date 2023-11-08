@@ -65,14 +65,14 @@ function MainMenu({ isMobileView, closeMenu }) {
               </span>
             </div>
           </li>
-          <li className={getLinkClass("/HTMLFormatter")}>
+          <li className={getLinkClass("/formatter/HTMLFormatter")}>
             <div>
               <span
                 className="menu-a"
-                href="/HTMLFormatter"
+                href="/formatters/HTMLFormatter"
                 onClick={(e) => {
                   e.preventDefault();
-                  navigateAndRefresh("/HTMLFormatter");
+                  navigateAndRefresh("/formatters/HTMLFormatter");
                 }}
               >
                 <Image
@@ -85,14 +85,14 @@ function MainMenu({ isMobileView, closeMenu }) {
               </span>
             </div>
           </li>
-          <li className={getLinkClass("/CSSFormatter")}>
+          <li className={getLinkClass("/formatter/CSSFormatter")}>
             <div>
               <span
                 className="menu-a"
-                href="/CSSFormatter"
+                href="/formatters/CSSFormatter"
                 onClick={(e) => {
                   e.preventDefault();
-                  navigateAndRefresh("/CSSFormatter");
+                  navigateAndRefresh("/formatters/CSSFormatter");
                 }}
               >
                 <Image
@@ -105,14 +105,14 @@ function MainMenu({ isMobileView, closeMenu }) {
               </span>
             </div>
           </li>
-          <li className={getLinkClass("/JSFormatter")}>
+          <li className={getLinkClass("/formatter/JSFormatter")}>
             <div>
               <span
                 className="menu-a"
-                href="/JSFormatter"
+                href="/formatters/JSFormatter"
                 onClick={(e) => {
                   e.preventDefault();
-                  navigateAndRefresh("/JSFormatter");
+                  navigateAndRefresh("/formatters/JSFormatter");
                 }}
               >
                 <Image
@@ -125,14 +125,14 @@ function MainMenu({ isMobileView, closeMenu }) {
               </span>
             </div>
           </li>
-          <li className={getLinkClass("/JSONFormatter")}>
+          <li className={getLinkClass("/formatter/JSONFormatter")}>
             <div>
               <span
                 className="menu-a"
-                href="/JSONFormatter"
+                href="/formatters/JSONFormatter"
                 onClick={(e) => {
                   e.preventDefault();
-                  navigateAndRefresh("/JSONFormatter");
+                  navigateAndRefresh("/formatters/JSONFormatter");
                 }}
               >
                 <Image
@@ -145,14 +145,14 @@ function MainMenu({ isMobileView, closeMenu }) {
               </span>
             </div>
           </li>
-          <li className={getLinkClass("/LESSFormatter")}>
+          <li className={getLinkClass("/formatter/LESSFormatter")}>
             <div>
               <span
                 className="menu-a"
-                href="/LESSFormatter"
+                href="/formatters/LESSFormatter"
                 onClick={(e) => {
                   e.preventDefault();
-                  navigateAndRefresh("/LESSFormatter");
+                  navigateAndRefresh("/formatters/LESSFormatter");
                 }}
               >
                 <Image
@@ -166,14 +166,14 @@ function MainMenu({ isMobileView, closeMenu }) {
             </div>
           </li>
 
-          <li className={getLinkClass("/XMLFormatter")}>
+          <li className={getLinkClass("/formatter/XMLFormatter")}>
             <div>
               <span
                 className="menu-a"
-                href="/XMLFormatter"
+                href="/formatters/XMLFormatter"
                 onClick={(e) => {
                   e.preventDefault();
-                  navigateAndRefresh("/XMLFormatter");
+                  navigateAndRefresh("/formatters/XMLFormatter");
                 }}
               >
                 <Image
@@ -186,14 +186,14 @@ function MainMenu({ isMobileView, closeMenu }) {
               </span>
             </div>
           </li>
-          <li className={getLinkClass("/TypeScriptFormatter")}>
+          <li className={getLinkClass("/formatter/TypeScriptFormatter")}>
             <div>
               <span
                 className="menu-a"
-                href="/TypeScriptFormatter"
+                href="/formatters/TypeScriptFormatter"
                 onClick={(e) => {
                   e.preventDefault();
-                  navigateAndRefresh("/TypeScriptFormatter");
+                  navigateAndRefresh("/formatters/TypeScriptFormatter");
                 }}
               >
                 <Image
@@ -206,14 +206,14 @@ function MainMenu({ isMobileView, closeMenu }) {
               </span>
             </div>
           </li>
-          <li className={getLinkClass("/GraphQLFormatter")}>
+          <li className={getLinkClass("/formatter/GraphQLFormatter")}>
             <div>
               <span
                 className="menu-a"
-                href="/GraphQLFormatter"
+                href="/formatters/GraphQLFormatter"
                 onClick={(e) => {
                   e.preventDefault();
-                  navigateAndRefresh("/GraphQLFormatter");
+                  navigateAndRefresh("/formatters/GraphQLFormatter");
                 }}
               >
                 <Image
@@ -229,14 +229,14 @@ function MainMenu({ isMobileView, closeMenu }) {
           <li className="menu-converters">
             <p>Converters</p>
           </li>
-          <li className={getLinkClass("/HTMLJSXConverter")}>
+          <li className={getLinkClass("/converters/HTMLJSXConverter")}>
             <div>
               <span
                 className="menu-a"
-                href="/HTMLJSXConverter"
+                href="/converters/HTMLJSXConverter"
                 onClick={(e) => {
                   e.preventDefault();
-                  navigateAndRefresh("/HTMLJSXConverter");
+                  navigateAndRefresh("/converters/HTMLJSXConverter");
                 }}
               >
                 <Image
@@ -290,11 +290,11 @@ function MainMenu({ isMobileView, closeMenu }) {
               </span>
             </div>
           </li>
-          <li className={getLinkClass("/Base64Encoder")}>
+          <li className={getLinkClass("/converters/Base64Encoder")}>
             <div>
               <span
                 className="menu-a"
-                href="/Base64Encoder"
+                href="/converters/Base64Encoder"
                 onClick={(e) => {
                   e.preventDefault();
                   navigateAndRefresh("/Base64Encoder");
@@ -330,14 +330,14 @@ function MainMenu({ isMobileView, closeMenu }) {
               </span>
             </div>
           </li>
-          <li className={getLinkClass("/StringCaseConverter")}>
+          <li className={getLinkClass("/converters/StringCaseConverter")}>
             <div>
               <span
                 className="menu-a"
-                href="/HTMLEntityEncoder"
+                href="/converters/StringCaseConverter"
                 onClick={(e) => {
                   e.preventDefault();
-                  navigateAndRefresh("/StringCaseConverter");
+                  navigateAndRefresh("/converters/StringCaseConverter");
                 }}
               >
                 <Image
@@ -373,14 +373,14 @@ function MainMenu({ isMobileView, closeMenu }) {
           <li className="menu-converters">
             <p>Previewers</p>
           </li>
-          <li className={getLinkClass("/HTMLPreviewer")}>
+          <li className={getLinkClass("/previewers/HTMLPreviewer")}>
             <div>
               <span
                 className="menu-a"
                 href="/HTMLPreviewer"
                 onClick={(e) => {
                   e.preventDefault();
-                  navigateAndRefresh("/HTMLPreviewer");
+                  navigateAndRefresh("/previewers/HTMLPreviewer");
                 }}
               >
                 <Image
@@ -393,14 +393,14 @@ function MainMenu({ isMobileView, closeMenu }) {
               </span>
             </div>
           </li>
-          <li className={getLinkClass("/MARKDOWNPreviewer")}>
+          <li className={getLinkClass("/previewers/MARKDOWNPreviewer")}>
             <div>
               <span
                 className="menu-a"
                 href="/MARKDOWNPreviewer"
                 onClick={(e) => {
                   e.preventDefault();
-                  navigateAndRefresh("/MARKDOWNPreviewer");
+                  navigateAndRefresh("/previewers/MARKDOWNPreviewer");
                 }}
               >
                 <Image
@@ -436,11 +436,11 @@ function MainMenu({ isMobileView, closeMenu }) {
               </span>
             </div>
           </li>
-          <li className={getLinkClass("/JWTDebugger")}>
+          <li className={getLinkClass("/debuggers/JWTDebugger")}>
             <div>
               <span
                 className="menu-a"
-                href="/JWTDebugger"
+                href="/debuggers/JWTDebugger"
                 onClick={(e) => {
                   e.preventDefault();
                   navigateAndRefresh("/JWTDebugger");
@@ -456,14 +456,14 @@ function MainMenu({ isMobileView, closeMenu }) {
               </span>
             </div>
           </li>
-          <li className={getLinkClass("/RegExpTester")}>
+          <li className={getLinkClass("/debuggers/RegExpTester")}>
             <div>
               <span
                 className="menu-a"
                 href="/RegExpTester"
                 onClick={(e) => {
                   e.preventDefault();
-                  navigateAndRefresh("/RegExpTester");
+                  navigateAndRefresh("/debuggers/RegExpTester");
                 }}
               >
                 <Image

@@ -1,4 +1,4 @@
-import HTMLEntityEncoder from "../components/converters/HTMLEntityEncoder";
+import HTMLEntityEncoder from "../../components/converters/HTMLEntityEncoder";
 import Head from "next/head";
 
 function HTMLEntityEncoderPage() {

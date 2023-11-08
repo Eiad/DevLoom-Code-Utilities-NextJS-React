@@ -233,11 +233,14 @@ section.full-width-logo {
 }
 
 .main-menu li.current-page .menu-a,
-.main-menu li span.menu-a:hover {
+.main-menu li span.menu-a:hover,
+.main-menu li.current-page a,
+.main-menu li a:hover {
   background: rgb(0, 78, 172);
 }
 
-.main-menu li span.menu-a {
+.main-menu li span.menu-a,
+.main-menu li a {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -254,7 +257,8 @@ section.full-width-logo {
   cursor: pointer;
 }
 
-.main-menu li:last-child span.menu-a {
+.main-menu li:last-child span.menu-a,
+.main-menu li:last-child a {
   margin-bottom: 0;
 }
 

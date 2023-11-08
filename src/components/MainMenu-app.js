@@ -58,10 +58,10 @@ function MainMenu({ isMobileView, closeMenu }) {
               </Link>
             </div>
           </li>
-          <li className={getLinkClass("/HTMLFormatter")}>
+          <li className={getLinkClass("/formatters/HTMLFormatter")}>
             <div>
               <Link
-                href="/HTMLFormatter"
+                href="/formatters/HTMLFormatter"
                 onClick={isMobileView ? closeMenu : null}
               >
                 <Image
@@ -74,10 +74,10 @@ function MainMenu({ isMobileView, closeMenu }) {
               </Link>
             </div>
           </li>
-          <li className={getLinkClass("/CSSFormatter")}>
+          <li className={getLinkClass("/formatters/CSSFormatter")}>
             <div>
               <Link
-                href="/CSSFormatter"
+                href="/formatters/CSSFormatter"
                 onClick={isMobileView ? closeMenu : null}
               >
                 <Image
@@ -90,10 +90,10 @@ function MainMenu({ isMobileView, closeMenu }) {
               </Link>
             </div>
           </li>
-          <li className={getLinkClass("/JSFormatter")}>
+          <li className={getLinkClass("/formatters/JSFormatter")}>
             <div>
               <Link
-                href="/JSFormatter"
+                href="/formatters/JSFormatter"
                 onClick={isMobileView ? closeMenu : null}
               >
                 <Image
@@ -106,10 +106,10 @@ function MainMenu({ isMobileView, closeMenu }) {
               </Link>
             </div>
           </li>
-          <li className={getLinkClass("/JSONFormatter")}>
+          <li className={getLinkClass("/formatters/JSONFormatter")}>
             <div>
               <Link
-                href="/JSONFormatter"
+                href="/formatters/JSONFormatter"
                 onClick={isMobileView ? closeMenu : null}
               >
                 <Image
@@ -122,10 +122,10 @@ function MainMenu({ isMobileView, closeMenu }) {
               </Link>
             </div>
           </li>
-          <li className={getLinkClass("/LESSFormatter")}>
+          <li className={getLinkClass("/formatters/LESSFormatter")}>
             <div>
               <Link
-                href="/LESSFormatter"
+                href="/formatters/LESSFormatter"
                 onClick={isMobileView ? closeMenu : null}
               >
                 <Image
@@ -138,10 +138,10 @@ function MainMenu({ isMobileView, closeMenu }) {
               </Link>
             </div>
           </li>
-          <li className={getLinkClass("/XMLFormatter")}>
+          <li className={getLinkClass("/formatters/XMLFormatter")}>
             <div>
               <Link
-                href="/XMLFormatter"
+                href="/formatters/XMLFormatter"
                 onClick={isMobileView ? closeMenu : null}
               >
                 <Image
@@ -154,10 +154,10 @@ function MainMenu({ isMobileView, closeMenu }) {
               </Link>
             </div>
           </li>
-          <li className={getLinkClass("/TypeScriptFormatter")}>
+          <li className={getLinkClass("/formatters/TypeScriptFormatter")}>
             <div>
               <Link
-                href="/TypeScriptFormatter"
+                href="/formatters/TypeScriptFormatter"
                 onClick={isMobileView ? closeMenu : null}
               >
                 <Image
@@ -170,10 +170,10 @@ function MainMenu({ isMobileView, closeMenu }) {
               </Link>
             </div>
           </li>
-          <li className={getLinkClass("/GraphQLFormatter")}>
+          <li className={getLinkClass("/formatters/GraphQLFormatter")}>
             <div>
               <Link
-                href="/GraphQLFormatter"
+                href="/formatters/GraphQLFormatter"
                 onClick={isMobileView ? closeMenu : null}
               >
                 <Image
@@ -189,10 +189,10 @@ function MainMenu({ isMobileView, closeMenu }) {
           <li className="menu-converters">
             <p>Converters</p>
           </li>
-          <li className={getLinkClass("/HTMLJSXConverter")}>
+          <li className={getLinkClass("/converters/HTMLJSXConverter")}>
             <div>
               <Link
-                href="/HTMLJSXConverter"
+                href="/converters/HTMLJSXConverter"
                 onClick={isMobileView ? closeMenu : null}
               >
                 <Image
@@ -205,10 +205,10 @@ function MainMenu({ isMobileView, closeMenu }) {
               </Link>
             </div>
           </li>
-          <li className={getLinkClass("/JSONYAMLConverter")}>
+          <li className={getLinkClass("/converters/JSONYAMLConverter")}>
             <div>
               <Link
-                href="/JSONYAMLConverter"
+                href="/converters/JSONYAMLConverter"
                 onClick={isMobileView ? closeMenu : null}
               >
                 <Image
@@ -221,10 +221,10 @@ function MainMenu({ isMobileView, closeMenu }) {
               </Link>
             </div>
           </li>
-          <li className={getLinkClass("/YAMLJSONConverter")}>
+          <li className={getLinkClass("/converters/YAMLJSONConverter")}>
             <div>
               <Link
-                href="/YAMLJSONConverter"
+                href="/converters/YAMLJSONConverter"
                 onClick={isMobileView ? closeMenu : null}
               >
                 <Image
@@ -237,10 +237,10 @@ function MainMenu({ isMobileView, closeMenu }) {
               </Link>
             </div>
           </li>
-          <li className={getLinkClass("/Base64Encoder")}>
+          <li className={getLinkClass("/converters/Base64Encoder")}>
             <div>
               <Link
-                href="/Base64Encoder"
+                href="/converters/Base64Encoder"
                 onClick={isMobileView ? closeMenu : null}
               >
                 <Image
@@ -253,10 +253,10 @@ function MainMenu({ isMobileView, closeMenu }) {
               </Link>
             </div>
           </li>
-          <li className={getLinkClass("/NumerBaseConverter")}>
+          <li className={getLinkClass("/converters/NumerBaseConverter")}>
             <div>
               <Link
-                href="/NumerBaseConverter"
+                href="/converters/NumerBaseConverter"
                 onClick={isMobileView ? closeMenu : null}
               >
                 <Image
@@ -269,10 +269,10 @@ function MainMenu({ isMobileView, closeMenu }) {
               </Link>
             </div>
           </li>
-          <li className={getLinkClass("/StringCaseConverter")}>
+          <li className={getLinkClass("/converters/StringCaseConverter")}>
             <div>
               <Link
-                href="/StringCaseConverter"
+                href="/converters/StringCaseConverter"
                 onClick={isMobileView ? closeMenu : null}
               >
                 <Image
@@ -285,10 +285,10 @@ function MainMenu({ isMobileView, closeMenu }) {
               </Link>
             </div>
           </li>
-          <li className={getLinkClass("/HTMLEntityEncoder")}>
+          <li className={getLinkClass("/converters/HTMLEntityEncoder")}>
             <div>
               <Link
-                href="/HTMLEntityEncoder"
+                href="/converters/HTMLEntityEncoder"
                 onClick={isMobileView ? closeMenu : null}
               >
                 <Image
@@ -304,10 +304,10 @@ function MainMenu({ isMobileView, closeMenu }) {
           <li className="menu-converters">
             <p>Previewers</p>
           </li>
-          <li className={getLinkClass("/HTMLPreviewer")}>
+          <li className={getLinkClass("/previewers/HTMLPreviewer")}>
             <div>
               <Link
-                href="/HTMLPreviewer"
+                href="/previewers/HTMLPreviewer"
                 onClick={isMobileView ? closeMenu : null}
               >
                 <Image
@@ -320,10 +320,10 @@ function MainMenu({ isMobileView, closeMenu }) {
               </Link>
             </div>
           </li>
-          <li className={getLinkClass("/MARKDOWNPreviewer")}>
+          <li className={getLinkClass("/previewers/MARKDOWNPreviewer")}>
             <div>
               <Link
-                href="/MARKDOWNPreviewer"
+                href="/previewers/MARKDOWNPreviewer"
                 onClick={isMobileView ? closeMenu : null}
               >
                 <Image
@@ -339,10 +339,10 @@ function MainMenu({ isMobileView, closeMenu }) {
           <li className="menu-converters">
             <p>Helpful Tools</p>
           </li>
-          <li className={getLinkClass("/LoremIpsum")}>
+          <li className={getLinkClass("/tools/LoremIpsum")}>
             <div>
               <Link
-                href="/LoremIpsum"
+                href="/tools/LoremIpsum"
                 onClick={isMobileView ? closeMenu : null}
               >
                 <Image
@@ -355,10 +355,10 @@ function MainMenu({ isMobileView, closeMenu }) {
               </Link>
             </div>
           </li>
-          <li className={getLinkClass("/JWTDebugger")}>
+          <li className={getLinkClass("/debuggers/JWTDebugger")}>
             <div>
               <Link
-                href="/JWTDebugger"
+                href="/debuggers/JWTDebugger"
                 onClick={isMobileView ? closeMenu : null}
               >
                 <Image
@@ -371,10 +371,10 @@ function MainMenu({ isMobileView, closeMenu }) {
               </Link>
             </div>
           </li>
-          <li className={getLinkClass("/RegExpTester")}>
+          <li className={getLinkClass("/debuggers/RegExpTester")}>
             <div>
               <Link
-                href="/RegExpTester"
+                href="/debuggers/RegExpTester"
                 onClick={isMobileView ? closeMenu : null}
               >
                 <Image

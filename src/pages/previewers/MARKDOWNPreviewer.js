@@ -1,4 +1,4 @@
-import MARKDOWNPreviewer from "../components/previewers/MARKDOWNPreviewer";
+import MARKDOWNPreviewer from "../../components/previewers/MARKDOWNPreviewer";
 import Head from "next/head";
 
 function MARKDOWNPreviewerPage() {

@@ -1,6 +1,6 @@
-import StringCaseConverter from "../components/converters/StringCaseConverter";
+import StringCaseConverter from "../../components/converters/StringCaseConverter";
 import Head from "next/head";
-import "../app/css/previewers.css";
+import "../../app/css/previewers.css";
 
 function StringCaseConverterPage() {
   return (

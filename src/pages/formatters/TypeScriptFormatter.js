@@ -1,4 +1,4 @@
-import TypeScriptFormatter from "../components/formatters/TypeScriptFormatter";
+import TypeScriptFormatter from "../../components/formatters/TypeScriptFormatter";
 import Head from "next/head";
 
 function TypeScriptFormatterPage() {

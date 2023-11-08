@@ -1,4 +1,4 @@
-import Base64Encoder from "../components/converters/Base64Encoder";
+import Base64Encoder from "../../components/converters/Base64Encoder";
 import Head from "next/head";
 
 function Base64EncoderPage() {

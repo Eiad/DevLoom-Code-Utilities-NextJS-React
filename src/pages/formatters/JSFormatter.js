@@ -1,4 +1,4 @@
-import JSFormatter from "../components/formatters/JSFormatter";
+import JSFormatter from "../../components/formatters/JSFormatter";
 import Head from "next/head";
 
 function JSFormatterPage() {

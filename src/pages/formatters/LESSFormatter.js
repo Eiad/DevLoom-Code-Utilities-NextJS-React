@@ -1,4 +1,4 @@
-import LESSFormatter from "../components/formatters/LESSFormatter";
+import LESSFormatter from "../../components/formatters/LESSFormatter";
 import Head from "next/head";
 
 function LESSFormatterPage() {

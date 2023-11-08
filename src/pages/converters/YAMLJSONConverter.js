@@ -1,4 +1,4 @@
-import YAMLJSONConverter from "../components/converters/YAMLJSONConverter";
+import YAMLJSONConverter from "../../components/converters/YAMLJSONConverter";
 import Head from "next/head";
 
 function YAMLJSONConverterPage() {

@@ -1,4 +1,4 @@
-import JSONYAMLConverter from "../components/converters/JSONYAMLConverter";
+import JSONYAMLConverter from "../../components/converters/JSONYAMLConverter";
 
 import Head from "next/head";
 

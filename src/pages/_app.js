@@ -4,8 +4,8 @@ import "../app/css/reset.css";
 import "../app/css/globals.css";
 import "../app/css/responsive.css";
 import Head from "next/head";
-import MainMenu from "../components/MainMenu-web";
-//import MainMenu from "../components/MainMenu-app";
+//import MainMenu from "../components/MainMenu-web";
+import MainMenu from "../components/MainMenu-app";
 import Image from "next/image";
 import Link from "next/link";
 // TEMO COMMENTING
@@ -15,6 +15,51 @@ function MyApp({ Component, pageProps }) {
   // State to manage the open/close status of the menu
   const [isMenuOpen, setIsMenuOpen] = useState(true);
   const [isMobileView, setIsMobileView] = useState(false);
+  const [licenseActivated, setLicenseActivated] = useState(false);
+
+  // License validation check
+  useEffect(() => {
+    const checkLicenseValidity = async () => {
+      const licenseKey = localStorage.getItem("LicenseKey");
+      const usageID = localStorage.getItem("usageID");
+
+      if (licenseKey && usageID) {
+        const res = await fetch("https://www.devloom.net/api/verifyLicense", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ licenseKey, usageID }),
+        });
+
+        if (res.ok) {
+          setLicenseActivated(true);
+          // License verification successful, load and display license data
+        } else {
+          // License verification failed, clear local storage and redirect
+          localStorage.clear();
+          window.location.href = "/LicenseDeactivated";
+        }
+      }
+    };
+
+    const activationStatus = localStorage.getItem("Devloom");
+    const lastCheckedUpdateDate = localStorage.getItem("lastCheckedUpdateDate");
+
+    // Check if the license has been activated and 30 days have passed since the last check
+    if (activationStatus === "Activated") {
+      const currentDate = new Date();
+      const nextCheckDate = new Date(lastCheckedUpdateDate);
+      nextCheckDate.setDate(nextCheckDate.getDate() - 1); //Num of days to check again should be 30 days
+
+      if (!lastCheckedUpdateDate || currentDate >= nextCheckDate) {
+        checkLicenseValidity();
+        localStorage.setItem(
+          "lastCheckedUpdateDate",
+          currentDate.toISOString()
+        );
+      }
+    }
+  }, []);
+
   // TEMO COMMENTING
   // const router = useRouter();
 

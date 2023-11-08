@@ -1,4 +1,4 @@
-import NumerBaseConverter from "../components/converters/NumerBaseConverter";
+import NumerBaseConverter from "../../components/converters/NumerBaseConverter";
 import Head from "next/head";
 
 function NumerBaseConverterPage() {

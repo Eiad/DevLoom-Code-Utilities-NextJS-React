@@ -24,6 +24,45 @@ const LicenseActivation = () => {
     }
   }, []);
 
+  useEffect(() => {
+    const checkLicenseValidity = async () => {
+      const licenseKey = localStorage.getItem("LicenseKey");
+      const usageID = localStorage.getItem("usageID");
+
+      if (licenseKey && usageID) {
+        const res = await fetch("https://www.devloom.net/api/verifyLicense", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ licenseKey, usageID }),
+        });
+
+        if (res.ok) {
+          setLicenseActivated(true);
+          // License verification successful, load and display license data
+        } else {
+          // License verification failed, clear local storage and redirect
+          localStorage.clear();
+          window.location.href = "/LicenseDeactivated";
+        }
+      }
+    };
+
+    const activationStatus = localStorage.getItem("Devloom");
+    const lastCheckedDate = localStorage.getItem("lastCheckedDate");
+
+    // Check if the license has been activated and 30 days have passed since the last check
+    if (activationStatus === "Activated") {
+      const currentDate = new Date();
+      const nextCheckDate = new Date(lastCheckedDate);
+      nextCheckDate.setDate(nextCheckDate.getDate() + 30);
+
+      if (!lastCheckedDate || currentDate >= nextCheckDate) {
+        checkLicenseValidity();
+        localStorage.setItem("lastCheckedDate", currentDate.toISOString());
+      }
+    }
+  }, []);
+
   const handleActivate = async () => {
     try {
       setIsLoading(true);

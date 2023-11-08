@@ -1,4 +1,4 @@
-import HTMLPreviewer from "../components/previewers/HTMLPreviewer";
+import HTMLPreviewer from "../../components/previewers/HTMLPreviewer";
 import Head from "next/head";
 
 function HTMLPreviewerPage() {

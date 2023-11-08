@@ -1,4 +1,4 @@
-import GraphQLFormatter from "../components/formatters/GraphQLFormatter";
+import GraphQLFormatter from "../../components/formatters/GraphQLFormatter";
 import Head from "next/head";
 
 function GraphQLFormatterPage() {

@@ -1,4 +1,4 @@
-import RegExpTester from "../components/debuggers/RegExpTester";
+import RegExpTester from "../../components/debuggers/RegExpTester";
 import Head from "next/head";
 
 function RegExpTesterPage() {

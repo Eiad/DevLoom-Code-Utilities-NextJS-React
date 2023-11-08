@@ -1,4 +1,4 @@
-import HTMLJSXConverter from "../components/converters/HTMLJSXConverter";
+import HTMLJSXConverter from "../../components/converters/HTMLJSXConverter";
 
 import Head from "next/head";
 
