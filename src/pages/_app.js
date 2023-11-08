@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Analytics } from "@vercel/analytics/react";
+//import { Analytics } from "@vercel/analytics/react";
 import "../app/css/reset.css";
 import "../app/css/globals.css";
 import "../app/css/responsive.css";
@@ -17,11 +17,13 @@ function MyApp({ Component, pageProps }) {
 
   // License validation check
   useEffect(() => {
+    let isOnline = () => navigator.onLine;
+
     const checkLicenseValidity = async () => {
       const licenseKey = localStorage.getItem("LicenseKey");
       const usageID = localStorage.getItem("usageID");
-
-      if (licenseKey && usageID) {
+      // Function to check for internet connection
+      if (licenseKey && usageID && isOnline()) {
         const res = await fetch("https://www.devloom.net/api/verifyLicense", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -41,13 +43,14 @@ function MyApp({ Component, pageProps }) {
 
     const activationStatus = localStorage.getItem("Devloom");
     const lastCheckedUpdateDate = localStorage.getItem("lastCheckedUpdateDate");
-
     // Check if the license has been activated and 30 days have passed since the last check
     if (activationStatus === "Activated") {
+      setLicenseActivated(true);
       const currentDate = new Date();
       const nextCheckDate = new Date(lastCheckedUpdateDate);
       nextCheckDate.setDate(nextCheckDate.getDate() - 1); //Num of days to check again should be 30 days
 
+      // Check for internet connection before verifying license
       if (!lastCheckedUpdateDate || currentDate >= nextCheckDate) {
         checkLicenseValidity();
         localStorage.setItem(
@@ -146,7 +149,7 @@ function MyApp({ Component, pageProps }) {
           <Component {...pageProps} />
         </section>
       </div>
-      <Analytics />
+      {/* <Analytics /> */}
     </>
   );
 }

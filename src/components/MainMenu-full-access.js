@@ -14,15 +14,6 @@ function MainMenu({ isMobileView, closeMenu }) {
     }
   }, []);
 
-  const navigateAndRefresh = (url) => {
-    // If mobile view, close the menu first.
-    if (isMobileView && closeMenu) {
-      closeMenu();
-    }
-    // Next.js router push followed by window location reload.
-    router.push(url).then(() => window.location.reload());
-  };
-
   const getLinkClass = (path) => {
     return router.pathname === path ? "current-page" : "";
   };
