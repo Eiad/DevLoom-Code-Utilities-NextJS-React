@@ -91,3 +91,31 @@ h1 {
 .license-infoText span {
   color: #000000;
 }
+
+/* License deactivation page */
+.license-deactivated-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 50px;
+  text-align: center;
+  background-color: #f7f7f7;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.deactivated-header {
+  color: #333;
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.deactivated-message {
+  color: #555;
+  font-size: 1.2em;
+}
+
+.deactivated-instruction {
+  color: #888;
+  font-size: 1em;
+  margin-top: 20px;
+}

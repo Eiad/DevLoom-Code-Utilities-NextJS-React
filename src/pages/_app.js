@@ -4,12 +4,10 @@ import "../app/css/reset.css";
 import "../app/css/globals.css";
 import "../app/css/responsive.css";
 import Head from "next/head";
-//import MainMenu from "../components/MainMenu-web";
-import MainMenu from "../components/MainMenu-app";
+import MainMenu from "../components/MainMenu-full-access";
+import MainMenuDemo from "../components/MainMenu-demo-access";
 import Image from "next/image";
 import Link from "next/link";
-// TEMO COMMENTING
-// import { useRouter } from "next/router";
 
 function MyApp({ Component, pageProps }) {
   // State to manage the open/close status of the menu
@@ -59,28 +57,6 @@ function MyApp({ Component, pageProps }) {
       }
     }
   }, []);
-
-  // TEMO COMMENTING
-  // const router = useRouter();
-
-  // DEMO COMMENTING - List of routes that can be accessed without license activation
-  // const freeRoutes = ["/HTMLFormatter"];
-  // useEffect(() => {
-  //   // Function to check license activation
-  //   const checkLicenseActivation = () => {
-  //     // If the current route is in the freeRoutes array, return early (do not check for activation)
-  //     if (freeRoutes.includes(router.pathname)) {
-  //       return;
-  //     }
-
-  //     const activationStatus = localStorage.getItem("Devloom");
-  //     if (activationStatus !== "Activated") {
-  //       router.push("/LicenseActivation");
-  //     }
-  //   };
-
-  //   checkLicenseActivation();
-  // }, [router.pathname]);
 
   // Set the menu's initial state based on the viewport width for mobile menu handling
   useEffect(() => {
@@ -139,10 +115,17 @@ function MyApp({ Component, pageProps }) {
             />
           </div>
           <div className="menu-content">
-            <MainMenu
-              isMobileView={isMobileView}
-              closeMenu={() => setIsMenuOpen(false)}
-            />
+            {licenseActivated ? (
+              <MainMenu
+                isMobileView={isMobileView}
+                closeMenu={() => setIsMenuOpen(false)}
+              />
+            ) : (
+              <MainMenuDemo
+                isMobileView={isMobileView}
+                closeMenu={() => setIsMenuOpen(false)}
+              />
+            )}
           </div>
         </section>
         <section
