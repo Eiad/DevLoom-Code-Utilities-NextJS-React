@@ -8,58 +8,15 @@ import MainMenu from "../components/MainMenu-full-access";
 import MainMenuDemo from "../components/MainMenu-demo-access";
 import Image from "next/image";
 import Link from "next/link";
+import useCheckLicenseValidity from "../components/useCheckLicenseValidity";
 
 function MyApp({ Component, pageProps }) {
   // State to manage the open/close status of the menu
   const [isMenuOpen, setIsMenuOpen] = useState(true);
   const [isMobileView, setIsMobileView] = useState(false);
   const [licenseActivated, setLicenseActivated] = useState(false);
-
   // License validation check
-  useEffect(() => {
-    let isOnline = () => navigator.onLine;
-
-    const checkLicenseValidity = async () => {
-      const licenseKey = localStorage.getItem("LicenseKey");
-      const usageID = localStorage.getItem("usageID");
-      // Function to check for internet connection
-      if (licenseKey && usageID && isOnline()) {
-        const res = await fetch("https://www.devloom.net/api/verifyLicense", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ licenseKey, usageID }),
-        });
-
-        if (res.ok) {
-          setLicenseActivated(true);
-          // License verification successful, load and display license data
-        } else {
-          // License verification failed, clear local storage and redirect
-          localStorage.clear();
-          window.location.href = "/LicenseDeactivated";
-        }
-      }
-    };
-
-    const activationStatus = localStorage.getItem("Devloom");
-    const lastCheckedUpdateDate = localStorage.getItem("lastCheckedUpdateDate");
-    // Check if the license has been activated and 30 days have passed since the last check
-    if (activationStatus === "Activated") {
-      setLicenseActivated(true);
-      const currentDate = new Date();
-      const nextCheckDate = new Date(lastCheckedUpdateDate);
-      nextCheckDate.setDate(nextCheckDate.getDate() - 1); //Num of days to check again should be 30 days
-
-      // Check for internet connection before verifying license
-      if (!lastCheckedUpdateDate || currentDate >= nextCheckDate) {
-        checkLicenseValidity();
-        localStorage.setItem(
-          "lastCheckedUpdateDate",
-          currentDate.toISOString()
-        );
-      }
-    }
-  }, []);
+  useCheckLicenseValidity(setLicenseActivated);
 
   // Set the menu's initial state based on the viewport width for mobile menu handling
   useEffect(() => {
@@ -117,6 +74,7 @@ function MyApp({ Component, pageProps }) {
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             />
           </div>
+          {/* Main Menu content */}
           <div className="menu-content">
             {licenseActivated ? (
               <MainMenu
