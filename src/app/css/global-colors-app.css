@@ -1,0 +1,70 @@
+/* General styles */
+body {
+  background-color: #e6f7ff;
+  color: #333;
+}
+
+/* Background Color Combinations */
+.main-container.lefthand-open:before,
+.left-hand-column,
+.menu-logo,
+.footer-logo {
+  background-color: #0161d5;
+}
+
+.header-logo,
+.menu-burger,
+.main-menu li.current-page p,
+.main-menu li.current-page .menu-a,
+.main-menu li span.menu-a:hover,
+.main-menu li.current-page a,
+.main-menu li a:hover,
+li.menu-converters p {
+  background-color: #004eac;
+}
+
+.get-started {
+  color: #666;
+}
+
+.top-section {
+  background-color: #f7f9fc;
+}
+
+.main-menu {
+  background-color: #0162d6;
+}
+
+.main-body nav button,
+button {
+  background-color: #0162d6;
+}
+
+.main-body nav button:hover,
+.main-body nav button.selected-nav,
+button:hover {
+  background-color: #0056b3;
+}
+
+button[disabled] {
+  background-color: #ccc;
+  color: #999;
+}
+
+.formatter-page,
+.base64-encoder-page,
+.get-started {
+  background-color: #ffffff;
+}
+
+.main-menu li span.menu-a,
+.main-menu li a,
+.main-body nav button,
+button {
+  color: #ffffff;
+}
+
+.main-menu li.current-page p,
+li.menu-converters p {
+  color: #b5c5cc;
+}
