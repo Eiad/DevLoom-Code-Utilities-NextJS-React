@@ -36,10 +36,6 @@ button {
   color: #ffffff;
 }
 
-.get-started {
-  color: #666;
-}
-
 button[disabled] {
   background-color: #ccc;
   color: #999;
