@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 //import { Analytics } from "@vercel/analytics/react";
 import "../app/css/reset.css";
 import "../app/css/globals.css";
-import "../app/css/global-colors.css";
+import "../app/css/global-colors-app.css";
 
 import "../app/css/responsive.css";
 import Head from "next/head";
@@ -99,9 +99,9 @@ function MyApp({ Component, pageProps }) {
           <section className="full-width-logo">
             <Link alt="DevLoom Home page" href="/">
               <Image
-                src="/logo/devloom-logo.jpg"
+                src="/logo/devloom-logo.png"
                 width={132}
-                height={80}
+                height={86}
                 alt="Devloom logo"
               />
             </Link>
