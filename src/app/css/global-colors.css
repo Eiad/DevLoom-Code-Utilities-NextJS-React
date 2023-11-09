@@ -12,7 +12,8 @@ body {
 .main-container.lefthand-open:before,
 .left-hand-column,
 .menu-logo,
-.footer-logo {
+.footer-logo,
+.main-menu {
   background-color: #0161d5;
 }
 

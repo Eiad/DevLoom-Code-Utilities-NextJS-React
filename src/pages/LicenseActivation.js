@@ -97,10 +97,6 @@ const LicenseActivation = () => {
         }
       }, 3000);
     } catch (error) {
-      setIsLoading(false);
-      if (mainContainer) {
-        mainContainer.classList.remove("global-loader");
-      }
       setResponseMessage(
         "An error occurred while validating the license. Please contact Devloom support"
       );

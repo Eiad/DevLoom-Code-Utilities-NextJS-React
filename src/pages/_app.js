@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 //import { Analytics } from "@vercel/analytics/react";
 import "../app/css/reset.css";
 import "../app/css/globals.css";
+import "../app/css/global-colors.css";
+
 import "../app/css/responsive.css";
 import Head from "next/head";
 import MainMenu from "../components/MainMenu-full-access";
