@@ -13,11 +13,6 @@
   margin: 5px;
   border-radius: 5px;
   font-size: 16px;
-  transition: background-color 0.3s;
-}
-
-.lorem-page-container button:hover {
-  background-color: #0056b3;
 }
 
 .lorem-page-container textarea {

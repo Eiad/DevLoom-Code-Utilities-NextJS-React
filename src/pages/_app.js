@@ -109,6 +109,7 @@ function MyApp({ Component, pageProps }) {
           <Component {...pageProps} />
         </section>
       </div>
+      <div id="modal-root"></div>
       {/* <Analytics /> */}
     </>
   );
