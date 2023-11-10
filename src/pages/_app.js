@@ -109,6 +109,10 @@ function MyApp({ Component, pageProps }) {
           <Component {...pageProps} />
         </section>
       </div>
+      <div
+        className={`dark-overlay ${isMenuOpen ? "menu-opened" : ""}`}
+        onClick={() => setIsMenuOpen(false)}
+      ></div>
       <div id="modal-root"></div>
       {/* <Analytics /> */}
     </>

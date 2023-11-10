@@ -12,13 +12,18 @@
 
 /* Larger phones */
 @media (max-width: 767px) {
-  .main-container.lefthand-open:after {
-    content: "";
+  .dark-overlay {
+    transition-property: all;
+    transition-duration: 0.2s;
+    transition-delay: 0s;
+  }
+  /* Mobile menu dark */
+  .dark-overlay.menu-opened {
     position: absolute;
-    width: calc(100% - 250px);
     background: rgb(0 0 0 / 80%);
     top: 0;
     right: 0;
+    left: 0;
     bottom: 0;
   }
 
