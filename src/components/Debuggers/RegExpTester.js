@@ -4,10 +4,14 @@ import "../../app/css/regex-tester.css";
 
 // RegExpTester component to test regular expressions against a test string.
 const RegExpTester = () => {
-  // State for the user's regular expression input.
-  const [regex, setRegex] = useState("");
-  // State for the user's test string input.
-  const [testString, setTestString] = useState("");
+  const [regex, setRegex] = useState("([A-Z])\\w+");
+  const demoString = `DevLoom assists you in accomplishing your small daily tasks effortlessly, requiring just a single click. It operates entirely without an internet connection and is open-source!
+🛠️ Offline Functionality
+   Put an end to the practice of pasting your JSON strings, JWT tokens, or any potentially sensitive data onto various online websites. DevLoom's application allows you to efficiently handle your minor tasks completely offline! Everything you input into the application stays securely on your device and never gets transmitted over the internet.`;
+
+  // Default test string value set to your provided string.
+  const [testString, setTestString] = useState(demoString);
+
   // State for storing matches found in the test string.
   const [matches, setMatches] = useState([]);
   // State to track if a test has been conducted.
