@@ -1,16 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import "../../app/css/num-base-converter.css";
 
 const NumberBaseConverter = () => {
   // State hooks for different number systems and tooltip text
-  const [decimalNumber, setDecimalNumber] = useState("");
-  const [binaryNumber, setBinaryNumber] = useState("");
-  const [hexNumber, setHexNumber] = useState("");
+  const [binaryNumber, setBinaryNumber] = useState("100101000100101100000001");
   const [octalNumber, setOctalNumber] = useState("");
+  const [decimalNumber, setDecimalNumber] = useState("");
+  const [hexNumber, setHexNumber] = useState("");
   const [customBase, setCustomBase] = useState(10);
   const [customBaseNumber, setCustomBaseNumber] = useState("");
   const [tooltipText, setTooltipText] = useState("");
+
+  useEffect(() => {
+    // Convert the initial binary number to its decimal equivalent and update all fields
+    const initialDecimal = parseInt(binaryNumber, 2);
+    convertFromDecimal(initialDecimal.toString());
+  }, []);
 
   // Function to convert a decimal number to different number bases
   const convertFromDecimal = (decimalValue) => {

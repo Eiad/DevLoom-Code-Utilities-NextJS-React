@@ -2,7 +2,14 @@ import React, { useState, useEffect, useCallback } from "react";
 import DOMPurify from "dompurify";
 
 const StringCaseConverter = () => {
-  const [input, setInput] = useState("");
+  // Pre-filled demo string
+  const demoString = `responseXMLParserKey
+custom_event_summaries
+SortedNaturalPost
+propose-news-stream
+That was a regular statement
+aDetailedTextWithSmileys😊AndExoticLétters`;
+  const [input, setInput] = useState(demoString);
   const [caseType, setCaseType] = useState("camelCase");
   const [output, setOutput] = useState("");
   const [sanitizedOutput, setSanitizedOutput] = useState("");
