@@ -91,6 +91,7 @@ function MyApp({ Component, pageProps }) {
             )}
           </div>
         </section>
+        {/* App's content container */}
         <section
           className={`right-hand-column ${
             isMenuOpen ? "menu-open" : "menu-closed"
@@ -106,6 +107,7 @@ function MyApp({ Component, pageProps }) {
               />
             </Link>
           </section>
+          {/* Main content of the app displayed here */}
           <Component {...pageProps} />
         </section>
       </div>

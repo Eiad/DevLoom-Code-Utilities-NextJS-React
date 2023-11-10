@@ -5,18 +5,12 @@ import "../../app/css/num-base-converter.css";
 const NumberBaseConverter = () => {
   // State hooks for different number systems and tooltip text
   const [binaryNumber, setBinaryNumber] = useState("100101000100101100000001");
-  const [octalNumber, setOctalNumber] = useState("");
-  const [decimalNumber, setDecimalNumber] = useState("");
-  const [hexNumber, setHexNumber] = useState("");
+  const [octalNumber, setOctalNumber] = useState("45045401");
+  const [decimalNumber, setDecimalNumber] = useState("9718529");
+  const [hexNumber, setHexNumber] = useState("944B01");
   const [customBase, setCustomBase] = useState(10);
-  const [customBaseNumber, setCustomBaseNumber] = useState("");
+  const [customBaseNumber, setCustomBaseNumber] = useState("9718529");
   const [tooltipText, setTooltipText] = useState("");
-
-  useEffect(() => {
-    // Convert the initial binary number to its decimal equivalent and update all fields
-    const initialDecimal = parseInt(binaryNumber, 2);
-    convertFromDecimal(initialDecimal.toString());
-  }, []);
 
   // Function to convert a decimal number to different number bases
   const convertFromDecimal = (decimalValue) => {
