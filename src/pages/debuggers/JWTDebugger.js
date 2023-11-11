@@ -1,5 +1,5 @@
-import JWTDebugger from "../../components/debuggers/JWTDebugger";
 import Head from "next/head";
+import JWTDebugger from "../../components/debuggers/JWTDebugger";
 
 function JWTDebuggerPage() {
   return (
