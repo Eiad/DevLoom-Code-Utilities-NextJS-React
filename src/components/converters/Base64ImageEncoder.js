@@ -88,7 +88,7 @@ const Base64ImageEncoder = () => {
               cols={30}
             />
             <button className="copy-btn" onClick={handleCopy}>
-              {isCopied ? "Copied!" : "Click to Copy"}
+              {isCopied ? "Copied!" : "Copy"}
             </button>
           </div>
         </div>
