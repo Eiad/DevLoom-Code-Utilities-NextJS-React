@@ -67,7 +67,8 @@ const Base64ImageEncoder = () => {
         <div className="bs64-preview">
           <div className="bs64-preview-img border-round">
             {imagePreviewSrc && (
-              // eslint-disable-next-line @next/next/no-img-element - valid case to use native img tag for Base64 src
+              // valid case to use native img tag for Base64 src
+              // eslint-disable-next-line @next/next/no-img-element
               <img
                 className="image-preview"
                 src={imagePreviewSrc}
