@@ -108,7 +108,7 @@ function MyApp({ Component, pageProps }) {
             </Link>
           </section>
           {/* Main content of the app displayed here */}
-          <Component {...pageProps} />
+          <Component {...pageProps} licenseActivated={licenseActivated} />
         </section>
       </div>
       <div
