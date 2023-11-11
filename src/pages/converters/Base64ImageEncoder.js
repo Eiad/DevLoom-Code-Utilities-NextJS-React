@@ -24,7 +24,7 @@ function Base64ImageEncoderPage() {
           workflow with our straightforward tool.
         </p>
         <p className="get-started">
-          No ads - No Trackers - Just straightforward image processing ;)
+          No ads - No Trackers - Just straightforward image processing
         </p>
       </div>
 
