@@ -5,25 +5,27 @@ function Base64ImageEncoderPage() {
   return (
     <>
       <Head>
-        <title>DevLoom Base64 IMAGE Encoder/Decoder</title>
+        <title>DevLoom Base64 Image Encoder/Decoder</title>
         <meta
           name="description"
-          content="Optimize your data processing with DevLoom Base64 Encoder/Decoder. Convert text to Base64 format or decode Base64 strings back to text effortlessly."
+          content="Streamline your image handling with DevLoom Base64 Image Encoder/Decoder. Easily convert images to Base64 format or decode Base64 strings to images with our intuitive tool."
         />
       </Head>
 
       <div className="top-section">
         <h1>
-          DevLoom Base64 Encoder/Decoder - Simplify Your Data Encoding &
+          DevLoom Base64 Image Encoder/Decoder - Streamline Image Encoding &
           Decoding
         </h1>
         <p>
-          Make your data encoding and decoding seamless with DevLoom&#39;s
-          Base64 Encoder/Decoder. Our tool offers a user-friendly way to
-          transform text to Base64 or decode Base64 strings. Enhance your data
-          processing workflow today!
+          Enhance your image processing with DevLoom's Base64 Image
+          Encoder/Decoder. Our platform provides a smooth way to encode images
+          into Base64 strings and decode them back into images. Optimize your
+          workflow with our straightforward tool.
         </p>
-        <p className="get-started">No ads - No Trackers - No Bullshit ;)</p>
+        <p className="get-started">
+          No ads - No Trackers - Just straightforward image processing ;)
+        </p>
       </div>
 
       <Base64ImageEncoder />

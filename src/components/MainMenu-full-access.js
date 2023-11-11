@@ -240,7 +240,23 @@ function MainMenu({ isMobileView, closeMenu }) {
                   height={20}
                   alt="Base64 Encoder"
                 />
-                <span>Base64 Encoder</span>
+                <span>Base64 Encode/Decode</span>
+              </Link>
+            </div>
+          </li>
+          <li className={getLinkClass("/converters/Base64ImageEncoder")}>
+            <div>
+              <Link
+                href="/converters/Base64ImageEncoder"
+                onClick={isMobileView ? closeMenu : null}
+              >
+                <Image
+                  src="/icons/picture-filled-icon.svg"
+                  width={20}
+                  height={20}
+                  alt="Base64 Encoder"
+                />
+                <span>Base64 Image Encode/Decode</span>
               </Link>
             </div>
           </li>
@@ -375,26 +391,6 @@ function MainMenu({ isMobileView, closeMenu }) {
                   alt="RegExp Tester"
                 />
                 <span>RegExpTester</span>
-              </Link>
-            </div>
-          </li>
-          <li className={getLinkClass("/LicenseActivation")}>
-            <div>
-              <Link
-                href="/LicenseActivation"
-                onClick={isMobileView ? closeMenu : null}
-              >
-                <Image
-                  src="/icons/license-icon.svg"
-                  width={20}
-                  height={20}
-                  alt="License Details"
-                />
-                {isActivated ? (
-                  <span>My License Details</span>
-                ) : (
-                  <span>License Activation</span>
-                )}
               </Link>
             </div>
           </li>
