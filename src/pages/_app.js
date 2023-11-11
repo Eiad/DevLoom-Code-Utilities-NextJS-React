@@ -7,18 +7,19 @@ import "../app/css/global-colors-app.css";
 import "../app/css/responsive.css";
 import Head from "next/head";
 import MainMenu from "../components/MainMenu-full-access";
-import MainMenuDemo from "../components/MainMenu-demo-access";
+// import MainMenuDemo from "../components/MainMenu-demo-access";
 import Image from "next/image";
 import Link from "next/link";
-import useCheckLicenseValidity from "../components/useCheckLicenseValidity";
+//import useCheckLicenseValidity from "../components/useCheckLicenseValidity";
 
 function MyApp({ Component, pageProps }) {
   // State to manage the open/close status of the menu
   const [isMenuOpen, setIsMenuOpen] = useState(true);
   const [isMobileView, setIsMobileView] = useState(false);
-  const [licenseActivated, setLicenseActivated] = useState(false);
+  //const [licenseActivated, setLicenseActivated] = useState(false);
+  /*  */
   // License validation check
-  useCheckLicenseValidity(setLicenseActivated);
+  //useCheckLicenseValidity(setLicenseActivated);
 
   // Set the menu's initial state based on the viewport width for mobile menu handling
   useEffect(() => {
@@ -78,7 +79,11 @@ function MyApp({ Component, pageProps }) {
           </div>
           {/* Main Menu content */}
           <div className="menu-content">
-            {licenseActivated ? (
+            <MainMenu
+              isMobileView={isMobileView}
+              closeMenu={() => setIsMenuOpen(false)}
+            />
+            {/* {licenseActivated ? (
               <MainMenu
                 isMobileView={isMobileView}
                 closeMenu={() => setIsMenuOpen(false)}
@@ -88,7 +93,7 @@ function MyApp({ Component, pageProps }) {
                 isMobileView={isMobileView}
                 closeMenu={() => setIsMenuOpen(false)}
               />
-            )}
+            )} */}
           </div>
         </section>
         {/* App's content container */}
@@ -108,7 +113,8 @@ function MyApp({ Component, pageProps }) {
             </Link>
           </section>
           {/* Main content of the app displayed here */}
-          <Component {...pageProps} licenseActivated={licenseActivated} />
+          {/* <Component {...pageProps} licenseActivated={licenseActivated} /> */}
+          <Component {...pageProps} />
         </section>
       </div>
       <div

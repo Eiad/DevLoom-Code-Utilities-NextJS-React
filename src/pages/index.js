@@ -15,13 +15,14 @@ function HomePage({ licenseActivated }) {
         </p>
         <p className="get-started">No ads - No Trackers - No Bullshit ;)</p>
       </div>
+      <AllFormatters />
       {/* Full access home page content */}
-      {licenseActivated ? (
+      {/* {licenseActivated ? (
         <AllFormatters />
       ) : (
         // Demo access home page content
         <div>This content is visible when the license is not activated.</div>
-      )}
+      )} */}
     </>
   );
 }

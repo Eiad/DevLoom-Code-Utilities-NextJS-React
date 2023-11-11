@@ -1,0 +1,19 @@
+.encoderDecoderSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.bs64-input {
+  flex: 0 0 60%;
+}
+
+.bs64-preview {
+  flex: 1 1;
+  padding: 20px;
+}
+
+.bs64-preview-img {
+  padding: 20px;
+  background: #ffffff;
+}
