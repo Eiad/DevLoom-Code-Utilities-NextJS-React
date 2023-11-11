@@ -51,7 +51,7 @@ const useCheckLicenseValidity = (setLicenseActivated) => {
       setLicenseActivated(true);
       const currentDate = new Date();
       const nextCheckDate = new Date(lastCheckedUpdateDate);
-      nextCheckDate.setDate(nextCheckDate.getDate() - 1); //Number of days to next check
+      nextCheckDate.setDate(nextCheckDate.getDate() + 30); //Number of days to next check - i decided 30 days
 
       // Check the license validity if it's the right time to do so.
       if (!lastCheckedUpdateDate || currentDate >= nextCheckDate) {
