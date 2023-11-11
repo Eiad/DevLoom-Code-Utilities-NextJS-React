@@ -18,7 +18,7 @@ function Base64ImageEncoderPage() {
           Decoding
         </h1>
         <p>
-          Enhance your image processing with DevLoom's Base64 Image
+          Enhance your image processing with DevLoom`&#39;s Base64 Image
           Encoder/Decoder. Our platform provides a smooth way to encode images
           into Base64 strings and decode them back into images. Optimize your
           workflow with our straightforward tool.
