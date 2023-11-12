@@ -17,7 +17,7 @@ function MyApp({ Component, pageProps }) {
   const [isMenuOpen, setIsMenuOpen] = useState(true);
   const [isMobileView, setIsMobileView] = useState(false);
   //const [licenseActivated, setLicenseActivated] = useState(false);
-  /*  */
+
   // License validation check
   //useCheckLicenseValidity(setLicenseActivated);
 
