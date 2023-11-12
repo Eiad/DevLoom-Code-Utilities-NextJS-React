@@ -65,18 +65,18 @@ const JWTDebugger = () => {
     var output = input;
     output = output.replace("-", "+");
     output = output.replace("_", "/");
-    // Pad with '=' to make the base64 string length a multiple of 4
+    // Adds padding ('=') based on the length of the string to make it a multiple of 4
     switch (output.length % 4) {
       case 0:
-        break;
+        break; // No padding needed
       case 2:
         output += "==";
-        break;
+        break; // Two '=' signs needed
       case 3:
         output += "=";
-        break;
+        break; // One '=' sign needed
       default:
-        throw "Illegal base64url string!";
+        throw "Illegal base64url string!"; // Throws error for invalid strings
     }
     return CryptoJS.enc.Base64.parse(output).toString(CryptoJS.enc.Utf8);
   };
@@ -97,10 +97,10 @@ const JWTDebugger = () => {
   );
   const encodedSignature = base64UrlEncode(signature);
 
-  // Concatenating all parts to form the complete JWT
+  // Concatenates header, payload, and signature to form the complete JWT
   const jwt = `${encodedHeader}.${encodedPayload}.${encodedSignature}`;
 
-  // State management for the token verification section
+  // useState hooks for managing the state of the token verification section
   const [token, setToken] = useState(jwt);
   const [verifySecret, setVerifySecret] = useState(secret);
   const [verificationResult, setVerificationResult] = useState(
@@ -123,17 +123,18 @@ const JWTDebugger = () => {
     }
   };
 
-  // Function to decode a JWT and update state with the decoded header and payload
+  // Function to decode a JWT and update the decoded header and payload states
   const handleDecodeJWT = (jwt) => {
     try {
-      const [header, payload] = jwt.split(".");
-      setDecodedHeader(JSON.parse(base64UrlDecode(header)));
-      setDecodedPayload(JSON.parse(base64UrlDecode(payload)));
+      const [header, payload] = jwt.split("."); // Splits the jwt into header and payload
+      setDecodedHeader(JSON.parse(base64UrlDecode(header))); // Decodes and sets the header
+      setDecodedPayload(JSON.parse(base64UrlDecode(payload))); // Decodes and sets the payload
     } catch (error) {
       console.error("Error decoding JWT:", error);
     }
   };
 
+  // JWT debugger UI components
   return (
     <>
       <section className="jwt-container">
