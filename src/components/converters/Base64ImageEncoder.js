@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import "../../app/css/base64-image-converter.css";
-import { placeholderBase64Image } from "../../constants/base64PlaceholderImage";
+import { placeholderBase64Image } from "../../constants/demo-constants";
 
 const Base64ImageEncoder = () => {
   const [base64, setBase64] = useState(placeholderBase64Image);
