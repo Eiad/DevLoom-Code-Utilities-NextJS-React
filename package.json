@@ -34,10 +34,7 @@
         "build/resources/background.jpg",
         "build/resources/readme.md",
         "build/resources/license.md"
-      ],
-      "extendInfo": {
-        "distribution.xml": "distribution.xml"
-      }
+      ]
     },
     "win": {
       "target": [

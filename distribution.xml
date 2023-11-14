@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<installer-gui-script minSpecVersion="1">
+    <title>devloom</title>
+    <options customize="allow" allow-external-scripts="no"/>
+    <domains enable_anywhere="true" />
+<background file="background.jpg" alignment="bottomleft" scaling="none"/>
+<welcome file="readme.md"/>
+<license file="license.md"/>
+
+    <choices-outline>
+        <line choice="default">
+            <line choice="com.devloom.app"/>
+        </line>
+    </choices-outline>
+    <choice id="default"/>
+    <choice id="com.devloom.app" visible="false">
+        <pkg-ref id="com.devloom.app"/>
+    </choice>
+    <pkg-ref id="com.devloom.app" version="0.3.0" onConclusion="none">
+        #com.devloom.app.pkg
+    </pkg-ref>
+</installer-gui-script>
