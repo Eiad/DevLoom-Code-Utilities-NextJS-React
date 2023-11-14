@@ -1,0 +1,83 @@
+<p>
+    sudo spctl --master-disable
+    sudo spctl --master-enable
+
+    dist/mac-arm64/devloom.app
+
+
+    productbuild --component /Users/mohamedashraf/ash-dev/devloom/dist/mac-arm64/devloom.app /Applications --sign "3rd
+    Party Mac Developer Installer: Mohamed Ashraf (LJK4SGP7TG)" /Users/mohamedashraf/ash-dev/devloom/outputs/devloom.pkg
+
+
+
+    pkgutil --check-signature dist/devloom-0.3.1-arm64.pkg
+
+
+    productbuild --component /Users/mohamedashraf/ash-dev/devloom/dist/mac-arm64/devloom.app /Applications --sign "3rd
+    Party Mac Developer Installer: Mohamed Ashraf (LJK4SGP7TG)" --timestamp --product
+    /Users/mohamedashraf/ash-dev/devloom/dist/mac-arm64/devloom.app/Contents/Info.plist
+    /Users/mohamedashraf/ash-dev/devloom/outputs/devloom.pkg
+
+
+    productbuild --component /Users/mohamedashraf/ash-dev/devloom/dist/mac-arm64/devloom.app /Applications --sign "3rd
+    Party Mac Developer Installer: Mohamed Ashraf (LJK4SGP7TG)" --timestamp --product
+    /Users/mohamedashraf/ash-dev/devloom/dist/mac-arm64/devloom.app/Contents/Info.plist
+    /Users/mohamedashraf/ash-dev/devloom/outputs/devloom.pkg
+
+
+    sudo installer -verbose -pkg dist/devloom-0.3.1-arm64.pkg -target /
+
+    sudo installer -verbose -pkg /path/to/devloom.pkg -target /
+
+
+    codesign --sign "Developer ID Application: Mohamed Ashraf (LJK4SGP7TG)" --verbose dist/devloom-0.3.0-arm64.pkg
+
+    pkgutil --check-signature dist/devloom-0.3.0-arm64.pkg
+
+
+
+
+
+    chmod -R u+rwX,go+rX /Users/mohamedashraf/ash-dev/devloom/assets
+
+
+    pkgutil --expand-full dist/devloom-0.3.1-arm64.pkg
+
+
+    pkgutil --expand-full dist/devloom-0.3.1-arm64.pkg /outputs
+
+
+
+    codesign --verify --deep --strict --verbose=2 dist/mac-arm64/devloom.app
+
+    RequestUUID = 9d47f318-c5a0-4d9f-b080-7bfb9b3ddbf8
+
+
+    xcrun notarytool store-credentials "devloom" --apple-id "ashraf.apple88@gmail.com" --team-id "LJK4SGP7TG"
+
+    xcrun notarytool submit "devloom.app.zip" --keychain-profile "devloom" --wait
+
+    xcrun notarytool validate devloom.app.zip
+
+
+
+    productbuild --component "devloom.app" /Applications --sign "Your Developer ID Installer Certificate" "Devloom.pkg"
+
+    dist/mac-arm64/devloom.app
+
+    pkgbuild --root dist/mac-arm64 --identifier com.devloom.app --version 0.3.0 devloom.pkg
+
+
+    productsign --sign "Developer ID Installer: Mohamed Ashraf (LJK4SGP7TG)" devloom.pkg signed_devloom.pkg
+
+
+    spctl --assess --verbose=4 --type install dist/devloom-0.3.0-arm64.pkg
+
+
+
+</p>
+
+
+xcrun notarytool submit dist/devloom-0.3.0-arm64.pkg --keychain-profile "devloom" --wait
+
+xcrun stapler staple dist/devloom-0.3.0-arm64.pkg
