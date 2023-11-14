@@ -26,8 +26,18 @@
     "mac": {
       "category": "public.app-category.developer-tools",
       "target": [
-        "dmg"
-      ]
+        "dmg",
+        "pkg"
+      ],
+      "identity": "Mohamed Ashraf (LJK4SGP7TG)",
+      "extraResources": [
+        "build/resources/background.jpg",
+        "build/resources/readme.md",
+        "build/resources/license.md"
+      ],
+      "extendInfo": {
+        "distribution.xml": "distribution.xml"
+      }
     },
     "win": {
       "target": [
@@ -56,6 +66,7 @@
     "remark-gfm": "^4.0.0"
   },
   "devDependencies": {
+    "@electron/osx-sign": "^1.0.5",
     "@types/crypto-js": "^4.1.3",
     "concurrently": "^8.2.2",
     "electron": "^27.0.0",
