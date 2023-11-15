@@ -3,7 +3,9 @@ import "../../app/css/base64-image-converter.css";
 import { placeholderBase64Image } from "../../constants/demo-constants";
 
 const Base64ImageEncoder = () => {
+  const downloadTxt = "Download image";
   const [base64, setBase64] = useState(placeholderBase64Image);
+  const [downloadButtonText, setDownloadButtonText] = useState(downloadTxt);
   const [imagePreviewSrc, setImagePreviewSrc] = useState(
     placeholderBase64Image
   );
@@ -62,6 +64,18 @@ const Base64ImageEncoder = () => {
     });
   };
 
+  const handleDownload = () => {
+    setDownloadButtonText("Downloaded!");
+    setTimeout(() => setDownloadButtonText(downloadTxt), 1000); // Reset button text after 1 second
+
+    const link = document.createElement("a");
+    link.href = imagePreviewSrc;
+    link.download = "devloom_downloaded_image.png";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <div className="bs64-imge-container">
       {error && <p className="error-message">{error}</p>}
@@ -105,6 +119,9 @@ const Base64ImageEncoder = () => {
               />
             )}
           </div>
+          <button className="download-btn" onClick={handleDownload}>
+            {downloadButtonText}
+          </button>
         </div>
       </div>
     </div>
