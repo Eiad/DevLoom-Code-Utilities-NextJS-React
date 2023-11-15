@@ -93,4 +93,10 @@ productbuild --component "component-path" "install-path" "/path/to/product-outpu
 productbuild --distribution ./devloom-component.pkg --sign "Developer ID Installer: Mohamed Ashraf (LJK4SGP7TG)" devloom.pkg
 
 
-pkgbuild --component /Applications/devloom.app --sign "Developer ID Installer: Mohamed Ashraf (LJK4SGP7TG)" --install-location /desktop devloom.pkg
+pkgbuild --component /Applications/devloom.app --sign "Developer ID Installer: Mohamed Ashraf (LJK4SGP7TG)" --install-location / devloom-2.pkg
+
+xcrun notarytool submit devloom-1.pkg --keychain-profile "devloom" --wait
+
+xattr -d com.apple.quarantine devloom-1.pkg
+
+pkgutil --check-signature devloom-1.pkg
