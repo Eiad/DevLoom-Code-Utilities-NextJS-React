@@ -117,7 +117,6 @@ p {
 /* Right-hand column styles */
 .right-hand-column {
   padding: 20px;
-  max-width: 1200px;
   margin: 0 auto;
   transition: transform 0.3s ease-in;
 }

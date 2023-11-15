@@ -5,7 +5,7 @@
 
 .markdown-input {
   flex: 0 0 40%;
-  height: 50vh;
+  min-height: 50vh;
   transition: transform 0.3s ease-in-out;
 }
 
@@ -152,6 +152,10 @@
 @media (max-width: 768px) {
   .markdownpage-container {
     display: block;
+  }
+
+  .markdownpage-container > * {
+    margin-bottom: 20px;
   }
 
   .markdown-preview-area {
