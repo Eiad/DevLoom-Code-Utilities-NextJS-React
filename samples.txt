@@ -85,7 +85,7 @@ xcrun notarytool submit dist/devloom-0.3.0-arm64.pkg --keychain-profile "devloom
 
 xcrun stapler staple dist/devloom-0.3.0-arm64.pkg
 
-productbuild --component dist/mac-arm64/devloom.app /Applications --sign "Developer ID Installer: Mohamed Ashraf (LJK4SGP7TG)" --version 0.3.0 dist/pkg/devloom.pkg
+productbuild --component /Applications/devloom.app /Applications --sign "Developer ID Installer: Mohamed Ashraf (LJK4SGP7TG)" --version 0.3.0 dist/pkg/devloom.pkg
 
 
 productbuild --component "component-path" "install-path" "/path/to/product-output-path/packagename.pkg"
@@ -93,4 +93,4 @@ productbuild --component "component-path" "install-path" "/path/to/product-outpu
 productbuild --distribution ./devloom-component.pkg --sign "Developer ID Installer: Mohamed Ashraf (LJK4SGP7TG)" devloom.pkg
 
 
-pkgbuild --component /Applications/devloom.app --sign "Developer ID Installer: Mohamed Ashraf (LJK4SGP7TG)" --install-location /Applications devloom.pkg
+pkgbuild --component /Applications/devloom.app --sign "Developer ID Installer: Mohamed Ashraf (LJK4SGP7TG)" --install-location /desktop devloom.pkg

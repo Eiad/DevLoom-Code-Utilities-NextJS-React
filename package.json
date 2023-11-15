@@ -31,9 +31,9 @@
       ],
       "identity": "Mohamed Ashraf (LJK4SGP7TG)",
       "extraResources": [
-        "build/resources/background.jpg",
-        "build/resources/readme.md",
-        "build/resources/license.md"
+        "assets/resources/background.jpg",
+        "assets/resources/readme.md",
+        "assets/resources/license.md"
       ]
     },
     "win": {

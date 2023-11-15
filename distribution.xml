@@ -3,9 +3,10 @@
     <title>devloom</title>
     <options customize="allow" allow-external-scripts="no"/>
     <domains enable_anywhere="true" />
-<background file="background.jpg" alignment="bottomleft" scaling="none"/>
-<welcome file="readme.md"/>
-<license file="license.md"/>
+    
+    <background file="background.jpg" alignment="bottomleft" scaling="none"/>
+    <welcome file="readme.md"/>
+    <license file="license.md"/>
 
     <choices-outline>
         <line choice="default">
