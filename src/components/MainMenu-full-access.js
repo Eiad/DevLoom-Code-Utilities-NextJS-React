@@ -394,10 +394,9 @@ function MainMenu({ isMobileView, closeMenu }) {
               </Link>
             </div>
           </li>
-          <li className={getLinkClass("/about-devloom")}>
+          <li className={`contact-us-link ${getLinkClass("/about-devloom")}`}>
             <div>
               <Link
-                className="about-us-link"
                 href="/about-devloom"
                 onClick={isMobileView ? closeMenu : null}
               >
