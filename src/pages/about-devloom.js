@@ -18,10 +18,10 @@ function AboutDevloom() {
       <div id="contact" className="text-center">
         <h2>Contact Us</h2>
         <p>
-          Have questions or need assistance? We're here to help! Reach out to
-          our support team at&nbsp;
+          Have questions or need assistance? We&#39;re here to help! Reach out
+          to our support team at&nbsp;
           <a href="mailto:support@devloom.net">support@devloom.net</a>, and
-          we'll get back to you as soon as possible.
+          we&#39;ll get back to you as soon as possible.
         </p>
         <p>Looking forward to assisting you!</p>
       </div>
