@@ -250,6 +250,10 @@ li.menu-converters p {
   cursor: default;
 }
 
+a.about-us-link span {
+  color: #50eaff;
+}
+
 /* Home page styles */
 .home-page {
   margin: 20px;
@@ -309,6 +313,10 @@ div#formattersWindow {
 }
 
 /* Input section styles */
+input#upload {
+  cursor: pointer;
+}
+
 textarea {
   height: 250px;
   width: 100%;

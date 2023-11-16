@@ -394,6 +394,23 @@ function MainMenu({ isMobileView, closeMenu }) {
               </Link>
             </div>
           </li>
+          <li className={getLinkClass("/about-devloom")}>
+            <div>
+              <Link
+                className="about-us-link"
+                href="/about-devloom"
+                onClick={isMobileView ? closeMenu : null}
+              >
+                <Image
+                  src="/icons/about-devloom.svg"
+                  width={20}
+                  height={20}
+                  alt="About Devloom - Contact us"
+                />
+                <span>About and Contacts</span>
+              </Link>
+            </div>
+          </li>
         </ul>
       </div>
       <div className="footer-logo">
