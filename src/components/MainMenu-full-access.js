@@ -407,7 +407,7 @@ function MainMenu({ isMobileView, closeMenu }) {
                   height={20}
                   alt="About Devloom - Contact us"
                 />
-                <span>About and Contacts</span>
+                <span>DevLoom Support</span>
               </Link>
             </div>
           </li>

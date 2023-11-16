@@ -1,3 +1,5 @@
+import "../app/css/contact-us.css";
+
 function AboutDevloom() {
   return (
     <>
@@ -13,11 +15,11 @@ function AboutDevloom() {
         </p>
         <p className="get-started">No ads - No Trackers - No Bullshit ;)</p>
       </div>
-      <div id="contact">
+      <div id="contact" className="text-center">
         <h2>Contact Us</h2>
         <p>
           Have questions or need assistance? We're here to help! Reach out to
-          our support team at
+          our support team at&nbsp;
           <a href="mailto:support@devloom.net">support@devloom.net</a>, and
           we'll get back to you as soon as possible.
         </p>
