@@ -225,16 +225,18 @@ aDetailedTextWithSmileys😊AndExoticLétters`;
           </select>
         </div>
       </div>
-      <div className="markdownpage-container">
-        <textarea
-          className="markdown-input border-round"
-          value={input}
-          onChange={handleInputChange}
-          placeholder="Enter your string"
-          rows="4"
-          cols="50"
-        />
-        <div className="markdown-preview border-round">
+      <div className="previewer-container">
+        <div className="previewer-left">
+          <textarea
+            className="markdown-input border-round"
+            value={input}
+            onChange={handleInputChange}
+            placeholder="Enter your string"
+            rows="4"
+            cols="50"
+          />
+        </div>
+        <div className="previewer-right markdown-preview border-round">
           <div className="markdown-preview-area">
             {sanitizedOutput.split("\n").map((line, index) => (
               <React.Fragment key={index}>

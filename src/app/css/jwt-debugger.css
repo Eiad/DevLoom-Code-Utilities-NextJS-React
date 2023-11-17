@@ -2,7 +2,7 @@
   background: #ffffff;
 }
 .jwt-container textarea[readonly] {
-  background: #e6f7ff;
+  background: #f6f6f6;
   margin-bottom: 7px;
 }
 

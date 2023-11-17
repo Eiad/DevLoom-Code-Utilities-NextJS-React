@@ -1,6 +1,10 @@
 /* General styles */
-body {
+body,
+.copy-text {
   background-color: #eeeeee;
+}
+
+body {
   color: #333;
 }
 

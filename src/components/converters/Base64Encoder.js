@@ -10,6 +10,9 @@ function Base64Encoder() {
   const [showOutput, setShowOutput] = useState(false);
   const [isProcessing, setIsProcessing] = useState(false);
   const [encodeMode, setEncodeMode] = useState(true); // true for encoding, false for decoding
+  const [placeholderText, setPlaceholderText] = useState(
+    "Add string to Encode"
+  );
 
   // Handle input text change
   const handleInputChange = (event) => {
@@ -21,6 +24,16 @@ function Base64Encoder() {
       setEncodedText("");
       setShowOutput(false);
     }
+  };
+
+  // Handle encode/decode mode change
+  const handleRadioChange = (encode) => {
+    setEncodeMode(encode);
+    setInputText("");
+    setPlaceholderText(
+      encode ? "Add string to Encode" : "Add string to Decode"
+    );
+    setShowOutput(false);
   };
 
   // Trigger the encode or decode function based on the selected mode
@@ -70,7 +83,7 @@ function Base64Encoder() {
               type="radio"
               value="encode"
               checked={encodeMode}
-              onChange={() => setEncodeMode(true)}
+              onChange={() => handleRadioChange(true)}
             />
             Encode
           </label>
@@ -79,7 +92,7 @@ function Base64Encoder() {
               type="radio"
               value="decode"
               checked={!encodeMode}
-              onChange={() => setEncodeMode(false)}
+              onChange={() => handleRadioChange(false)}
             />
             Decode
           </label>
@@ -88,7 +101,7 @@ function Base64Encoder() {
           <textarea
             value={inputText}
             onChange={handleInputChange}
-            placeholder={"Paste / Type here..."}
+            placeholder={placeholderText}
           />
         </div>
 
