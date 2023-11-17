@@ -6,10 +6,6 @@
   }
 }
 
-/* Tablets */
-@media (min-width: 768px) and (max-width: 1023px) {
-}
-
 /* Larger phones */
 @media (max-width: 767px) {
   .dark-overlay {
@@ -43,9 +39,12 @@
     font-size: 13px;
     width: calc(50% - 10px);
   }
-}
-
-/* Smaller screens */
-@media (max-width: 500px) {
-  /* Content to be here */
+  .previewer-container,
+  .previewer-left,
+  .previewer-right {
+    display: block;
+    height: auto;
+    width: 100%;
+    margin-bottom: 20px;
+  }
 }

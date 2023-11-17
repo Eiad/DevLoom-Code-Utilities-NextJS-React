@@ -156,10 +156,4 @@
   .markdown-preview-area {
     margin-top: 20px;
   }
-
-  .markdown-input,
-  .markdown-preview {
-    display: block;
-    height: auto;
-  }
 }
