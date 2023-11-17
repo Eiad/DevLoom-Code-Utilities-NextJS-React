@@ -1,22 +1,17 @@
 .markdownpage-container {
   display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
   gap: 20px;
 }
 
 .markdown-input {
-  flex: 0 0 40%;
   min-height: 50vh;
-  transition: transform 0.3s ease-in-out;
 }
 
 .markdown-preview {
-  flex: 1;
   background: #fff;
   padding: 20px;
-}
-
-.markdown-input.prev-active {
-  flex: 0 0 30%;
 }
 
 .markdown-preview h1,

@@ -324,7 +324,7 @@ textarea {
   font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  resize: vertical;
+  resize: auto;
   box-shadow: -1px 4px 19px -6px rgba(0, 0, 0, 0.13);
 }
 
@@ -405,4 +405,28 @@ button[disabled] {
   border-radius: 4px;
   text-align: center;
   font-weight: bold;
+}
+
+/* Previewers */
+
+.previewer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.previewer-left {
+  width: fit-content;
+  min-width: 40%;
+}
+
+.previewer-left textarea {
+  min-width: 100%;
+  min-height: 60vh;
+  display: block;
+}
+
+.previewer-right {
+  flex: 1 1;
 }

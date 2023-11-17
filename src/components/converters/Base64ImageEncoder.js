@@ -46,12 +46,17 @@ const Base64ImageEncoder = () => {
     setError("");
     const inputBase64 = event.target.value;
     setBase64(inputBase64);
-    const imageSrc = isValidBase64Image(inputBase64)
-      ? inputBase64
-      : `data:image/png;base64,${inputBase64}`;
-    setImagePreviewSrc(imageSrc);
-  };
 
+    if (!inputBase64) {
+      setImagePreviewSrc("/assets/blank.jpg"); // Set to blank image when textarea is empty
+      fileInputRef.current.value = ""; // Reset the file uploader
+    } else {
+      const imageSrc = isValidBase64Image(inputBase64)
+        ? inputBase64
+        : `data:image/png;base64,${inputBase64}`;
+      setImagePreviewSrc(imageSrc);
+    }
+  };
   const isValidBase64Image = (base64String) => {
     return base64String.startsWith("data:image/");
   };
@@ -89,8 +94,8 @@ const Base64ImageEncoder = () => {
           onChange={handleFileChange}
         />
       </div>
-      <div className="encoderDecoderSection">
-        <div className="bs64-input">
+      <div className={`previewer-container ${base64 ? "preview-active" : ""}`}>
+        <div className="previewer-left bs64-input">
           <div className="bs64-preview-string">
             <h4>Or type a Base64 String</h4>
             <textarea
@@ -101,12 +106,16 @@ const Base64ImageEncoder = () => {
               rows={6}
               cols={30}
             />
-            <button className="copy-btn" onClick={handleCopy}>
+            <button
+              className="copy-btn"
+              onClick={handleCopy}
+              disabled={!base64}
+            >
               {isCopied ? "Copied!" : "Copy"}
             </button>
           </div>
         </div>
-        <div className="bs64-preview">
+        <div className="previewer-right bs64-preview text-center">
           <h4>Preview</h4>
           <div className="bs64-preview-img border-round text-center">
             {imagePreviewSrc && (
@@ -119,7 +128,11 @@ const Base64ImageEncoder = () => {
               />
             )}
           </div>
-          <button className="download-btn" onClick={handleDownload}>
+          <button
+            className="download-btn"
+            onClick={handleDownload}
+            disabled={!base64}
+          >
             {downloadButtonText}
           </button>
         </div>

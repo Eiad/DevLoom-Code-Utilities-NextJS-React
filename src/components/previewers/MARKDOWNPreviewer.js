@@ -10,14 +10,16 @@ function MARKDOWNPreviewer() {
   const [markdown, setMarkdown] = useState(demoMarkdownSnippet);
 
   return (
-    <div className="markdownpage-container">
-      <textarea
-        placeholder="Paste your Markdown code here..."
-        className="markdown-input border-round"
-        value={markdown}
-        onChange={(e) => setMarkdown(e.target.value)}
-      />
-      <div className="markdown-preview border-round">
+    <div className="previewer-container">
+      <div className="previewer-left markdown-input">
+        <textarea
+          placeholder="Paste your Markdown code here..."
+          className="border-round"
+          value={markdown}
+          onChange={(e) => setMarkdown(e.target.value)}
+        />
+      </div>
+      <div className="previewer-right markdown-preview border-round">
         <ReactMarkdown rehypePlugins={[rehypeRaw]} remarkPlugins={[remarkGfm]}>
           {markdown || "Markdown preview..."}
         </ReactMarkdown>
