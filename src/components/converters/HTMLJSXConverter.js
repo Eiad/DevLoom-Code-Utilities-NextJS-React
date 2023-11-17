@@ -38,29 +38,43 @@ function HTMLJSXConverter() {
 
     // Convert inline styles to JSX style format
     jsx = jsx.replace(
-      /style="([^"]+)"/g,
-      (_, style) =>
-        `style={{${style
-          .split(";")
-          .filter(Boolean)
-          .map((s) => {
-            const [key, value] = s.trim().split(":");
-            const camelCaseKey = key
-              .split("-")
-              .map((word, index) =>
-                index === 0 ? word : word[0].toUpperCase() + word.slice(1)
-              )
-              .join("");
-            return `${camelCaseKey}: '${value.trim()}'`;
-          })
-          .join(", ")}}}`
+      /style="([^"]+)"/g, // Regex to match style attributes and capture their values
+      (_, style) => {
+        // The captured style string is processed within this function
+        return `style={{${
+          style
+            .split(";") // Split the style string into individual style declarations
+            .filter(Boolean) // Filter out any empty strings resulting from the split
+            .map((s) => {
+              // Process each style declaration
+              const [key, value] = s.split(":").map((item) => item.trim()); // Split each declaration into key and value, and trim any extra whitespace
+              if (!key || !value) return ""; // If either key or value is missing, return an empty string (skip this style declaration)
+
+              // Convert CSS property names to camelCase for JSX compatibility
+              const camelCaseKey = key
+                .split("-")
+                .map(
+                  (word, index) =>
+                    index === 0
+                      ? word // Keep the first word as is
+                      : word.charAt(0).toUpperCase() + word.slice(1) // Capitalize the first letter of subsequent words
+                )
+                .join("");
+
+              // Return the JSX style property as a string, and remove any single quotes from the value
+              return `${camelCaseKey}: '${value.replace(/'/g, "")}'`;
+            })
+            .filter(Boolean) // Filter out any empty strings resulting from the map
+            .join(", ") // Join the processed style properties into a single string
+        }}}`; // Wrap the style properties in a JSX style object
+      }
     );
 
     // Convert inline event handlers to camelCase
     jsx = jsx.replace(/on(\w+)="([^"]+)"/g, (match, event, handler) => {
       // Special case for 'mouseover'
       if (event === "mouseover") {
-        return `onMouseOver={${handler.replace(/\(\)/, "")}}`; // remove any parentheses from the handler
+        return `onMouseOver={${handler.replace(/\(\)/, "")}}`;
       }
       // Fallback for other event names
       const camelCaseEvent =

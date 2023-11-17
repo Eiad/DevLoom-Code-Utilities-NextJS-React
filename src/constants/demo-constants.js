@@ -1,17 +1,15 @@
 // HTMLPreviewer Demo
 export const demoHtmlSnippet = `
-<div style="background-color: #232d3f; color: #fff; padding: 20px; text-align: center;">
-  <h1 class="color-white">Welcome to DevLoom HTML Previewer!</h1>
-  <p class="color-yellow">
+<div style="background-color: #232d3f; color: #fff; padding: 50px 20px; text-align: center; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+  <h1 style="margin: 0; color: #ffffff; font-family: 'Arial', sans-serif; font-size: 2em; line-height: 1.2; letter-spacing: 1.5px;">
+    DevLoom HTML Previewer!
+  </h1>
+  <p style="color: #f0e130; font-family: 'Arial', sans-serif; font-size: 1.1em; margin-top: 20px;">
     This is a <strong>live preview</strong>. Try editing the HTML code to see
-    changes here.
+    changes here now.
   </p>
 </div>
-<style>
-  .color-yellow{color: yellow;}
-  .color-white{color: #ffffff !important;}
-</style>
-  `;
+`;
 
 // MARKDOWNPreviewer Demo
 export const demoMarkdownSnippet = `
