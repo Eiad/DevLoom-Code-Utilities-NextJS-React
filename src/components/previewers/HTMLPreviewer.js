@@ -6,9 +6,6 @@ import { demoHtmlSnippet } from "../../constants/demo-constants";
 function HTMLPreviewer() {
   const [htmlCode, setHtmlCode] = useState(demoHtmlSnippet);
   const [sanitizedHtml, setSanitizedHtml] = useState("");
-  const textareaClassName = htmlCode
-    ? "markdown-input border-round prev-active"
-    : "markdown-input border-round";
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -18,18 +15,27 @@ function HTMLPreviewer() {
   }, [htmlCode]);
 
   return (
-    <div className="markdownpage-container">
-      <textarea
-        placeholder="Paste your HTML code here..."
-        className={textareaClassName}
-        value={htmlCode}
-        onChange={(e) => setHtmlCode(e.target.value)}
-      />
+    <>
       <div
-        className="markdown-preview border-round"
-        dangerouslySetInnerHTML={{ __html: sanitizedHtml || "HTML preview..." }}
-      ></div>
-    </div>
+        className={`previewer-container markdownpage-container ${
+          htmlCode ? "preview-active" : ""
+        }`}
+      >
+        <div className="previewer-left">
+          <textarea
+            placeholder="Paste your HTML code here..."
+            value={htmlCode}
+            onChange={(e) => setHtmlCode(e.target.value)}
+          />
+        </div>
+        <div
+          className="previewer-right markdown-preview border-round"
+          dangerouslySetInnerHTML={{
+            __html: sanitizedHtml || "HTML is previewed here...",
+          }}
+        ></div>
+      </div>
+    </>
   );
 }
 
