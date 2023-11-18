@@ -1,6 +1,7 @@
 0-remind yourself with our conversion exchange history.
 
-1-make sure to give the full code back with zero omissions.
+Please give me the full updated component back, no skins and no omissions, not even code comments
+
 
 Gumroad Customer license: B2F488E0-34AB4CF1-BAAA4E77-4DE6D741
 
