@@ -8,9 +8,10 @@ import "../app/css/responsive.css";
 import Head from "next/head";
 import MainMenu from "../components/MainMenu-full-access";
 // import MainMenuDemo from "../components/MainMenu-demo-access";
+//import useCheckLicenseValidity from "../components/useCheckLicenseValidity";
 import Image from "next/image";
 import Link from "next/link";
-//import useCheckLicenseValidity from "../components/useCheckLicenseValidity";
+import useSwipeToOpenMenu from "../components/useSwipeToOpenMenu";
 
 function MyApp({ Component, pageProps }) {
   // State to manage the open/close status of the menu
@@ -41,6 +42,9 @@ function MyApp({ Component, pageProps }) {
       };
     }
   }, []);
+
+  // Use the custom hook
+  useSwipeToOpenMenu(setIsMenuOpen);
 
   return (
     <>
