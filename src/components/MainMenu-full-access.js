@@ -362,22 +362,6 @@ function MainMenu({ isMobileView, closeMenu }) {
               </Link>
             </div>
           </li>
-          <li className={getLinkClass("/debuggers/JWTDebugger")}>
-            <div>
-              <Link
-                href="/debuggers/JWTDebugger"
-                onClick={isMobileView ? closeMenu : null}
-              >
-                <Image
-                  src="/icons/jwt-icon.svg"
-                  width={20}
-                  height={20}
-                  alt="JWT Debugger"
-                />
-                <span>JWT Debugger</span>
-              </Link>
-            </div>
-          </li>
           <li className={getLinkClass("/debuggers/RegExpTester")}>
             <div>
               <Link
