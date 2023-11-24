@@ -30,7 +30,7 @@ function HTMLFormatter() {
         tabWidth = 4;
         break;
       case "no-Spaces":
-        tabWidth = 2;
+        tabWidth = 0;
         break;
       default:
         break;
@@ -42,7 +42,7 @@ function HTMLFormatter() {
         plugins: [htmlParser],
         tabWidth: formatOption === "no-Spaces" ? 0 : tabWidth,
         useTabs: formatOption === "no-Spaces" ? false : useTabs,
-        printWidth: formatOption === "no-Spaces" ? 10000 : 80,
+        printWidth: formatOption === "no-Spaces" ? 10000 : 160,
         htmlWhitespaceSensitivity:
           formatOption === "no-Spaces" ? "ignore" : "css",
       };
