@@ -7,8 +7,8 @@ import "../app/css/global-colors-app.css";
 import "../app/css/responsive.css";
 import Head from "next/head";
 import MainMenu from "../components/MainMenu-full-access";
-// import MainMenuDemo from "../components/MainMenu-demo-access";
-//import useCheckLicenseValidity from "../components/useCheckLicenseValidity";
+import MainMenuDemo from "../components/MainMenu-demo-access";
+import useCheckLicenseValidity from "../components/useCheckLicenseValidity";
 import Image from "next/image";
 import Link from "next/link";
 import useSwipeToOpenMenu from "../components/useSwipeToOpenMenu";
@@ -17,10 +17,10 @@ function MyApp({ Component, pageProps }) {
   // State to manage the open/close status of the menu
   const [isMenuOpen, setIsMenuOpen] = useState(true);
   const [isMobileView, setIsMobileView] = useState(false);
-  //const [licenseActivated, setLicenseActivated] = useState(false);
+  const [licenseActivated, setLicenseActivated] = useState(false);
 
   // License validation check
-  //useCheckLicenseValidity(setLicenseActivated);
+  useCheckLicenseValidity(setLicenseActivated);
 
   // Set the menu's initial state based on the viewport width for mobile menu handling
   useEffect(() => {
