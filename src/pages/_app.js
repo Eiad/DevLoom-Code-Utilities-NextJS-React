@@ -50,13 +50,11 @@ function MyApp({ Component, pageProps }) {
     <>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>
-          DevLoom - The All-in-One Code Formatter, Converter, Encoder, and
-          Previewer - No Ads - No Trackers - No Bullshit!
-        </title>
+        <title>DevLoom - The All-in-One Dev Utilities App - Formatter, Converter, Encoder, and
+          Previewer - No Ads - No Trackers - No Bullshit!</title>
         <meta
           name="description"
-          content="Elevate your coding experience with DevLoom. Simplify code formatting, encoding, and beautification for HTML, JavaScript, CSS, JSON, and Base64 effortlessly. Streamline your development workflow with our comprehensive suite of tools."
+          content="Streamline your development workflow with DevLoom's comprehensive suite of dev utilities. Effortlessly format, convert, encode, preview and debug code for HTML, CSS, JavaScript, JSON, YAML, and more."
         />
         <meta
           name="keywords"

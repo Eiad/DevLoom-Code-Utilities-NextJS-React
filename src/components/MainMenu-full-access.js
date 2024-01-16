@@ -394,6 +394,26 @@ function MainMenu({ isMobileView, closeMenu }) {
               </Link>
             </div>
           </li>
+          <li className={getLinkClass("/LicenseActivation")}>
+            <div>
+              <Link
+                href="/LicenseActivation"
+                onClick={isMobileView ? closeMenu : null}
+              >
+                <Image
+                  src="/icons/license-icon.svg"
+                  width={20}
+                  height={20}
+                  alt="License Details"
+                />
+                {isActivated ? (
+                  <span>My License Details</span>
+                ) : (
+                  <span>License Activation</span>
+                )}
+              </Link>
+            </div>
+          </li>
         </ul>
       </div>
       <div className="footer-logo">

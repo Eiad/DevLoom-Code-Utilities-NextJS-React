@@ -5,13 +5,10 @@ function HomePage({ licenseActivated }) {
     <>
       <div className="top-section">
         <h1>
-          Meet DevLoom: Every Developer&#39;s Ultimate Toolkit - Online and Free
+          Meet DevLoom - The All-in-One Dev Utilities App - No Ads - No Trackers - No Bullshit!
         </h1>
         <p>
-          Explore DevLoom, the ultimate destination for multi-language code
-          formatting, encoding, and conversion. Perfect your codes from HTML,
-          CSS, JavaScript, JSON, Base64, and more. Seamlessly switch between
-          diverse formats and elevate every coding session.
+        Streamline your development workflow with DevLoom&#39;s comprehensive suite of dev utilities. Effortlessly format, convert, encode, preview and debug code for HTML, CSS, JavaScript, JSON, YAML, and more.
         </p>
         <p className="get-started">No ads - No Trackers - No Bullshit ;)</p>
       </div>
