@@ -5,7 +5,7 @@ function HomePage({ licenseActivated }) {
     <>
       <div className="top-section">
         <h1>
-          Meet DevLoom - The All-in-One Dev Utilities App - No Ads - No Trackers - No Bullshit!
+          Meet DevLoom - Developed by <a target="_blank" href="https://i-ash.com">Ash</a> - The All-in-One Dev Utilities App - No Ads - No Trackers - No Bullshit!
         </h1>
         <p>
         Streamline your development workflow with DevLoom&#39;s comprehensive suite of dev utilities. Effortlessly format, convert, encode, preview and debug code for HTML, CSS, JavaScript, JSON, YAML, and more.
