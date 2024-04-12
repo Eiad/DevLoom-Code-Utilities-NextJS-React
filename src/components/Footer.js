@@ -4,7 +4,7 @@ function Footer() {
   return (
     <section className="footer text-center">
       <p className="copyrights text-center">
-        &copy; {currentYear} DevLoom. All rights reserved.
+        Developed by <a target="_blank" href="https://i-ash.com">ASH</a>  &copy; {currentYear} DevLoom. All rights reserved. 
       </p>
     </section>
   );
