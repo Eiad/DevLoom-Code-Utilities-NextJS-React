@@ -4,7 +4,7 @@
 
 Copyright (c) 2023, DevLoom Team
 
-All rights reserved.
+Mohamed Ashraf - i-ash.com - All rights reserved.
 
 ### Authorization
 
