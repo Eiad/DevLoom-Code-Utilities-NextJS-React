@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Prism from "prismjs";
 import "../../app/css/highligh-styling.css";
 import "prismjs/components/prism-javascript";

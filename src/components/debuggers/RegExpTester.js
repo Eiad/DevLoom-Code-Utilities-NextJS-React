@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import DOMPurify from "dompurify";
 import "../../app/css/regex-tester.css";
-// Default test string value set to your provided string.
+// Default test string value.
 import { demoRegexString } from "../../constants/demo-constants";
 
 // RegExpTester component to test regular expressions against a test string.
