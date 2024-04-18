@@ -394,7 +394,7 @@ function MainMenu({ isMobileView, closeMenu }) {
               </Link>
             </div>
           </li>
-          <li className={getLinkClass("/LicenseActivation")}>
+          {/* <li className={getLinkClass("/LicenseActivation")}>
             <div>
               <Link
                 href="/LicenseActivation"
@@ -413,7 +413,7 @@ function MainMenu({ isMobileView, closeMenu }) {
                 )}
               </Link>
             </div>
-          </li>
+          </li> */}
         </ul>
       </div>
       <div className="footer-logo">
