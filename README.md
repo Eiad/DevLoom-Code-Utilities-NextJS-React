@@ -93,4 +93,4 @@ The main pages are:
 - Node.js and npm are installed
 - Familiarity with Next.js, React, and Electron
 
-## Developed by [Ash](https://i-ash.com)
+Developed by [Ash](https://i-ash.com)
