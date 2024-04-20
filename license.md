@@ -1,6 +1,6 @@
 # License
 
-## DevLoom for macOS
+## DevLoom - Don't use this repo unless granted permession from me Ash
 
 Copyright (c) 2023, DevLoom Team
 
