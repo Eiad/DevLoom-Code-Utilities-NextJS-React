@@ -2,7 +2,7 @@
 
 ## DevLoom - Don't use this repo unless granted permission from me Ash
 
-Copyright (c) 2023, DevLoom Team
+Copyright (c) 2024, DevLoom Team
 
 Mohamed Ashraf - i-ash.com - All rights reserved.
 
