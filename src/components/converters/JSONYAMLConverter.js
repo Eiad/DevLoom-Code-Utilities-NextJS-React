@@ -41,7 +41,7 @@ function JSONYAMLConverter() {
   const handleCopyYAML = () => {
     navigator.clipboard.writeText(outputYAML).then(() => {
       setIsCopiedYAML(true);
-      setTimeout(() => setIsCopiedYAML(false), 2000); // Reset after 2 seconds
+      setTimeout(() => setIsCopiedYAML(false), 2000);
     });
   };
 

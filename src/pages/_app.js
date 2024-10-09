@@ -14,36 +14,28 @@ import Link from "next/link";
 import useSwipeToOpenMenu from "../components/useSwipeToOpenMenu";
 
 function MyApp({ Component, pageProps }) {
-  // State to manage the open/close status of the menu
   const [isMenuOpen, setIsMenuOpen] = useState(true);
   const [isMobileView, setIsMobileView] = useState(false);
   const [licenseActivated, setLicenseActivated] = useState(false);
 
-  // License validation check
   useCheckLicenseValidity(setLicenseActivated);
 
-  // Set the menu's initial state based on the viewport width for mobile menu handling
   useEffect(() => {
-    // By default mobile menu is hidden on mobile
     if (window.innerWidth <= 768) {
       setIsMenuOpen(false);
     }
-    // When a menu item is selected, the whole navigation menu closes on mobile.
     if (typeof window !== "undefined") {
       const handleResize = () => {
         setIsMobileView(window.innerWidth <= 768);
       };
-      // Set initial value
       handleResize();
       window.addEventListener("resize", handleResize);
-      // Cleanup
       return () => {
         window.removeEventListener("resize", handleResize);
       };
     }
   }, []);
 
-  // Use the custom hook
   useSwipeToOpenMenu(setIsMenuOpen);
 
   return (
@@ -61,7 +53,6 @@ function MyApp({ Component, pageProps }) {
           content="DevLoom, Code Formatter, HTML Formatter, LESS Formatter, Code Beautifier, Coding Assistant, Development Workflow, Code Optimization, JSON to YAML Converter, YAML to JSON Converter, HTML Previewer, Markdown Previewer, Base64 Encoder, Code Conversion Tool, Simplify Coding, Improve Coding Experience, Dynamic Code Previews, Live Markdown Previews, Coding Tools, Efficient Coding Tools, Streamline Coding Process, Code Beautification, lorem ipsum generator, Base64 Encoding"
         />
       </Head>
-      {/* Main body content */}
       <div
         className={`main-container ${
           isMenuOpen ? "lefthand-open" : "lefthand-closed"
@@ -79,26 +70,13 @@ function MyApp({ Component, pageProps }) {
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             />
           </div>
-          {/* Main Menu content */}
           <div className="menu-content">
             <MainMenu
               isMobileView={isMobileView}
               closeMenu={() => setIsMenuOpen(false)}
             />
-            {/* {licenseActivated ? (
-              <MainMenu
-                isMobileView={isMobileView}
-                closeMenu={() => setIsMenuOpen(false)}
-              />
-            ) : (
-              <MainMenuDemo
-                isMobileView={isMobileView}
-                closeMenu={() => setIsMenuOpen(false)}
-              />
-            )} */}
           </div>
         </section>
-        {/* App's content container */}
         <section
           className={`right-hand-column ${
             isMenuOpen ? "menu-open" : "menu-closed"
@@ -114,8 +92,6 @@ function MyApp({ Component, pageProps }) {
               />
             </Link>
           </section>
-          {/* Main content of the app displayed here */}
-          {/* <Component {...pageProps} licenseActivated={licenseActivated} /> */}
           <Component {...pageProps} />
         </section>
       </div>

@@ -3,7 +3,6 @@ import Image from "next/image";
 import "../../app/css/num-base-converter.css";
 
 const NumberBaseConverter = () => {
-  // State hooks for different number systems and tooltip text
   const [binaryNumber, setBinaryNumber] = useState("100101000100101100000001");
   const [octalNumber, setOctalNumber] = useState("45045401");
   const [decimalNumber, setDecimalNumber] = useState("9718529");
@@ -12,7 +11,6 @@ const NumberBaseConverter = () => {
   const [customBaseNumber, setCustomBaseNumber] = useState("9718529");
   const [tooltipText, setTooltipText] = useState("");
 
-  // Function to convert a decimal number to different number bases
   const convertFromDecimal = (decimalValue) => {
     setDecimalNumber(decimalValue);
     setBinaryNumber(parseInt(decimalValue, 10).toString(2));
@@ -21,8 +19,6 @@ const NumberBaseConverter = () => {
     setCustomBaseNumber(parseInt(decimalValue, 10).toString(customBase));
   };
 
-  // Handlers to update state based on user input for different number bases
-  // Each ensures that the input matches the valid characters for that base
   const handleDecimalChange = (value) => {
     const regex = /^[0-9]*$/;
     if (regex.test(value)) {
@@ -63,7 +59,6 @@ const NumberBaseConverter = () => {
     }
   };
 
-  // Updates the custom base and reconverts the number when the base changes
   const handleCustomBaseChange = (base) => {
     setCustomBase(base);
     if (decimalNumber) {
@@ -72,7 +67,6 @@ const NumberBaseConverter = () => {
     }
   };
 
-  // Similar to other handlers, but dynamically creates regex based on the custom base
   const handleCustomBaseNumberChange = (value) => {
     const validChars = "0123456789abcdefghijklmnopqrstuvwxyz".slice(
       0,
@@ -88,7 +82,6 @@ const NumberBaseConverter = () => {
     }
   };
 
-  // Function to clear all input fields
   const clearAllFields = () => {
     setDecimalNumber("");
     setBinaryNumber("");
@@ -97,7 +90,6 @@ const NumberBaseConverter = () => {
     setCustomBaseNumber("");
   };
 
-  // Function to copy the text of a field to the clipboard and show tooltip
   const copyToClipboard = async (text, fieldName) => {
     try {
       await navigator.clipboard.writeText(text);
@@ -108,7 +100,6 @@ const NumberBaseConverter = () => {
     }
   };
 
-  // JSX to render the Number Base Converter UI
   return (
     <div className="converter-container border-round">
       <h2>Number Base Converter</h2>

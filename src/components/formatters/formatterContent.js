@@ -46,7 +46,7 @@ function FormatterContent(props) {
   const handleCopy = () => {
     navigator.clipboard.writeText(formattedCode).then(() => {
       setIsCopied(true);
-      setTimeout(() => setIsCopied(false), 2000); // Reset after 2 seconds
+      setTimeout(() => setIsCopied(false), 2000);
     });
   };
 
@@ -55,8 +55,6 @@ function FormatterContent(props) {
       <div className="main-body">
         <div className="formatter-page">
           <h1 className="text-center">{codeType} Formatter</h1>
-
-          {/* New Dropdown for Format Options */}
           <div className="format-options">
             <label htmlFor="formatOption">Indentation level: </label>
             <select
@@ -78,8 +76,6 @@ function FormatterContent(props) {
               placeholder={`Copy-paste your ${codeType} here...`}
             />
           </div>
-
-          {/* Button is disabled if textarea is empty or if it is processing */}
           <button
             onClick={handleFormatClick}
             disabled={!inputCode || isProcessing}

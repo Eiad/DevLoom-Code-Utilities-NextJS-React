@@ -7,21 +7,18 @@ function HTMLEntityEncoder() {
   const [isCopied, setIsCopied] = useState(false);
   const [showOutput, setShowOutput] = useState(false);
   const [isProcessing, setIsProcessing] = useState(false);
-  const [encodeMode, setEncodeMode] = useState(true); // true for encoding, false for decoding
+  const [encodeMode, setEncodeMode] = useState(true);
 
-  // Handle input text change
   const handleInputChange = (event) => {
     const inputValue = event.target.value;
     setInputText(inputValue);
 
-    // If the input is cleared, hide the output and clear the encoded text
     if (!inputValue.trim()) {
       setEncodedText("");
       setShowOutput(false);
     }
   };
 
-  // Trigger the encode or decode function based on the selected mode
   const handleEncodeDecodeClick = () => {
     setIsProcessing(true);
     setTimeout(() => {
@@ -34,7 +31,6 @@ function HTMLEntityEncoder() {
     }, 300);
   };
 
-  // Encode the provided text to HTML entities format
   const encodeHTMLEntities = () => {
     const result = inputText.replace(/[\u00A0-\u9999<>\&]/gim, function (i) {
       return "&#" + i.charCodeAt(0) + ";";
@@ -43,7 +39,6 @@ function HTMLEntityEncoder() {
     setShowOutput(true);
   };
 
-  // Decode the provided HTML entities back to text
   const decodeHTMLEntities = () => {
     const textArea = document.createElement("textarea");
     textArea.innerHTML = inputText;
@@ -52,7 +47,6 @@ function HTMLEntityEncoder() {
     setShowOutput(true);
   };
 
-  // Handle copying the encoded/decoded text to clipboard
   const handleCopy = () => {
     navigator.clipboard.writeText(encodedText).then(() => {
       setIsCopied(true);

@@ -2,8 +2,8 @@ import React, { useState } from "react";
 
 import * as prettier from "prettier/standalone";
 import * as babelParser from "prettier/parser-babel";
-import * as prettierEstree from "prettier/plugins/estree"; // Added the estree plugin
-import FormatterContent from "./formatterContent"; // Import the component
+import * as prettierEstree from "prettier/plugins/estree";
+import FormatterContent from "./formatterContent"; 
 
 function JSFormatter() {
   const [inputCode, setInputCode] = useState("");
@@ -30,7 +30,7 @@ function JSFormatter() {
         tabWidth = 4;
         break;
       case "no-Space":
-        tabWidth = 0; // Using zero for full no spaces
+        tabWidth = 0; 
         break;
       default:
         break;

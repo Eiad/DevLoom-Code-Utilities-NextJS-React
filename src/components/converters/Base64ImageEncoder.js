@@ -18,9 +18,8 @@ const Base64ImageEncoder = () => {
     if (!file) {
       return;
     }
-    // Exclude SVG files
     if (file.type.startsWith("image/") && file.type !== "image/svg+xml") {
-      const maxFileSize = 2 * 1024 * 1024; // 2MB size limit
+      const maxFileSize = 2 * 1024 * 1024;
       if (file.size <= maxFileSize) {
         const reader = new FileReader();
         reader.onload = (e) => {
@@ -38,7 +37,7 @@ const Base64ImageEncoder = () => {
       }
     } else {
       setError("Please select an image file (SVG not allowed).");
-      fileInputRef.current.value = ""; // Reset the file input if non-image or SVG
+      fileInputRef.current.value = "";
     }
   };
 
@@ -48,8 +47,8 @@ const Base64ImageEncoder = () => {
     setBase64(inputBase64);
 
     if (!inputBase64) {
-      setImagePreviewSrc("/assets/blank.jpg"); // Set to blank image when textarea is empty
-      fileInputRef.current.value = ""; // Reset the file uploader
+      setImagePreviewSrc("/assets/blank.jpg");
+      fileInputRef.current.value = "";
     } else {
       const imageSrc = isValidBase64Image(inputBase64)
         ? inputBase64
@@ -65,13 +64,13 @@ const Base64ImageEncoder = () => {
   const handleCopy = () => {
     navigator.clipboard.writeText(base64).then(() => {
       setIsCopied(true);
-      setTimeout(() => setIsCopied(false), 2000); // Reset after 2 seconds
+      setTimeout(() => setIsCopied(false), 2000);
     });
   };
 
   const handleDownload = () => {
     setDownloadButtonText("Downloaded!");
-    setTimeout(() => setDownloadButtonText(downloadTxt), 1000); // Reset button text after 1 second
+    setTimeout(() => setDownloadButtonText(downloadTxt), 1000);
 
     const link = document.createElement("a");
     link.href = imagePreviewSrc;
@@ -119,8 +118,6 @@ const Base64ImageEncoder = () => {
           <h4>Preview</h4>
           <div className="bs64-preview-img border-round text-center">
             {imagePreviewSrc && (
-              //Valid case to use native img as of the Base64 src.
-              // eslint-disable-next-line @next/next/no-img-element
               <img
                 className="image-preview"
                 src={imagePreviewSrc}

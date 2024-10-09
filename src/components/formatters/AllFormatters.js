@@ -9,7 +9,7 @@ import TypeScriptFormatter from "./TypeScriptFormatter";
 import GraphQLFormatter from "./GraphQLFormatter";
 
 function AllFormatters() {
-  const [selectedFormatter, setSelectedFormatter] = useState("HTML"); // default formatter to display
+  const [selectedFormatter, setSelectedFormatter] = useState("HTML");
 
   let ComponentToShow;
   switch (selectedFormatter) {

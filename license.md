@@ -1,6 +1,6 @@
 # License
 
-## DevLoom - Don't use this repo unless granted permission from me Ash
+## DevLoom - Don't use this repo unless granted permission from me - Ash
 
 Copyright (c) 2024, DevLoom Team
 

@@ -41,7 +41,7 @@ function YAMLJSONConverter() {
   const handleCopyJSON = () => {
     navigator.clipboard.writeText(outputJSON).then(() => {
       setIsCopiedJSON(true);
-      setTimeout(() => setIsCopiedJSON(false), 2000); // Reset after 2 seconds
+      setTimeout(() => setIsCopiedJSON(false), 2000);
     });
   };
 

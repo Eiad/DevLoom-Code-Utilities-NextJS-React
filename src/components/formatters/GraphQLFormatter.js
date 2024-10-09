@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import * as prettier from "prettier/standalone";
-import * as graphqlParser from "prettier/parser-graphql"; // Import GraphQL parser
-import FormatterContent from "./formatterContent"; // Import the component
+import * as graphqlParser from "prettier/parser-graphql";
+import FormatterContent from "./formatterContent"; 
 
 function GraphQLFormatter() {
   const [inputCode, setInputCode] = useState("");

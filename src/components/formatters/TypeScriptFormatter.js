@@ -30,7 +30,7 @@ function TypeScriptFormatter() {
         tabWidth = 4;
         break;
       case "no-Space":
-        tabWidth = 0; // Using zero for full no spaces
+        tabWidth = 0; 
         break;
       default:
         break;
@@ -38,12 +38,12 @@ function TypeScriptFormatter() {
 
     try {
       const formatOptions = {
-        parser: "typescript", // Use 'typescript' parser
-        plugins: [typescriptParser, prettierEstree], // Use the TypeScript parser
+        parser: "typescript", 
+        plugins: [typescriptParser, prettierEstree],
         tabWidth: formatOption === "no-Spaces" ? 0 : tabWidth,
         useTabs: formatOption === "no-Spaces" ? false : useTabs,
         printWidth: formatOption === "no-Spaces" ? 10000 : 80,
-        semi: formatOption !== "no-Spaces", // No semicolons for no-Spaces
+        semi: formatOption !== "no-Spaces", 
         singleQuote: false,
         bracketSpacing: formatOption !== "no-Spaces",
       };

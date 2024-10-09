@@ -1,65 +1,45 @@
 import React, { useState } from "react";
 import DOMPurify from "dompurify";
 import "../../app/css/regex-tester.css";
-// Default test string value.
 import { demoRegexString } from "../../constants/demo-constants";
 
-// RegExpTester component to test regular expressions against a test string.
 const RegExpTester = () => {
   const [regex, setRegex] = useState("([A-Z])\\w+");
   const [testString, setTestString] = useState(demoRegexString);
-
-  // State for storing matches found in the test string.
   const [matches, setMatches] = useState([]);
-  // State to track if a test has been conducted.
   const [hasTested, setHasTested] = useState(false);
-  // State for the highlighted string with matches.
   const [highlightedString, setHighlightedString] = useState("");
-  // State for any error message.
   const [error, setError] = useState("");
 
-  // Updates the regex state as the user types.
   const handleRegexChange = (e) => {
     setRegex(e.target.value);
   };
 
-  // Updates the test string state as the user types.
   const handleTestStringChange = (e) => {
     setTestString(e.target.value);
   };
 
-  // Function to test the regular expression against the test string.
   const testRegExp = () => {
-    // Clear any existing errors before testing.
     setError("");
     setHasTested(true);
     try {
-      // Create a RegExp object with global and unicode flags.
       const regexObj = new RegExp(regex, "gu");
-      // Use matchAll to find all matches in the test string.
       const matchResults = [...testString.matchAll(regexObj)];
 
-      // For building the highlighted string.
       let lastIndex = 0;
       let resultString = [];
 
-      // Loop through matches to construct the highlighted string.
       matchResults.forEach((match) => {
-        // Add non-matching text.
         resultString.push(testString.slice(lastIndex, match.index));
-        // Add matching text with highlight span.
         resultString.push(`<span class="highlight">${match[0]}</span>`);
         lastIndex = match.index + match[0].length;
       });
 
-      // Add any remaining text after the last match.
       resultString.push(testString.slice(lastIndex));
 
-      // Update states with the matches and the highlighted string.
       setMatches(matchResults.map((match) => match[0]));
       setHighlightedString(DOMPurify.sanitize(resultString.join("")));
     } catch (error) {
-      // Update error state and clear matches if the regular expression is invalid.
       setError("Invalid regular expression. Please check your syntax.");
       console.error("Invalid regular expression:", error);
       setMatches([]);
@@ -67,10 +47,8 @@ const RegExpTester = () => {
     }
   };
 
-  // Button is disabled if either regex or test string is empty.
   const isTestButtonDisabled = regex.length === 0 || testString.length === 0;
 
-  // Function to safely create HTML markup for the highlighted string.
   const createMarkup = () => {
     return { __html: highlightedString };
   };
@@ -107,14 +85,11 @@ const RegExpTester = () => {
         >
           Test RegExp
         </button>
-        {/* Display error message if there is an error */}
         {error && <div className="error-message">{error}</div>}
       </div>
-      {/* Render the Matches section only if there's no error and a test has been conducted */}
       {hasTested && !error && (
         <div className="regex-tester-results">
           <h2 className="text-center">Matches</h2>
-          {/* Render the highlighted string as HTML */}
           <div
             id="results"
             className="text-with-highlights border-round"

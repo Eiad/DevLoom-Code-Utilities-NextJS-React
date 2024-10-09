@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import * as prettier from "prettier/standalone";
 import * as babelParser from "prettier/parser-babel";
 import * as prettierEstree from "prettier/plugins/estree";
-import FormatterContent from "./formatterContent"; // Import the component
+import FormatterContent from "./formatterContent";
 
 function JSONFormatter() {
   const [inputCode, setInputCode] = useState("");
@@ -29,7 +29,7 @@ function JSONFormatter() {
         tabWidth = 4;
         break;
       case "no-Spaces":
-        tabWidth = 0; // Using zero for full no spaces
+        tabWidth = 0; 
         break;
       default:
         break;
@@ -48,7 +48,7 @@ function JSONFormatter() {
 
       const formatted = prettier.format(inputCode, formatOptions);
 
-      // Check if the formatted value is a Promise
+      
       if (formatted instanceof Promise) {
         formatted.then((result) => {
           setFormattedCode(result);

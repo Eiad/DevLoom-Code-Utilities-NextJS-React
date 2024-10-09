@@ -2,7 +2,6 @@ import React, { useState, useEffect, useCallback } from "react";
 import DOMPurify from "dompurify";
 
 const StringCaseConverter = () => {
-  // Pre-filled demo string
   const demoString = `responseXMLParserKey
 custom_event_summaries
 SortedNaturalPost
@@ -16,7 +15,6 @@ aDetailedTextWithSmileys😊AndExoticLétters`;
   const [copyButtonText, setCopyButtonText] = useState("Copy");
   const [isCopyButtonDisabled, setIsCopyButtonDisabled] = useState(true);
 
-  // Conversion functions
   const toCamelCase = (str) => {
     return str
       .replace(/([a-z])([A-Z])/g, "$1 $2")
@@ -30,24 +28,17 @@ aDetailedTextWithSmileys😊AndExoticLétters`;
   const toPascalCase = (str) => {
     return (
       str
-        // Replace underscores and hyphens with a space
         .replace(/[-_]+/g, " ")
-        // Capitalize the first character of each word, convert the rest to lowercase
         .replace(/\w\S*/g, (match) => {
           return match.charAt(0).toUpperCase() + match.substr(1).toLowerCase();
         })
-        // Remove all spaces
         .replace(/\s+/g, "")
     );
   };
 
   const toSnakeCase = (str) => {
-    // Insert an underscore before each uppercase letter that follows a lowercase letter or another uppercase letter followed by a lowercase letter
     str = str.replace(/([a-z])([A-Z])|([A-Z])([A-Z][a-z])/g, "$1$3_$2$4");
-
-    // Replace spaces and punctuation with underscore, preserving emojis and foreign characters
     str = str.replace(/[\s\p{P}]+/gu, "_");
-
     return str.toLowerCase();
   };
 
@@ -59,20 +50,13 @@ aDetailedTextWithSmileys😊AndExoticLétters`;
   const toScreamingKebabCase = (str) => {
     let kebab = str.replace(/([a-z])([A-Z])/g, "$1-$2").toLowerCase();
     kebab = kebab.replace(/[\s_]+|[^a-z0-9-\u0080-\uFFFF]/gi, "-");
-    return kebab.toUpperCase(); // Convert the entire string to uppercase
+    return kebab.toUpperCase();
   };
 
   const toConstantCase = (str) => {
-    // Insert underscores before uppercase letters following lowercase letters
     str = str.replace(/([a-z])([A-Z])/g, "$1_$2");
-
-    // Transform to uppercase
     str = str.toUpperCase();
-
-    // Replace non-alphanumeric characters (excluding emojis and underscores) with underscores
-    // This regex keeps emojis and non-ASCII characters intact while replacing other non-alphanumeric characters
     str = str.replace(/([^\w\_\u0080-\uFFFF]|_)+/g, "_");
-
     return str;
   };
 
@@ -98,22 +82,19 @@ aDetailedTextWithSmileys😊AndExoticLétters`;
     return str
       .split(" ")
       .map((word) => {
-        // Check for snake_case, camelCase, or hyphenated words
         if (/_/.test(word) || /[a-z][A-Z]/.test(word)) {
-          return word; // Leave camelCase and snake_case words as they are
+          return word;
         } else if (/-/.test(word)) {
-          // For hyphenated words, only capitalize after the hyphen
           return word
             .split("-")
             .map((part, index) => {
-              if (index === 0) return part; // First part remains as is
+              if (index === 0) return part;
               return (
                 part.charAt(0).toUpperCase() + part.substr(1).toLowerCase()
               );
             })
             .join("-");
         } else {
-          // For normal words, capitalize the first letter
           return word.charAt(0).toUpperCase() + word.substr(1).toLowerCase();
         }
       })
@@ -122,10 +103,10 @@ aDetailedTextWithSmileys😊AndExoticLétters`;
 
   const toSlugCase = (str) => {
     return str
-      .normalize("NFD") // Normalize to decompose special characters
-      .replace(/[\u0300-\u036f]/g, "") // Remove diacritics
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
       .toLowerCase()
-      .replace(/\W+/g, "-"); // Replace one or more non-word characters with a single hyphen
+      .replace(/\W+/g, "-");
   };
 
   const convertString = useCallback(() => {
@@ -164,7 +145,6 @@ aDetailedTextWithSmileys😊AndExoticLétters`;
     setOutput(convertedLines.join("\n"));
   }, [input, caseType]);
 
-  // New function to handle copying text
   const handleCopy = () => {
     navigator.clipboard
       .writeText(sanitizedOutput)
@@ -175,7 +155,6 @@ aDetailedTextWithSmileys😊AndExoticLétters`;
       .catch((err) => console.error("Error copying text: ", err));
   };
 
-  // Update the disabled state of the copy button based on input
   useEffect(() => {
     setIsCopyButtonDisabled(input.trim() === "");
   }, [input]);

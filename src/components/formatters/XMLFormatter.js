@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import * as prettier from "prettier/standalone";
-import * as htmlParser from "prettier/parser-html"; // XML uses HTML parser
+import * as htmlParser from "prettier/parser-html"; // Note to myself XML uses HTML parser
 import FormatterContent from "./formatterContent";
 
 function XMLFormatter() {
@@ -28,7 +28,7 @@ function XMLFormatter() {
         tabWidth = 4;
         break;
       case "no-Spaces":
-        tabWidth = 0; // Using zero for full no spaces
+        tabWidth = 0;
         break;
       default:
         break;
@@ -47,7 +47,7 @@ function XMLFormatter() {
 
       const formatted = prettier.format(inputCode, formatOptions);
 
-      // Check if the formatted value is a Promise
+      
       if (formatted instanceof Promise) {
         formatted.then((result) => {
           setFormattedCode(result);

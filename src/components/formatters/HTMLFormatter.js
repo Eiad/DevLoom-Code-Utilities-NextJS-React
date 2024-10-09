@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import * as prettier from "prettier/standalone";
 import * as htmlParser from "prettier/parser-html";
-import FormatterContent from "./formatterContent"; // Import the component
+import FormatterContent from "./formatterContent"; 
 
 function HTMLFormatter() {
-  // States for capturing user input and displaying formatted code
+  
   const [inputCode, setInputCode] = useState("");
   const [formattedCode, setFormattedCode] = useState("");
   const [formatOption, setFormatOption] = useState("2spaces");
@@ -49,7 +49,7 @@ function HTMLFormatter() {
 
       const formatted = prettier.format(inputCode, formatOptions);
 
-      // Check if the formatted value is a Promise
+      
       if (formatted instanceof Promise) {
         formatted.then((result) => {
           setFormattedCode(result);
@@ -58,7 +58,6 @@ function HTMLFormatter() {
         setFormattedCode(formatted);
       }
     } catch (error) {
-      // Handle any errors during formatting
       alert(
         "There was an error formatting your code. Please check and try again."
       );

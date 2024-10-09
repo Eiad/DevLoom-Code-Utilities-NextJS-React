@@ -18,7 +18,7 @@ const LicenseActivation = () => {
         EMail: localStorage.getItem("EMail"),
         LicenseKey: localStorage.getItem("LicenseKey"),
         PurchaseDate: localStorage.getItem("PurchaseDate"),
-        usageID: localStorage.getItem("usageID"), // retrieving usageID
+        usageID: localStorage.getItem("usageID"),
       };
       setLicenseData(storedLicenseData);
     }
@@ -38,9 +38,7 @@ const LicenseActivation = () => {
 
         if (res.ok) {
           setLicenseActivated(true);
-          // License verification successful, load and display license data
         } else {
-          // License verification failed, clear local storage and redirect
           localStorage.clear();
           window.location.href = "/LicenseDeactivated";
         }
@@ -50,7 +48,6 @@ const LicenseActivation = () => {
     const activationStatus = localStorage.getItem("Devloom");
     const lastCheckedDate = localStorage.getItem("lastCheckedDate");
 
-    // Check if the license has been activated and 30 days have passed since the last check
     if (activationStatus === "Activated") {
       const currentDate = new Date();
       const nextCheckDate = new Date(lastCheckedDate);
@@ -91,7 +88,7 @@ const LicenseActivation = () => {
           localStorage.setItem("EMail", data.EMail);
           localStorage.setItem("LicenseKey", data.LicenseKey);
           localStorage.setItem("PurchaseDate", data.PurchaseDate);
-          localStorage.setItem("usageID", data.usageID); // storing usageID
+          localStorage.setItem("usageID", data.usageID);
           setLicenseActivated(true);
           window.location.reload();
         }
