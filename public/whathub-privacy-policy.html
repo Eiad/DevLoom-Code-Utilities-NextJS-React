@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Privacy Policy - WhatHub</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Privacy policy for WhatHub - Your premium second WhatsApp client for iOS">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --whatsapp-green: #25D366;
+            --whatsapp-dark: #128C7E;
+            --text-primary: #2C3E50;
+            --text-secondary: #546E7A;
+            --background-light: #F8FAFC;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--background-light);
+            color: var(--text-primary);
+            line-height: 1.7;
+        }
+
+        .header-section {
+            background: linear-gradient(135deg, var(--whatsapp-green), var(--whatsapp-dark));
+            padding: 6rem 0 8rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-section::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4rem;
+            background: var(--background-light);
+            clip-path: polygon(0 100%, 100% 100%, 100% 0);
+        }
+
+        .header-content {
+            color: white;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .main-content {
+            margin-top: -4rem;
+            position: relative;
+            z-index: 3;
+        }
+
+        .privacy-card {
+            background: white;
+            border-radius: 1rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 3rem;
+        }
+
+        .section-title {
+            color: var(--whatsapp-dark);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        #contact p {
+          margin: 5px 0;
+          line-height: 1.5;
+          font-size: 15px;
+        }
+
+
+        .subsection {
+            margin-top: 2.5rem;
+        }
+
+        .subsection-title {
+            color: var(--text-primary);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .privacy-list {
+            list-style: none;
+            padding-left: 1.5rem;
+        }
+
+        .privacy-list li {
+            position: relative;
+            margin-bottom: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        .privacy-list li::before {
+            content: '•';
+            color: var(--whatsapp-green);
+            position: absolute;
+            left: -1.5rem;
+            font-weight: bold;
+        }
+
+        .last-updated {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: var(--background-light);
+            border-radius: 2rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .contact-section {
+            background: var(--background-light);
+            border-radius: 1rem;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 3rem 0;
+            color: var(--text-secondary);
+        }
+
+        @media (max-width: 768px) {
+            .header-section {
+                padding: 4rem 0 6rem;
+            }
+            
+            .privacy-card {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 header-content">
+                    <h1 class="display-4 fw-bold mb-3">WhatHub Privacy Policy</h1>
+                    <p class="lead mb-0">Your Privacy is Our Priority</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="privacy-card">
+                        <h2 class="section-title">Privacy Policy for WhatHub</h2>
+                        <p class="last-updated">Last Updated: <script>
+                            const today = new Date();
+                            const day = String(today.getDate()).padStart(2, '0');
+                            const month = String(today.getMonth() + 1).padStart(2, '0');
+                            const year = today.getFullYear();
+                            document.write(`${day}/${month}/${year}`);
+                        </script></p>
+
+                        <h3 class="subsection-title">1. Introduction</h3>
+                        <p>WhatHub ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we handle information when you use our iOS application WhatHub (the "App").</p>
+
+                        <h3 class="subsection-title">2. Information Collection and Use</h3>
+                        <p>WhatHub is designed with your privacy in mind:</p>
+                        <ul class="privacy-list">
+                            <li>We do not collect or store any personal information</li>
+                            <li>We do not track your usage or behavior</li>
+                            <li>We do not have access to your WhatsApp messages or media</li>
+                            <li>All WhatsApp functionality is handled through official WhatsApp services</li>
+                        </ul>
+
+                        <h3 class="subsection-title">3. Local Device Storage</h3>
+                        <p>The following information may be stored locally on your device:</p>
+                        <ul class="privacy-list">
+                            <li>App preferences and settings</li>
+                            <li>Authentication status</li>
+                            <li>Theme preferences</li>
+                            <li>Face ID/Touch ID settings</li>
+                            <li>Custom PIN configurations</li>
+                        </ul>
+
+                        <h3 class="subsection-title">4. Security Features</h3>
+                        <p>We implement several security features to protect your privacy:</p>
+                        <ul class="privacy-list">
+                            <li>Biometric authentication (Face ID/Touch ID)</li>
+                            <li>Custom PIN protection</li>
+                            <li>Secure app lock functionality</li>
+                        </ul>
+
+                        <h3 class="subsection-title">5. Third-Party Services</h3>
+                        <p>Our App interfaces with WhatsApp services. Please refer to WhatsApp's privacy policy for information about how they handle your data.</p>
+
+                        <h3 class="subsection-title">6. Children's Privacy</h3>
+                        <p>The App is not intended for use by children under 13. We do not knowingly collect any information from children under 13.</p>
+
+                        <h3 class="subsection-title">7. Changes to Privacy Policy</h3>
+                        <p>We may update this Privacy Policy periodically. We will notify users of any material changes through the App or via the App Store.</p>
+
+                        <h3 class="subsection-title">8. Contact Us</h3>
+                        <p>If you have questions about this Privacy Policy, please contact us at: support@whathub.app</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p class="mb-0">&copy; <script>document.write(new Date().getFullYear())</script> WhatHub. DevLoom inc - Ash - All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
