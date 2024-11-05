@@ -362,6 +362,31 @@ function MainMenu({ isMobileView, closeMenu }) {
               </Link>
             </div>
           </li>
+          <li className={getLinkClass("syncnote")}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
+             <Link
+                href="https://syncnote.devloom.net/"
+                onClick={isMobileView ? closeMenu : null}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Image
+                  src="/icons/convert-icon.svg"
+                  width={20}
+                  height={20}
+                  alt="RegExp Tester"
+                />
+                <span>Sync Note</span>
+                <Image
+                  src="/icons/external-link.svg"
+                  width={16}
+                  height={16}
+                  alt="External Link"
+                  style={{ marginLeft: 'aut' }}
+                />
+              </Link>
+            </div>
+          </li>
           <li className={getLinkClass("/debuggers/RegExpTester")}>
             <div>
               <Link
