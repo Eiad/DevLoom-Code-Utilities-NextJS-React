@@ -362,8 +362,24 @@ function MainMenu({ isMobileView, closeMenu }) {
               </Link>
             </div>
           </li>
+          <li className={getLinkClass("/debuggers/RegExpTester")}>
+            <div>
+              <Link
+                href="/debuggers/RegExpTester"
+                onClick={isMobileView ? closeMenu : null}
+              >
+                <Image
+                  src="/icons/regex-icon.svg"
+                  width={20}
+                  height={20}
+                  alt="RegExp Tester"
+                />
+                <span>RegExpTester</span>
+              </Link>
+            </div>
+          </li>
           <li className={getLinkClass("syncnote")}>
-          <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
+           <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
              <Link
                 href="https://syncnote.devloom.net/"
                 onClick={isMobileView ? closeMenu : null}
@@ -386,23 +402,7 @@ function MainMenu({ isMobileView, closeMenu }) {
                 />
               </Link>
             </div>
-          </li>
-          <li className={getLinkClass("/debuggers/RegExpTester")}>
-            <div>
-              <Link
-                href="/debuggers/RegExpTester"
-                onClick={isMobileView ? closeMenu : null}
-              >
-                <Image
-                  src="/icons/regex-icon.svg"
-                  width={20}
-                  height={20}
-                  alt="RegExp Tester"
-                />
-                <span>RegExpTester</span>
-              </Link>
-            </div>
-          </li>
+          </li>          
           <li className={`contact-us-link ${getLinkClass("/about-devloom")}`}>
             <div>
               <Link
