@@ -117,7 +117,23 @@
             background: var(--background-light);
             border-radius: 1rem;
             padding: 2rem;
-            margin-top: 2rem;
+            margin-top: 3rem;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .contact-section a {
+            color: var(--whatsapp-dark);
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .contact-section a:hover {
+            color: var(--whatsapp-green);
+        }
+
+        .support-note {
+            padding-top: 1rem;
+            border-top: 1px solid rgba(0,0,0,0.05);
         }
 
         .footer {
@@ -133,6 +149,11 @@
             
             .privacy-card {
                 padding: 2rem;
+            }
+
+            .contact-section {
+                padding: 1.5rem;
+                margin-top: 2rem;
             }
         }
     </style>
@@ -202,8 +223,20 @@
                         <h3 class="subsection-title">7. Changes to Privacy Policy</h3>
                         <p>We may update this Privacy Policy periodically. We will notify users of any material changes through the App or via the App Store.</p>
 
-                        <h3 class="subsection-title">8. Contact Us</h3>
-                        <p>If you have questions about this Privacy Policy, please contact us at: support@whathub.app</p>
+                        <h3 class="subsection-title">8. Contact Information</h3>
+                        <p>If you have any questions, concerns, or requests related to this Privacy Policy or our privacy practices, please contact us:</p>
+                        <ul class="privacy-list">
+                            <li>Email: <a href="mailto:support@devloom.net" class="text-decoration-none">support@devloom.net</a></li>
+                            <li>Response Time: We typically respond within 24-48 business hours</li>
+                            <li>Languages: We provide support in English</li>
+                        </ul>
+                        <div class="support-note mt-3">
+                            <p class="mb-0 text-muted">
+                                <small>
+                                    For faster assistance, please include your App Store order ID or transaction details when contacting support.
+                                </small>
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
