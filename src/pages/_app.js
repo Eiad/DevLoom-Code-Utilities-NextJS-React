@@ -52,6 +52,7 @@ function MyApp({ Component, pageProps }) {
           name="keywords"
           content="DevLoom, Code Formatter, HTML Formatter, LESS Formatter, Code Beautifier, Coding Assistant, Development Workflow, Code Optimization, JSON to YAML Converter, YAML to JSON Converter, HTML Previewer, Markdown Previewer, Base64 Encoder, Code Conversion Tool, Simplify Coding, Improve Coding Experience, Dynamic Code Previews, Live Markdown Previews, Coding Tools, Efficient Coding Tools, Streamline Coding Process, Code Beautification, lorem ipsum generator, Base64 Encoding"
         />
+        <meta name="google-adsense-account" content="ca-pub-9765751367804035" />
       </Head>
       <div
         className={`main-container ${
