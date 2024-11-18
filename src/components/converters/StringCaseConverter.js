@@ -9,7 +9,7 @@ propose-news-stream
 That was a regular statement
 aDetailedTextWithSmileys😊AndExoticLétters`;
   const [input, setInput] = useState(demoString);
-  const [caseType, setCaseType] = useState("camelCase");
+  const [caseType, setCaseType] = useState("url-friendly-slug-case");
   const [output, setOutput] = useState("");
   const [sanitizedOutput, setSanitizedOutput] = useState("");
   const [copyButtonText, setCopyButtonText] = useState("Copy");
