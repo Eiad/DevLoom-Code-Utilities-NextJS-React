@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // output Needs to be enabled for electron's apps build to use out folder for static "Offline" apps
-  //output: "export",
+  // Required for Tauri static export
+  output: "export",
 
   // disable the Image Optimization feature during static export
   images: {

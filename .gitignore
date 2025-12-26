@@ -42,4 +42,11 @@ yarn-error.log*
 next-env.d.ts
 
 
+# Tauri
+/src-tauri/target/
+/src-tauri/embedded.provisionprofile
+
+# Apple API keys
+/.keys/
+
 # Tempz

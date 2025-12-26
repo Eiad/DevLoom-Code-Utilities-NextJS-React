@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+import { isTauri, openExternal } from "../utils/tauri";
 
 function MainMenu({ isMobileView, closeMenu }) {
   const router = useRouter();
@@ -380,9 +381,15 @@ function MainMenu({ isMobileView, closeMenu }) {
           </li>
           <li className={getLinkClass("syncnote")}>
            <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
-             <Link
+             <a
                 href="https://syncnote.devloom.net/"
-                onClick={isMobileView ? closeMenu : null}
+                onClick={(e) => {
+                  if (isTauri()) {
+                    e.preventDefault();
+                    openExternal("https://syncnote.devloom.net/");
+                  }
+                  if (isMobileView) closeMenu();
+                }}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -390,7 +397,7 @@ function MainMenu({ isMobileView, closeMenu }) {
                   src="/icons/convert-icon.svg"
                   width={20}
                   height={20}
-                  alt="RegExp Tester"
+                  alt="Sync Note"
                 />
                 <span>Sync Note</span>
                 <Image
@@ -398,9 +405,9 @@ function MainMenu({ isMobileView, closeMenu }) {
                   width={16}
                   height={16}
                   alt="External Link"
-                  style={{ marginLeft: 'aut' }}
+                  style={{ marginLeft: 'auto' }}
                 />
-              </Link>
+              </a>
             </div>
           </li>          
           <li className={`contact-us-link ${getLinkClass("/about-devloom")}`}>
