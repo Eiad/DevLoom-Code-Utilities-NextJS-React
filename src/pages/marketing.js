@@ -1,5 +1,6 @@
 import "../app/css/contact-us.css";
 import Image from "next/image";
+import Link from "next/link";
 
 function Marketing() {
   return (
@@ -135,8 +136,8 @@ function Marketing() {
             Contact us at <a href="mailto:support@devloom.net">support@devloom.net</a>
           </p>
           <div style={{ marginTop: '20px' }}>
-            <a href="/privacy" style={{ marginRight: '20px' }}>Privacy Policy</a>
-            <a href="/terms">Terms of Service</a>
+            <Link href="/privacy" style={{ marginRight: '20px' }}>Privacy Policy</Link>
+            <Link href="/terms">Terms of Service</Link>
           </div>
         </section>
 
