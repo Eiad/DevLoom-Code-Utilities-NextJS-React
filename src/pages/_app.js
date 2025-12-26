@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useRouter } from "next/router";
 import { Analytics } from "@vercel/analytics/react";
 import "../app/css/reset.css";
 import "../app/css/globals.css";
@@ -12,8 +13,10 @@ import useCheckLicenseValidity from "../components/useCheckLicenseValidity";
 import Image from "next/image";
 import Link from "next/link";
 import useSwipeToOpenMenu from "../components/useSwipeToOpenMenu";
+import { isTauri } from "../utils/tauri";
 
 function MyApp({ Component, pageProps }) {
+  const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState(true);
   const [isMobileView, setIsMobileView] = useState(false);
   const [licenseActivated, setLicenseActivated] = useState(false);
@@ -35,6 +38,82 @@ function MyApp({ Component, pageProps }) {
       };
     }
   }, []);
+
+  // Listen for Tauri menu navigation events
+  useEffect(() => {
+    if (!isTauri()) return;
+
+    let unlisten;
+    const setupListeners = async () => {
+      const { listen } = await import("@tauri-apps/api/event");
+
+      // Navigate to route from menu
+      unlisten = await listen("navigate", (event) => {
+        router.push(event.payload);
+      });
+    };
+
+    setupListeners();
+
+    return () => {
+      if (unlisten) unlisten();
+    };
+  }, [router]);
+
+  // Disable right-click context menu in Tauri
+  useEffect(() => {
+    if (!isTauri()) return;
+
+    const handleContextMenu = (e) => {
+      e.preventDefault();
+    };
+
+    document.addEventListener("contextmenu", handleContextMenu);
+    return () => {
+      document.removeEventListener("contextmenu", handleContextMenu);
+    };
+  }, []);
+
+  // Update window title based on current route
+  useEffect(() => {
+    if (!isTauri()) return;
+
+    const updateTitle = async () => {
+      const { getCurrentWindow } = await import("@tauri-apps/api/window");
+      const window = getCurrentWindow();
+
+      const routeTitles = {
+        "/": "DevLoom",
+        "/formatters/HTMLFormatter": "DevLoom - HTML Formatter",
+        "/formatters/CSSFormatter": "DevLoom - CSS Formatter",
+        "/formatters/JSFormatter": "DevLoom - JavaScript Formatter",
+        "/formatters/JSONFormatter": "DevLoom - JSON Formatter",
+        "/formatters/XMLFormatter": "DevLoom - XML Formatter",
+        "/formatters/LESSFormatter": "DevLoom - LESS Formatter",
+        "/formatters/TypeScriptFormatter": "DevLoom - TypeScript Formatter",
+        "/formatters/GraphQLFormatter": "DevLoom - GraphQL Formatter",
+        "/converters/HTMLJSXConverter": "DevLoom - HTML to JSX",
+        "/converters/JSONYAMLConverter": "DevLoom - JSON to YAML",
+        "/converters/YAMLJSONConverter": "DevLoom - YAML to JSON",
+        "/converters/Base64Encoder": "DevLoom - Base64 Encoder",
+        "/converters/Base64ImageEncoder": "DevLoom - Base64 Image Encoder",
+        "/converters/NumerBaseConverter": "DevLoom - Number Base Converter",
+        "/converters/StringCaseConverter": "DevLoom - String Case Converter",
+        "/converters/HTMLEntityEncoder": "DevLoom - HTML Entity Encoder",
+        "/previewers/HTMLPreviewer": "DevLoom - HTML Previewer",
+        "/previewers/MARKDOWNPreviewer": "DevLoom - Markdown Previewer",
+        "/debuggers/RegExpTester": "DevLoom - RegExp Tester",
+        "/tools/LoremIpsum": "DevLoom - Lorem Ipsum Generator",
+        "/about-devloom": "DevLoom - About",
+        "/LicenseActivation": "DevLoom - License Activation",
+      };
+
+      const title = routeTitles[router.pathname] || "DevLoom";
+      await window.setTitle(title);
+    };
+
+    updateTitle();
+  }, [router.pathname]);
 
   useSwipeToOpenMenu(setIsMenuOpen);
 
